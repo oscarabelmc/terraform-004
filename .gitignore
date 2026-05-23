@@ -29,3 +29,6 @@ terraform.rc
 # Generated graph files
 *.dot
 !**/solution/*.dot
+
+# Generated module artifacts
+*.cfg
