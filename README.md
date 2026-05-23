@@ -38,6 +38,7 @@ Each exercise directory contains:
 | 4 | Environment variable prefix — `TF_VAR_` | Input Variables | [004-env-var-prefix](./004-env-var-prefix) |
 | 5 | Format all config files — `terraform fmt -recursive` | IaC Workflow | [005-terraform-fmt](./005-terraform-fmt) |
 | 6 | Delete `terraform.tfstate` — resources become orphaned | State Management | [006-state-file-deletion](./006-state-file-deletion) |
+| 7 | Run triggers — auto-queue downstream runs after apply | HCP Terraform | [007-run-triggers](./007-run-triggers) |
 
 ## Contributing
 
