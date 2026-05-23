@@ -36,6 +36,7 @@ Each exercise directory contains:
 | 2 | Dependency graph — resource ordering & parallelism | State & DAG Management | [002-dependency-graph](./002-dependency-graph) |
 | 3 | Provider dependencies — three ways to establish | IaC Workflow | [003-provider-dependencies](./003-provider-dependencies) |
 | 4 | Environment variable prefix — `TF_VAR_` | Input Variables | [004-env-var-prefix](./004-env-var-prefix) |
+| 5 | Format all config files — `terraform fmt -recursive` | IaC Workflow | [005-terraform-fmt](./005-terraform-fmt) |
 
 ## Contributing
 
