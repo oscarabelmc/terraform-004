@@ -51,6 +51,7 @@ Each exercise directory contains:
 | 17 | Variable type errors — `list(string)` with `default = {}` | Input Variables | [017-variable-type-errors](./017-variable-type-errors) |
 | 18 | Sensitive data in state — stored as plaintext despite `sensitive = true` | State Management | [018-sensitive-data-state](./018-sensitive-data-state) |
 | 19 | Module version pinning — why include `version` argument | Modules | [019-module-version-pinning](./019-module-version-pinning) |
+| 20 | Passing module outputs between modules — `module.<name>.<output>` | Modules | [020-module-output-passing](./020-module-output-passing) |
 
 ## Contributing
 
