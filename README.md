@@ -44,6 +44,7 @@ Each exercise directory contains:
 | 10 | `terraform plan` as a review artifact before deployment | IaC Workflow | [010-terraform-plan-review](./010-terraform-plan-review) |
 | 11 | `terraform show` vs `terraform state show` | State Management | [011-terraform-show-commands](./011-terraform-show-commands) |
 | 12 | What is "drift" in the context of state? | State Management | [012-state-drift](./012-state-drift) |
+| 13 | Module input variables — `name`, `cidr`, `azs` as module arguments | Modules | [013-module-inputs](./013-module-inputs) |
 
 ## Contributing
 
