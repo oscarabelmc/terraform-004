@@ -42,6 +42,7 @@ Each exercise directory contains:
 | 8 | Preview state drift without making changes | State Management | [008-refresh-only-plan](./008-refresh-only-plan) |
 | 9 | Terraform language — immutable, declarative, HCL/JSON | IaC Concepts | [009-terraform-language](./009-terraform-language) |
 | 10 | `terraform plan` as a review artifact before deployment | IaC Workflow | [010-terraform-plan-review](./010-terraform-plan-review) |
+| 11 | `terraform show` vs `terraform state show` | State Management | [011-terraform-show-commands](./011-terraform-show-commands) |
 
 ## Contributing
 
