@@ -47,6 +47,7 @@ Each exercise directory contains:
 | 13 | Module input variables — `name`, `cidr`, `azs` as module arguments | Modules | [013-module-inputs](./013-module-inputs) |
 | 14 | `terraform destroy` prompts for confirmation by default | IaC Workflow | [014-terraform-destroy-confirm](./014-terraform-destroy-confirm) |
 | 15 | VCS-driven workflow — code, PR, plan, approve | HCP Terraform | [015-vcs-workflow](./015-vcs-workflow) |
+| 16 | `length()` function — count elements in a list | Functions | [016-length-function](./016-length-function) |
 
 ## Contributing
 
