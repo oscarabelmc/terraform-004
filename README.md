@@ -50,6 +50,7 @@ Each exercise directory contains:
 | 16 | `length()` function — count elements in a list | Functions | [016-length-function](./016-length-function) |
 | 17 | Variable type errors — `list(string)` with `default = {}` | Input Variables | [017-variable-type-errors](./017-variable-type-errors) |
 | 18 | Sensitive data in state — stored as plaintext despite `sensitive = true` | State Management | [018-sensitive-data-state](./018-sensitive-data-state) |
+| 19 | Module version pinning — why include `version` argument | Modules | [019-module-version-pinning](./019-module-version-pinning) |
 
 ## Contributing
 
