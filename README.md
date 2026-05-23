@@ -41,6 +41,7 @@ Each exercise directory contains:
 | 7 | Run triggers — auto-queue downstream runs after apply | HCP Terraform | [007-run-triggers](./007-run-triggers) |
 | 8 | Preview state drift without making changes | State Management | [008-refresh-only-plan](./008-refresh-only-plan) |
 | 9 | Terraform language — immutable, declarative, HCL/JSON | IaC Concepts | [009-terraform-language](./009-terraform-language) |
+| 10 | `terraform plan` as a review artifact before deployment | IaC Workflow | [010-terraform-plan-review](./010-terraform-plan-review) |
 
 ## Contributing
 
