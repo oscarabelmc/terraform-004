@@ -25,3 +25,7 @@ override.tf.json
 # CLI configuration files
 .terraformrc
 terraform.rc
+
+# Generated graph files
+*.dot
+!**/solution/*.dot
