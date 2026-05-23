@@ -34,6 +34,8 @@ Each exercise directory contains:
 |---|---------|--------|-----------|
 | 1 | Provider initialization — `terraform init` | Infrastructure as Code (IaC) Workflow | [001-provider-initialization](./001-provider-initialization) |
 | 2 | Dependency graph — resource ordering & parallelism | State & DAG Management | [002-dependency-graph](./002-dependency-graph) |
+| 3 | Provider dependencies — three ways to establish | IaC Workflow | [003-provider-dependencies](./003-provider-dependencies) |
+| 4 | Environment variable prefix — `TF_VAR_` | Input Variables | [004-env-var-prefix](./004-env-var-prefix) |
 
 ## Contributing
 
