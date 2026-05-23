@@ -46,6 +46,7 @@ Each exercise directory contains:
 | 12 | What is "drift" in the context of state? | State Management | [012-state-drift](./012-state-drift) |
 | 13 | Module input variables — `name`, `cidr`, `azs` as module arguments | Modules | [013-module-inputs](./013-module-inputs) |
 | 14 | `terraform destroy` prompts for confirmation by default | IaC Workflow | [014-terraform-destroy-confirm](./014-terraform-destroy-confirm) |
+| 15 | VCS-driven workflow — code, PR, plan, approve | HCP Terraform | [015-vcs-workflow](./015-vcs-workflow) |
 
 ## Contributing
 
