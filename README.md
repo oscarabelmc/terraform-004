@@ -39,6 +39,7 @@ Each exercise directory contains:
 | 5 | Format all config files — `terraform fmt -recursive` | IaC Workflow | [005-terraform-fmt](./005-terraform-fmt) |
 | 6 | Delete `terraform.tfstate` — resources become orphaned | State Management | [006-state-file-deletion](./006-state-file-deletion) |
 | 7 | Run triggers — auto-queue downstream runs after apply | HCP Terraform | [007-run-triggers](./007-run-triggers) |
+| 8 | Preview state drift without making changes | State Management | [008-refresh-only-plan](./008-refresh-only-plan) |
 
 ## Contributing
 
