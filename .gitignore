@@ -25,6 +25,3 @@ override.tf.json
 # CLI configuration files
 .terraformrc
 terraform.rc
-
-# Personal session tracker
-SESSION.md
