@@ -55,6 +55,7 @@ Each exercise directory contains:
 | 21 | Backend reconfiguration — `terraform init -reconfigure` | State Management | [021-backend-reconfigure](./021-backend-reconfigure) |
 | 22 | Module installation — `terraform init` downloads modules | Modules | [022-terraform-init-modules](./022-terraform-init-modules) |
 | 23 | Selective resource decommission — remove from config, then `apply` | IaC Workflow | [023-remove-resources](./023-remove-resources) |
+| 24 | Import existing resources — write config + import blocks + `apply` | IaC Workflow | [024-import-existing-resources](./024-import-existing-resources) |
 
 ## Contributing
 
