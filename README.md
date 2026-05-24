@@ -54,6 +54,7 @@ Each exercise directory contains:
 | 20 | Passing module outputs between modules — `module.<name>.<output>` | Modules | [020-module-output-passing](./020-module-output-passing) |
 | 21 | Backend reconfiguration — `terraform init -reconfigure` | State Management | [021-backend-reconfigure](./021-backend-reconfigure) |
 | 22 | Module installation — `terraform init` downloads modules | Modules | [022-terraform-init-modules](./022-terraform-init-modules) |
+| 23 | Selective resource decommission — remove from config, then `apply` | IaC Workflow | [023-remove-resources](./023-remove-resources) |
 
 ## Contributing
 
