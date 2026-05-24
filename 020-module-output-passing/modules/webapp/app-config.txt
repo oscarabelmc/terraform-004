@@ -1,2 +1,0 @@
-DATABASE_URL=postgresql://prod-db-united-kangaroo.example.com:5432/prod-db-united-kangaroo
-APP_MODE=production
