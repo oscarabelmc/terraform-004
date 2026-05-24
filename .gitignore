@@ -32,3 +32,6 @@ terraform.rc
 
 # Generated module artifacts
 *.cfg
+
+# Generated config files from exercises
+*app-config.txt
