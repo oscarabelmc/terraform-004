@@ -139,6 +139,7 @@ Each exercise directory contains:
 | 105 | `terraform apply -replace` — force resource recreation without config changes | IaC Workflow | [105-terraform-apply-replace](./105-terraform-apply-replace) |
 | 106 | `.terraform.lock.hcl` — dependency lock file created/updated by `init` | IaC Workflow | [106-terraform-lock-hcl](./106-terraform-lock-hcl) |
 | 107 | Steps required before using a new provider (select two) | IaC Workflow | [107-new-provider-steps](./107-new-provider-steps) |
+| 108 | Passing variables from root module to child module | Modules | [108-module-variable-passing](./108-module-variable-passing) |
 
 ## Contributing
 
