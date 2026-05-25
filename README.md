@@ -121,6 +121,11 @@ Each exercise directory contains:
 | 87 | HCP Terraform — one VCS repo per workspace | HCP Terraform | [087-hcp-vcs-mapping](./087-hcp-vcs-mapping) |
 | 88 | `terraform fmt -check` for CI/CD formatting gate | IaC Workflow | [088-terraform-fmt-check](./088-terraform-fmt-check) |
 | 89 | Correct `map(string)` syntax — `{ "key" = "value" }` | Input Variables | [089-map-string-syntax](./089-map-string-syntax) |
+| 90 | Module reuse via variables across environments | Modules | [090-module-reuse-variables](./090-module-reuse-variables) |
+| 91 | Terraform files to ignore in Git | Security | [091-gitignore-files](./091-gitignore-files) |
+| 92 | Root vs child module identification | Modules | [092-root-child-module](./092-root-child-module) |
+| 93 | Default state location without backend block | State Management | [093-default-state-location](./093-default-state-location) |
+| 94 | Keep `moved` block for ≥1 apply cycle | IaC Workflow | [094-moved-block](./094-moved-block) |
 
 ## Contributing
 
