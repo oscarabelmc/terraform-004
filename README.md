@@ -131,6 +131,7 @@ Each exercise directory contains:
 | 97 | Before `terraform import`, write matching resource blocks first | IaC Workflow | [097-terraform-import-cli](./097-terraform-import-cli) |
 | 98 | Cross-variable validation — conditional requirement on another variable | Input Variables | [098-cross-variable-validation](./098-cross-variable-validation) |
 | 99 | HCP Terraform policy enforcement levels — advisory vs mandatory | HCP Terraform | [099-hcp-policy-enforcement](./099-hcp-policy-enforcement) |
+| 100 | A Terraform provider is a plugin — plugin-based architecture | IaC Concepts | [100-provider-as-plugin](./100-provider-as-plugin) |
 
 ## Contributing
 
