@@ -127,6 +127,7 @@ Each exercise directory contains:
 | 93 | Default state location without backend block | State Management | [093-default-state-location](./093-default-state-location) |
 | 94 | Keep `moved` block for ≥1 apply cycle | IaC Workflow | [094-moved-block](./094-moved-block) |
 | 95 | Registry module info — inputs, outputs, dependencies | Modules | [095-registry-module-info](./095-registry-module-info) |
+| 96 | `terraform apply` executes changes to reach desired state | IaC Workflow | [096-terraform-apply](./096-terraform-apply) |
 
 ## Contributing
 
