@@ -117,6 +117,7 @@ Each exercise directory contains:
 | 83 | `merge()` function — combine common + resource-specific tags | Functions | [083-merge-function-tags](./083-merge-function-tags) |
 | 84 | State locking — not all remote backends support it by default | State Management | [084-state-locking-backends](./084-state-locking-backends) |
 | 85 | Tilde (~) in plan means update in-place | IaC Workflow | [085-plan-symbols](./085-plan-symbols) |
+| 86 | `sensitive = true` does not prevent state storage | Security | [086-sensitive-output-state](./086-sensitive-output-state) |
 
 ## Contributing
 
