@@ -126,6 +126,7 @@ Each exercise directory contains:
 | 92 | Root vs child module identification | Modules | [092-root-child-module](./092-root-child-module) |
 | 93 | Default state location without backend block | State Management | [093-default-state-location](./093-default-state-location) |
 | 94 | Keep `moved` block for ≥1 apply cycle | IaC Workflow | [094-moved-block](./094-moved-block) |
+| 95 | Registry module info — inputs, outputs, dependencies | Modules | [095-registry-module-info](./095-registry-module-info) |
 
 ## Contributing
 
