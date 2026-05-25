@@ -129,6 +129,7 @@ Each exercise directory contains:
 | 95 | Registry module info — inputs, outputs, dependencies | Modules | [095-registry-module-info](./095-registry-module-info) |
 | 96 | `terraform apply` executes changes to reach desired state | IaC Workflow | [096-terraform-apply](./096-terraform-apply) |
 | 97 | Before `terraform import`, write matching resource blocks first | IaC Workflow | [097-terraform-import-cli](./097-terraform-import-cli) |
+| 98 | Cross-variable validation — conditional requirement on another variable | Input Variables | [098-cross-variable-validation](./098-cross-variable-validation) |
 
 ## Contributing
 
