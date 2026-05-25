@@ -144,6 +144,7 @@ Each exercise directory contains:
 | 110 | `terraform state list` — list all tracked resources without attributes | State Management | [110-terraform-state-list](./110-terraform-state-list) |
 | 111 | `required_providers` — setting in terraform block for source + version | IaC Workflow | [111-required-providers-setting](./111-required-providers-setting) |
 | 112 | Multiple providers in a single configuration (true/false) | IaC Workflow | [112-multiple-providers](./112-multiple-providers) |
+| 113 | Implicit vs explicit dependencies — `depends_on` required? (true/false) | State & DAG Management | [113-implicit-dependencies-true-false](./113-implicit-dependencies-true-false) |
 
 ## Contributing
 
