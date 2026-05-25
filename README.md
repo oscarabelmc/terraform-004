@@ -145,6 +145,7 @@ Each exercise directory contains:
 | 111 | `required_providers` — setting in terraform block for source + version | IaC Workflow | [111-required-providers-setting](./111-required-providers-setting) |
 | 112 | Multiple providers in a single configuration (true/false) | IaC Workflow | [112-multiple-providers](./112-multiple-providers) |
 | 113 | Implicit vs explicit dependencies — `depends_on` required? (true/false) | State & DAG Management | [113-implicit-dependencies-true-false](./113-implicit-dependencies-true-false) |
+| 114 | Local vs remote state — tradeoffs (select three) | State Management | [114-local-vs-remote-state-tradeoffs](./114-local-vs-remote-state-tradeoffs) |
 
 ## Contributing
 
