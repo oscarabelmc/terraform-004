@@ -137,6 +137,7 @@ Each exercise directory contains:
 | 103 | Provider configurations in modules — inheritance, explicit passing, restrictions | Modules | [103-module-provider-configs](./103-module-provider-configs) |
 | 104 | `create_before_destroy` — avoid downtime during resource recreation | State & DAG Management | [104-create-before-destroy](./104-create-before-destroy) |
 | 105 | `terraform apply -replace` — force resource recreation without config changes | IaC Workflow | [105-terraform-apply-replace](./105-terraform-apply-replace) |
+| 106 | `.terraform.lock.hcl` — dependency lock file created/updated by `init` | IaC Workflow | [106-terraform-lock-hcl](./106-terraform-lock-hcl) |
 
 ## Contributing
 
