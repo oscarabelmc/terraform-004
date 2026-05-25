@@ -116,6 +116,7 @@ Each exercise directory contains:
 | 82 | Child module variable isolation — no auto-inheritance | Modules | [082-module-variable-access](./082-module-variable-access) |
 | 83 | `merge()` function — combine common + resource-specific tags | Functions | [083-merge-function-tags](./083-merge-function-tags) |
 | 84 | State locking — not all remote backends support it by default | State Management | [084-state-locking-backends](./084-state-locking-backends) |
+| 85 | Tilde (~) in plan means update in-place | IaC Workflow | [085-plan-symbols](./085-plan-symbols) |
 
 ## Contributing
 
