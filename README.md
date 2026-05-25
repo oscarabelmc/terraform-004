@@ -138,6 +138,7 @@ Each exercise directory contains:
 | 104 | `create_before_destroy` — avoid downtime during resource recreation | State & DAG Management | [104-create-before-destroy](./104-create-before-destroy) |
 | 105 | `terraform apply -replace` — force resource recreation without config changes | IaC Workflow | [105-terraform-apply-replace](./105-terraform-apply-replace) |
 | 106 | `.terraform.lock.hcl` — dependency lock file created/updated by `init` | IaC Workflow | [106-terraform-lock-hcl](./106-terraform-lock-hcl) |
+| 107 | Steps required before using a new provider (select two) | IaC Workflow | [107-new-provider-steps](./107-new-provider-steps) |
 
 ## Contributing
 
