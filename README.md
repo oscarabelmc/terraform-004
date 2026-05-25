@@ -115,6 +115,7 @@ Each exercise directory contains:
 | 81 | Fastest syntax check after refactoring — `terraform validate` | IaC Workflow | [081-terraform-validate-refactor](./081-terraform-validate-refactor) |
 | 82 | Child module variable isolation — no auto-inheritance | Modules | [082-module-variable-access](./082-module-variable-access) |
 | 83 | `merge()` function — combine common + resource-specific tags | Functions | [083-merge-function-tags](./083-merge-function-tags) |
+| 84 | State locking — not all remote backends support it by default | State Management | [084-state-locking-backends](./084-state-locking-backends) |
 
 ## Contributing
 
