@@ -1,0 +1,17 @@
+# cost center tag advisory policy
+# Enforcement level: advisory
+# This policy warns if a CostCenter tag is missing but does not block the run.
+
+import "tfplan"
+
+# Only check resources that support tags
+resources_with_tags = filter tfplan.resource_changes as _, rc {
+  rc.change.after.tags is not null and
+  rc.mode is "managed"
+}
+
+main = rule {
+  all resources_with_tags as _, rc {
+    rc.change.after.tags contains "CostCenter"
+  }
+}

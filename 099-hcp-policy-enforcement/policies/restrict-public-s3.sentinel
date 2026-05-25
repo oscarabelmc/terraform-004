@@ -1,0 +1,16 @@
+# public S3 bucket restriction
+# Enforcement level: hard-mandatory
+# This policy blocks any run that creates or modifies an S3 bucket with public-read ACL.
+
+import "tfplan"
+
+s3_buckets = filter tfplan.resource_changes as _, rc {
+  rc.type is "aws_s3_bucket" and
+  rc.mode is "managed"
+}
+
+main = rule {
+  all s3_buckets as _, rc {
+    rc.change.after.acl not in ["public-read", "public-read-write"]
+  }
+}
