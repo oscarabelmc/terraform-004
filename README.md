@@ -120,6 +120,7 @@ Each exercise directory contains:
 | 86 | `sensitive = true` does not prevent state storage | Security | [086-sensitive-output-state](./086-sensitive-output-state) |
 | 87 | HCP Terraform — one VCS repo per workspace | HCP Terraform | [087-hcp-vcs-mapping](./087-hcp-vcs-mapping) |
 | 88 | `terraform fmt -check` for CI/CD formatting gate | IaC Workflow | [088-terraform-fmt-check](./088-terraform-fmt-check) |
+| 89 | Correct `map(string)` syntax — `{ "key" = "value" }` | Input Variables | [089-map-string-syntax](./089-map-string-syntax) |
 
 ## Contributing
 
