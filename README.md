@@ -135,6 +135,7 @@ Each exercise directory contains:
 | 101 | A provider translates API interactions between Terraform and the service | IaC Concepts | [101-provider-api-translation](./101-provider-api-translation) |
 | 102 | S3 backend configuration and state migration | State Management | [102-s3-backend-migration](./102-s3-backend-migration) |
 | 103 | Provider configurations in modules — inheritance, explicit passing, restrictions | Modules | [103-module-provider-configs](./103-module-provider-configs) |
+| 104 | `create_before_destroy` — avoid downtime during resource recreation | State & DAG Management | [104-create-before-destroy](./104-create-before-destroy) |
 
 ## Contributing
 
