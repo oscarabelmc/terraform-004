@@ -118,6 +118,7 @@ Each exercise directory contains:
 | 84 | State locking — not all remote backends support it by default | State Management | [084-state-locking-backends](./084-state-locking-backends) |
 | 85 | Tilde (~) in plan means update in-place | IaC Workflow | [085-plan-symbols](./085-plan-symbols) |
 | 86 | `sensitive = true` does not prevent state storage | Security | [086-sensitive-output-state](./086-sensitive-output-state) |
+| 87 | HCP Terraform — one VCS repo per workspace | HCP Terraform | [087-hcp-vcs-mapping](./087-hcp-vcs-mapping) |
 
 ## Contributing
 
