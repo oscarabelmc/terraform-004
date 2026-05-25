@@ -133,6 +133,7 @@ Each exercise directory contains:
 | 99 | HCP Terraform policy enforcement levels — advisory vs mandatory | HCP Terraform | [099-hcp-policy-enforcement](./099-hcp-policy-enforcement) |
 | 100 | A Terraform provider is a plugin — plugin-based architecture | IaC Concepts | [100-provider-as-plugin](./100-provider-as-plugin) |
 | 101 | A provider translates API interactions between Terraform and the service | IaC Concepts | [101-provider-api-translation](./101-provider-api-translation) |
+| 102 | S3 backend configuration and state migration | State Management | [102-s3-backend-migration](./102-s3-backend-migration) |
 
 ## Contributing
 
