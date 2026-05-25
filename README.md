@@ -136,6 +136,7 @@ Each exercise directory contains:
 | 102 | S3 backend configuration and state migration | State Management | [102-s3-backend-migration](./102-s3-backend-migration) |
 | 103 | Provider configurations in modules — inheritance, explicit passing, restrictions | Modules | [103-module-provider-configs](./103-module-provider-configs) |
 | 104 | `create_before_destroy` — avoid downtime during resource recreation | State & DAG Management | [104-create-before-destroy](./104-create-before-destroy) |
+| 105 | `terraform apply -replace` — force resource recreation without config changes | IaC Workflow | [105-terraform-apply-replace](./105-terraform-apply-replace) |
 
 ## Contributing
 
