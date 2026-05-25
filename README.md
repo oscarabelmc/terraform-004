@@ -143,6 +143,7 @@ Each exercise directory contains:
 | 109 | HCP Terraform variable sets for sharing credentials across workspaces | HCP Terraform | [109-hcp-variable-sets-credentials](./109-hcp-variable-sets-credentials) |
 | 110 | `terraform state list` — list all tracked resources without attributes | State Management | [110-terraform-state-list](./110-terraform-state-list) |
 | 111 | `required_providers` — setting in terraform block for source + version | IaC Workflow | [111-required-providers-setting](./111-required-providers-setting) |
+| 112 | Multiple providers in a single configuration (true/false) | IaC Workflow | [112-multiple-providers](./112-multiple-providers) |
 
 ## Contributing
 
