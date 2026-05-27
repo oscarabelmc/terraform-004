@@ -6,7 +6,7 @@
 variable "existing_disk" { type = string }
 
 resource "google_compute_instance" "web" {
-  name         = "btk-web-1"
+  name         = "order-web-1"
   machine_type = "e2-micro"
   zone         = "us-central1-a"
 
@@ -82,7 +82,7 @@ Terraform builds a **directed acyclic graph (DAG)** to determine resource creati
    If Terraform tried to create the attached disk first:
 
    ```
-   Error: Error creating attached disk: instance "btk-web-1" not found
+   Error: Error creating attached disk: instance "order-web-1" not found
    ```
 
    The instance must exist before a disk can be attached to it. Terraform's dependency graph prevents this error.
@@ -128,7 +128,7 @@ In the example code below, what order will Terraform create these resources?
 variable "existing_disk" { type = string }
 
 resource "google_compute_instance" "web" {
-  name         = "btk-web-1"
+  name         = "order-web-1"
   machine_type = "e2-micro"
   zone         = "us-central1-a"
 

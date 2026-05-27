@@ -2,7 +2,7 @@
 
 The correct answers are **A** and **B**.
 
-> **A.** `btk-cluster` refers to a local child module on disk.
+> **A.** `local-cluster` refers to a local child module on disk.
 >
 > **B.** `main.tf` is the root (calling) module.
 
@@ -12,14 +12,14 @@ The correct answers are **A** and **B**.
 
 ### A — Local child module
 
-The `source = "./modules/btk-cluster"` path indicates a **local module**:
+The `source = "./modules/local-cluster"` path indicates a **local module**:
 
 ```
-source = "./modules/btk-cluster"
+source = "./modules/local-cluster"
           │
           ├── ./  → relative path (current directory)
           │
-          └── modules/btk-cluster/ → directory on local disk
+          └── modules/local-cluster/ → directory on local disk
 ```
 
 This means the module code lives in a subdirectory of the project, not in an external registry.
@@ -32,7 +32,7 @@ The file where Terraform is executed (`main.tf` at the project root) is the **ro
 Root Module:         /home/.../092-root-child-module/   (where terraform runs)
                      └── main.tf (calls module "servers")
 
-Child Module:        /home/.../092-root-child-module/modules/btk-cluster/
+Child Module:        /home/.../092-root-child-module/modules/local-cluster/
                      └── main.tf (defines resources)
 ```
 
@@ -48,7 +48,7 @@ Child Module:        /home/.../092-root-child-module/modules/btk-cluster/
 
 | Source format | Type | Example |
 |---------------|------|---------|
-| `./path` or `../path` | **Local** child module | `./modules/btk-cluster` |
+| `./path` or `../path` | **Local** child module | `./modules/local-cluster` |
 | `namespace/name/provider` | **Public registry** | `hashicorp/consul/aws` |
 | `git::https://...` | **Git repository** | `git::https://github.com/org/repo.git` |
 | `http://...` or `https://...` | **HTTP URL** | `https://example.com/module.zip` |

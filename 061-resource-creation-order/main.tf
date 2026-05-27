@@ -13,7 +13,7 @@ variable "existing_disk" {
 }
 
 resource "google_compute_instance" "web" {
-  name         = "btk-web-1"
+  name         = "order-web-1"
   machine_type = "e2-micro"
   zone         = "us-central1-a"
 

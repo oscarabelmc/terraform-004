@@ -7,7 +7,7 @@ module "vault-aws-tgw" {
   source  = "terraform-aws-modules/transit-gateway/aws"
   version = "3.0.3"
 
-  client_id      = var.bk_client
+  client_id      = var.tgw_client
   hvn_id         = var.hvn
   route_table_id = var.rtb_id
 }
@@ -99,7 +99,7 @@ module "vault-aws-tgw" {
   source  = "terraform-aws-modules/transit-gateway/aws"
   version = "3.0.3"
 
-  client_id      = var.bk_client
+  client_id      = var.tgw_client
   hvn_id         = var.hvn
   route_table_id = var.rtb_id
 }

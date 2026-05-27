@@ -4,12 +4,12 @@
 
 ```hcl
 # modules/subnets/main.tf
-resource "aws_subnet" "bk" {
-  vpc_id     = aws_vpc.bk.id
+resource "aws_subnet" "main" {
+  vpc_id     = aws_vpc.main.id
   cidr_block = var.subnet_cidr
 
   tags = {
-    Name = "BK Subnet"
+    Name = "outputs-subnet"
   }
 }
 ```
@@ -55,7 +55,7 @@ Module internals are **private** — resources created inside a module cannot be
    ```hcl
    output "subnet_id" {
      description = "The ID of the created subnet"
-     value       = aws_subnet.bk.id
+     value       = aws_subnet.main.id
    }
    ```
 
@@ -83,7 +83,7 @@ Module internals are **private** — resources created inside a module cannot be
 
    ```
    module.subnets
-     ├── aws_subnet.bk.id  (internal)
+     ├── aws_subnet.main.id  (internal)
      └── output "subnet_id"  →  module.subnets.subnet_id
                                      │
                                      ▼
@@ -106,7 +106,7 @@ Module internals are **private** — resources created inside a module cannot be
 You're invoking a module that creates a subnet. The root load balancer module requires that subnet's ID. How should you expose the ID and pass it to the load balancer module?
 
 - A. Add an output block to the subnet module and pass the value to the load balancer module using `module.subnets.subnet_id`
-- B. Reference the resource directly in the load balancer module: `aws_subnet.bk.id`
+- B. Reference the resource directly in the load balancer module: `aws_subnet.main.id`
 - C. Hardcode the subnet ID in the load balancer module's configuration
 - D. Use `terraform output` to capture the subnet ID and pass it as an environment variable
 - E. Create a data source in the load balancer module to look up the subnet

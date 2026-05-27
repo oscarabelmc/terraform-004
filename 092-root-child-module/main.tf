@@ -9,6 +9,6 @@ terraform {
 }
 
 module "servers" {
-  source  = "./modules/btk-cluster"
+  source  = "./modules/local-cluster"
   servers = 5
 }

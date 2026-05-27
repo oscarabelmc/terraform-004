@@ -33,7 +33,7 @@ Only the `data` block queries existing infrastructure without creating or modify
 2. **Module block** — packages resources but doesn't query existing ones:
 
    ```hcl
-   module "deploy-bk-servers" {
+   module "data-query-servers" {
      source  = "./modules/app-cluster"
      servers = 5
    }
@@ -83,20 +83,20 @@ Which code snippet would enable you to query information about existing resource
 
 - A.
   ```hcl
-  data "aws_ami" "btk-app" {
+  data "aws_ami" "example" {
     most_recent = true
     owners      = ["self"]
 
     filter {
       name   = "tag:Owner"
-      values = ["btk-platform"]
+      values = ["data-platform"]
     }
   }
   ```
 
 - B.
   ```hcl
-  module "deploy-bk-servers" {
+  module "data-query-servers" {
     source  = "./modules/app-cluster"
     servers = 5
   }

@@ -10,10 +10,10 @@ terraform {
 
 import {
   to = google_storage_bucket.data_lake
-  id = "bk-existing-bucket"
+  id = "imported-data-lake"
 }
 
 resource "google_storage_bucket" "data_lake" {
-  name     = "bk-existing-bucket"
+  name     = "imported-data-lake"
   location = "US"
 }

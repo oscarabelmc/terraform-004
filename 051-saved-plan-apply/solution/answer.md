@@ -2,7 +2,7 @@
 
 The correct answer is **A**.
 
-> `terraform apply bk-project.tfplan`
+> `terraform apply saved-plan.tfplan`
 
 ---
 
@@ -11,7 +11,7 @@ The correct answer is **A**.
 `saved plan files` (`tfplan`) capture the **exact execution plan** at a specific point in time:
 
 ```
-Step 1:  terraform plan -out=bk-project.tfplan
+Step 1:  terraform plan -out=saved-plan.tfplan
          ↓
          Creates binary plan file with:
          - Exact resources to create/modify/destroy
@@ -20,7 +20,7 @@ Step 1:  terraform plan -out=bk-project.tfplan
          ↓
 Step 2:  Review and approve (based on plan output)
          ↓
-Step 3:  terraform apply bk-project.tfplan
+Step 3:  terraform apply saved-plan.tfplan
          ↓
          Executes the exact same plan — no re-evaluation
 ```

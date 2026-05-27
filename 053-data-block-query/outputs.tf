@@ -1,11 +1,11 @@
 output "ami_id" {
   description = "Queried AMI ID"
-  value       = data.aws_ami.btk-app.id
+  value       = data.aws_ami.example.id
 }
 
 output "ami_name" {
   description = "Queried AMI name"
-  value       = data.aws_ami.btk-app.name
+  value       = data.aws_ami.example.name
 }
 
 output "instance_ami" {

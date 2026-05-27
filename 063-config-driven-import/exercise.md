@@ -5,11 +5,11 @@
 ```hcl
 import {
   to = google_storage_bucket.data_lake
-  id = "bk-existing-bucket"
+  id = "imported-data-lake"
 }
 
 resource "google_storage_bucket" "data_lake" {
-  name     = "bk-existing-bucket"
+  name     = "imported-data-lake"
   location = "US"
 }
 ```
@@ -40,7 +40,7 @@ Terraform 1.5+ introduced **config-driven import** using `import` blocks. Unlike
    ```hcl
    import {
      to = google_storage_bucket.data_lake   # Resource address in state
-     id = "bk-existing-bucket"              # Real-world resource ID
+     id = "imported-data-lake"              # Real-world resource ID
    }
    ```
 
@@ -117,7 +117,7 @@ Terraform 1.5+ introduced **config-driven import** using `import` blocks. Unlike
    # Remove this block — the resource is now in state
    # import {
    #   to = google_storage_bucket.data_lake
-   #   id = "bk-existing-bucket"
+   #   id = "imported-data-lake"
    # }
    ```
 
@@ -130,18 +130,18 @@ You have an existing Google Cloud Storage bucket that was created manually. You 
 ```hcl
 import {
   to = google_storage_bucket.data_lake
-  id = "bk-existing-bucket"
+  id = "imported-data-lake"
 }
 
 resource "google_storage_bucket" "data_lake" {
-  name     = "bk-existing-bucket"
+  name     = "imported-data-lake"
   location = "US"
 }
 ```
 
 What command(s) should you run next?
 
-- A. `terraform import google_storage_bucket.data_lake bk-existing-bucket`
+- A. `terraform import google_storage_bucket.data_lake imported-data-lake`
 - B. `terraform refresh` to sync state with the existing bucket
 - C. Run `terraform plan` followed by `terraform apply` to import the resource
 - D. `terraform apply -auto-approve` to immediately import without review

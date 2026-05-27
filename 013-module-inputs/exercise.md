@@ -11,7 +11,7 @@ module "vpc" {
   cidr               = var.vpc_cidr_block
   azs                = var.vpc_azs
   tags               = merge(var.vpc_tags, {
-    Owner       = "btk-platform"
+    Owner       = "inputs-team"
     Environment = "pr0d-east"
   })
 }

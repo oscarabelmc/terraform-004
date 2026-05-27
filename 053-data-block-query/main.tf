@@ -8,21 +8,21 @@ terraform {
   }
 }
 
-data "aws_ami" "btk-app" {
+data "aws_ami" "example" {
   most_recent = true
   owners      = ["self"]
 
   filter {
     name   = "tag:Owner"
-    values = ["btk-platform"]
+    values = ["data-platform"]
   }
 }
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.btk-app.id
+  ami           = data.aws_ami.example.id
   instance_type = "m6g.xlarge"
 
   tags = {
-    Name = "btk-web-server"
+    Name = "data-web-server"
   }
 }

@@ -38,7 +38,7 @@ This ensures the creation order:
 Step 1: aws_vpc.main           ("production-vpc")
               │
               ▼  (implicit: subnet references VPC's id)
-Step 2: aws_subnet.public      ("bk-public-subnet")
+Step 2: aws_subnet.public      ("ref-public-subnet")
 ```
 
 Without the reference, Terraform would try to create both resources in parallel (or in arbitrary order), potentially failing because the subnet references a VPC that doesn't exist yet.

@@ -15,7 +15,7 @@ module "ec2_instances" {
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
 
-  tags = { Owner = "btk-platform", Env = "pr0d-east" }
+  tags = { Owner = "ref-team", Env = "pr0d-east" }
 }
 ```
 
@@ -132,7 +132,7 @@ module "ec2_instances" {
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
 
-  tags = { Owner = "btk-platform", Env = "pr0d-east" }
+  tags = { Owner = "ref-team", Env = "pr0d-east" }
 }
 ```
 

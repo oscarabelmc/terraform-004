@@ -3,5 +3,5 @@ output "server_count" {
 }
 
 output "module_note" {
-  value = "main.tf is the root (calling) module. ./modules/btk-cluster is a local child module."
+  value = "main.tf is the root (calling) module. ./modules/local-cluster is a local child module."
 }

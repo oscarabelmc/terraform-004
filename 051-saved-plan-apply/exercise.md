@@ -1,6 +1,6 @@
 # Saved Plan — Apply Exercise
 
-**Exam Question:** Your team's change management process requires that all Terraform changes be reviewed and approved before execution. You run `terraform plan -out=bk-project.tfplan` and send the output for review. After approval is granted two hours later, what command should you run to execute the exact changes that were reviewed?
+**Exam Question:** Your team's change management process requires that all Terraform changes be reviewed and approved before execution. You run `terraform plan -out=saved-plan.tfplan` and send the output for review. After approval is granted two hours later, what command should you run to execute the exact changes that were reviewed?
 
 ## Background
 
@@ -25,13 +25,13 @@ Terraform plans can be **saved to a file** with the `-out` flag. This captures t
 3. **Generate a saved plan:**
 
    ```bash
-   terraform plan -out=bk-project.tfplan
+   terraform plan -out=saved-plan.tfplan
    ```
 
    This creates a binary plan file:
 
    ```bash
-   ls -la bk-project.tfplan
+   ls -la saved-plan.tfplan
    ```
 
 ### Part 2 — Review the plan (simulated)
@@ -39,7 +39,7 @@ Terraform plans can be **saved to a file** with the `-out` flag. This captures t
 4. **View the plan for review:**
 
    ```bash
-   terraform show bk-project.tfplan
+   terraform show saved-plan.tfplan
    ```
 
    You can share this output with your team for approval. The `tfplan` file itself can also be inspected later.
@@ -49,7 +49,7 @@ Terraform plans can be **saved to a file** with the `-out` flag. This captures t
 5. **After approval, apply the saved plan:**
 
    ```bash
-   terraform apply bk-project.tfplan
+   terraform apply saved-plan.tfplan
    ```
 
    Terraform uses the **exact** plan saved earlier — it doesn't re-evaluate the configuration or state. This ensures the applied changes match what was reviewed.
@@ -75,12 +75,12 @@ Terraform plans can be **saved to a file** with the `-out` flag. This captures t
 
 ### Put It Together
 
-Your team's change management process requires that all Terraform changes be reviewed and approved before execution. You run `terraform plan -out=bk-project.tfplan` and send the output for review. After approval is granted two hours later, what command should you run to execute the exact changes that were reviewed?
+Your team's change management process requires that all Terraform changes be reviewed and approved before execution. You run `terraform plan -out=saved-plan.tfplan` and send the output for review. After approval is granted two hours later, what command should you run to execute the exact changes that were reviewed?
 
-- A. `terraform apply bk-project.tfplan`
+- A. `terraform apply saved-plan.tfplan`
 - B. `terraform apply`
-- C. `terraform plan -out=bk-project.tfplan` again, then `terraform apply`
-- D. `terraform apply -auto-approve bk-project.tfplan`
+- C. `terraform plan -out=saved-plan.tfplan` again, then `terraform apply`
+- D. `terraform apply -auto-approve saved-plan.tfplan`
 - E. `terraform init && terraform apply`
 
 ## Files

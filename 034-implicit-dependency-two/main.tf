@@ -13,7 +13,7 @@ resource "aws_instance" "app_core" {
   instance_type     = "t3.micro"
   availability_zone = "ca-central-1a"
 
-  tags = { Owner = "btk-platform", Env = "pr0d-east" }
+  tags = { Owner = "implicit-team", Env = "pr0d-east" }
 }
 
 resource "aws_ebs_volume" "data_pr0d_east" {

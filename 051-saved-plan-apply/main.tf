@@ -9,6 +9,6 @@ terraform {
 }
 
 resource "random_pet" "server" {
-  prefix = "bk"
+  prefix = "saved-plan"
   length = 2
 }

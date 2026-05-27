@@ -11,13 +11,13 @@ The correct answer is **A**.
 A `data` block is Terraform's mechanism for **reading** existing infrastructure:
 
 ```hcl
-data "aws_ami" "btk-app" {
+data "aws_ami" "example" {
   most_recent = true
   owners      = ["self"]
 
   filter {
     name   = "tag:Owner"
-    values = ["btk-platform"]
+    values = ["data-platform"]
   }
 }
 ```
@@ -26,7 +26,7 @@ This queries the AWS API for AMIs matching the criteria and returns attributes (
 
 ```hcl
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.btk-app.id  # ← using the fetched data
+  ami           = data.aws_ami.example.id  # ← using the fetched data
   instance_type = "m6g.xlarge"
 }
 ```

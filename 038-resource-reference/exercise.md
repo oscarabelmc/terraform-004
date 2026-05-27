@@ -16,7 +16,7 @@ resource "aws_subnet" "public" {
   cidr_block = "10.5.2.0/24"
 
   tags = {
-    Name = "bk-public-subnet"
+    Name = "ref-public-subnet"
   }
 }
 ```

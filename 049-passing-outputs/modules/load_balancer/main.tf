@@ -18,7 +18,7 @@ variable "vpc_id" {
 }
 
 resource "aws_lb" "main" {
-  name               = "bk-load-balancer"
+  name               = "outputs-lb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_sg.id]

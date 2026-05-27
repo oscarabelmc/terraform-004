@@ -4,7 +4,7 @@
 
 ```hcl
 module "servers" {
-  source  = "./modules/btk-cluster"
+  source  = "./modules/local-cluster"
   servers = 5
 }
 ```
@@ -26,8 +26,8 @@ Every Terraform configuration has a **root module** — the directory where you 
    ```
    ./main.tf                          ← Root module
    ./outputs.tf                       ← Root module outputs
-   ./modules/btk-cluster/main.tf      ← Child module
-   ./modules/btk-cluster/outputs.tf   ← Child module outputs
+   ./modules/local-cluster/main.tf      ← Child module
+   ./modules/local-cluster/outputs.tf   ← Child module outputs
    ```
 
 2. **Which is the root module?**
@@ -40,7 +40,7 @@ Every Terraform configuration has a **root module** — the directory where you 
 
    ```hcl
    module "servers" {
-     source  = "./modules/btk-cluster"  # ← Local path
+     source  = "./modules/local-cluster"  # ← Local path
      servers = 5
    }
    ```
@@ -52,18 +52,18 @@ Every Terraform configuration has a **root module** — the directory where you 
    | `github.com/org/repo` | **Git module** |
    | `http://...` | **HTTP module** |
 
-4. **Since `source = "./modules/btk-cluster"`, this is a local child module.**
+4. **Since `source = "./modules/local-cluster"`, this is a local child module.**
 
 ### Part 3 — How the module relationship works
 
 5. **Data flow:**
 
    ```
-   Root Module (main.tf)              Child Module (./modules/btk-cluster/)
+   Root Module (main.tf)              Child Module (./modules/local-cluster/)
    ┌──────────────────────────┐       ┌──────────────────────────────┐
    │ module "servers" {       │       │ variable "servers" {         │
    │   source = "./modules/   │ ───→  │   type = number              │
-   │     btk-cluster"         │ input │ }                            │
+   │     local-cluster"         │ input │ }                            │
    │   servers = 5            │       │                              │
    │ }                        │       │ resource "aws_instance"      │
    │                          │       │   .server[count.index]       │
@@ -99,21 +99,21 @@ You are reviewing the following Terraform configuration in `main.tf`. Which stat
 
 ```hcl
 module "servers" {
-  source  = "./modules/btk-cluster"
+  source  = "./modules/local-cluster"
   servers = 5
 }
 ```
 
-- A. `btk-cluster` refers to a local child module on disk
+- A. `local-cluster` refers to a local child module on disk
 - B. `main.tf` is the root (calling) module
-- C. `btk-cluster` is a module from the Terraform public registry
+- C. `local-cluster` is a module from the Terraform public registry
 - D. `servers = 5` sets an output value of the child module
-- E. The module `btk-cluster` cannot accept any input variables
+- E. The module `local-cluster` cannot accept any input variables
 
 ## Files
 
 - `main.tf` — root module calling a local child module
 - `outputs.tf` — root module outputs
-- `modules/btk-cluster/main.tf` — child module
-- `modules/btk-cluster/outputs.tf` — child module outputs
+- `modules/local-cluster/main.tf` — child module
+- `modules/local-cluster/outputs.tf` — child module outputs
 - `solution/answer.md` — explanation and exam tips
