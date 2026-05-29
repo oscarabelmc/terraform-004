@@ -1,8 +1,17 @@
 # Provider Dependencies Exercise
 
-**Exam Question:** In Terraform, how can a dependency on a provider be established? (Select three.)
+**Domain:** IaC Workflow
+**Topic:** Provider dependencies — three ways to establish
 
-This exercise walks through each valid method to help you identify them on the exam.
+## Description
+
+In Terraform, how can a dependency on a provider be established? (Select three.)
+
+## Learning Objectives
+
+- Provider declaration creates a dependency
+- Resource/data blocks create dependencies
+- State entries create dependencies
 
 ## Steps
 
@@ -40,16 +49,7 @@ This exercise walks through each valid method to help you identify them on the e
 
 14. **Run `terraform plan` again** — Now the `local` provider is no longer needed, because no resource references it and nothing in state tracks it.
 
-### Put It Together
-
-Which three options from the list below establish a dependency on a provider?
-
-- A. Using a resource or data block that belongs to that provider in the configuration.
-- B. Running `terraform init` to download the provider plugin.
-- C. Having existing resource instances for that provider recorded in the current state.
-- D. Adding a `depends_on` argument to a resource pointing to the provider.
-- E. Declaring a provider block in the configuration, including any required version constraints.
-
 ## Files
 - `main.tf` — configuration with two providers and resources
-- `solution/answer.md` — explanation of the correct answers and common distractors
+- `solution/` — reference implementation
+

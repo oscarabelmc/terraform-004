@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A**, **E**, and **F**.
 
@@ -111,13 +111,3 @@ Key points:
 - Apply = provision reproducible infrastructure
 - Destroy is a specific apply, not a separate step
 - Validate and import are secondary operations
-
-## Exam Tips
-
-- Memorize the **three core steps**: Write, Plan, Apply
-- Destroy is **not** a core step — it's apply with no resources
-- Validate is **not** a core step — it's a helper operation
-- Import is **not** a core step — it's a feature using plan/apply
-- Init is a **prerequisite**, not a workflow step
-- Common exam trap: including Destroy as a core step (it's apply of an empty config)
-- Another trap: including Validate as a core step (it's a sub-operation)

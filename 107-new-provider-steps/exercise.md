@@ -1,6 +1,18 @@
 # New Provider — Required Steps Exercise
 
-**Exam Question:** Before a new Terraform provider can be used in a configuration, what steps are required? (Select two.)
+**Domain:** IaC Workflow
+**Topic:** Steps required before using a new provider
+
+## Description
+
+Before a new Terraform provider can be used in a configuration, what steps are required? (Select two.)
+
+## Learning Objectives
+
+- Step 1: Declare and configure the provider
+- Step 2: Initialize the working directory
+- Verify the provider is ready
+- What does NOT need to happen
 
 ## Background
 
@@ -134,18 +146,9 @@ Neither step alone is sufficient. You must **declare** the provider so Terraform
    | Install manually via package manager | ❌ | Terraform manages its own plugins |
    | Restart the terminal | ❌ | No effect |
 
-### Put It Together
-
-Before a new Terraform provider can be used in a configuration, what steps are required? (Select two.)
-
-- A. Initialize the working directory using `terraform init` to download and install the provider
-- B. Declare and configure the provider in the configuration with the required arguments
-- C. Run `terraform plan` to validate the provider configuration
-- D. Restart the terminal session to load the new provider
-- E. Manually download the provider binary from the Terraform registry
-
 ## Files
 
 - `main.tf` — config template for adding a new provider
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

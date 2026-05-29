@@ -1,21 +1,17 @@
 # Module Input Variables Exercise
 
-**Exam Question:** In the following Terraform code, what do `name`, `cidr`, and `azs` represent, and what purpose do they serve?
+**Domain:** Modules
+**Topic:** Module input variables — `name`, `cidr`, `azs` as module arguments
 
-```hcl
-module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "5.0.2"
+## Description
 
-  name               = var.vpc_name
-  cidr               = var.vpc_cidr_block
-  azs                = var.vpc_azs
-  tags               = merge(var.vpc_tags, {
-    Owner       = "inputs-team"
-    Environment = "pr0d-east"
-  })
-}
-```
+In the following Terraform code, what do `name`, `cidr`, and `azs` represent, and what purpose do they serve
+
+## Learning Objectives
+
+- Inspect the module interface
+- Inspect the calling module
+- See it in action
 
 ## Steps
 
@@ -83,16 +79,6 @@ module "vpc" {
 
    The new value flows through to the module, demonstrating how these inputs parameterize the module.
 
-### Put It Together
-
-In the Terraform code shown, what do `name`, `cidr`, and `azs` represent, and what purpose do they serve?
-
-- A. They are output values that the module exposes to the caller.
-- B. They are module-specific inputs that are passed into the child module used for resource creation.
-- C. They are Terraform built-in functions that generate network configurations.
-- D. They are hardcoded defaults defined inside the module that cannot be overridden.
-- E. They are resource attributes that Terraform assigns automatically based on the provider.
-
 ## Files
 - `main.tf` — root module calling the child module
 - `variables.tf` — root module input variables
@@ -100,4 +86,5 @@ In the Terraform code shown, what do `name`, `cidr`, and `azs` represent, and wh
 - `modules/my_network/` — child module
 - `modules/my_network/variables.tf` — declares `name`, `cidr`, `azs` as inputs
 - `modules/my_network/main.tf` — uses inputs in resource creation
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

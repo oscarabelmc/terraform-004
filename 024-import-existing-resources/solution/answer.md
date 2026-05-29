@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The three correct answers are: **B, C, and D**.
 
@@ -64,11 +64,3 @@ After this, you can:
 - Remove the `import` blocks (they've served their purpose)
 - Manage the resources normally via `terraform plan` and `terraform apply`
 - Make future changes through Terraform — drift detection, updates, etc.
-
-## Exam Tips
-
-- Three steps: **write config → add import → run apply**
-- `import` blocks are the **modern approach** (Terraform 1.5+). The older method is `terraform import <address> <id>` CLI command.
-- The key constraint: **"without impacting"** means no destruction, no recreation, no modification
-- After import, you can remove the import blocks — they aren't needed for ongoing management
-- Common exam trap: confusing `terraform import` (adopts) with `terraform apply` (creates/modifies/destroys)

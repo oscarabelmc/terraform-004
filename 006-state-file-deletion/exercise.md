@@ -1,6 +1,18 @@
 # State File Deletion Exercise
 
-**Exam Question:** You are using a local backend and accidentally delete the `terraform.tfstate` file for your workspace. What is the most serious consequence?
+**Domain:** State Management
+**Topic:** Delete `terraform.tfstate` — resources become orphaned
+
+## Description
+
+You are using a local backend and accidentally delete the `terraform.tfstate` file for your workspace. What is the most serious consequence
+
+## Learning Objectives
+
+- Create resources and inspect state
+- Simulate the deletion
+- The dangerous consequence
+- Recovery
 
 ## Steps
 
@@ -79,17 +91,8 @@
 
    The original state is restored. You can now manage the original resources again.
 
-### Put It Together
-
-What is the most serious consequence of accidentally deleting the `terraform.tfstate` file when using a local backend?
-
-- A. Terraform auto-recovers by regenerating the state from the configuration.
-- B. Terraform prompts the user to confirm deletion, preventing the mistake.
-- C. Terraform loses the mapping to existing resources, making them orphaned and unmanaged.
-- D. Only the `.backup` file is affected; the primary state file is redundant.
-- E. The next `terraform plan` will update the existing resources rather than recreate them.
-
 ## Files
 - `main.tf` — creates a random pet name and a local file
 - `outputs.tf` — outputs for verification
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

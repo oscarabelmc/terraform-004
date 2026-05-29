@@ -1,6 +1,20 @@
 # Import Existing Resources Exercise
 
-**Exam Question:** Some of your production resources were created manually in the Azure portal. The company requires all production resources to be managed through Terraform. What should you do to bring those existing resources under Terraform management without disrupting them?
+**Domain:** IaC Workflow
+**Topic:** Import blocks to adopt existing resources
+
+## Description
+
+Some of your production resources were created manually in the Azure portal. The company requires all production resources to be managed through Terraform. What should you do to bring those existing resources under Terraform management without disrupting them
+
+## Learning Objectives
+
+- Understand the import workflow
+- Simulate existing resources
+- Write matching configuration
+- Add import blocks
+- Run terraform apply
+- Clean up import blocks
 
 ## Background
 
@@ -111,20 +125,11 @@ When resources exist outside of Terraform (created via console, CLI, or other to
 
    The import blocks have served their purpose. The resources are now fully managed by Terraform.
 
-### Put It Together
-
-Some of your production resources were created manually in the Azure portal. The company requires all production resources to be managed through Terraform. What should you do to bring those existing resources under Terraform management without disrupting them?
-
-- A. Use the `import` block to import the existing resources under Terraform management
-- B. Delete the resources in the portal and recreate them with Terraform
-- C. Use data sources to reference the existing resources
-- D. Run `terraform apply` and Terraform will automatically detect and adopt the resources
-- E. Copy the resources into a new Terraform configuration in a different region
-
 ## Files
 
 - `main.tf` — starter configuration (needs resource blocks + import blocks)
 - `modules/existing/` — simulates resources created outside Terraform
 - `modules/existing/main.tf` — the "manually created" resources
-- `solution/main.tf` — complete config with import blocks + resource blocks
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+- `solution/` — reference implementation
+

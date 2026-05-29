@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -84,14 +84,3 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 | **CI/CD pipelines** | Run `terraform plan` in CI with results in HCP Terraform |
 | **Scripting/automation** | Combine CLI with shell scripts |
 | **Hybrid workflows** | Develop locally, deploy via HCP Terraform |
-
-## Exam Tips
-
-- **CLI-driven workflow** = you type commands, HCP Terraform executes them
-- The **execution mode** in the workspace settings determines where runs happen — not the workflow type alone
-- CLI-driven workflow with **remote execution** = plan/apply on HCP Terraform
-- CLI-driven workflow with **local execution** = plan/apply on your machine, state in HCP Terraform
-- The `cloud` block (or `remote` backend) enables CLI-driven workflow
-- Run output is **streamed** to your terminal — you see it in real-time
-- Runs also appear in the **HCP Terraform UI** run history
-- Common exam scenario: "You run `terraform plan` locally but it executes remotely — how?" — CLI-driven workflow with remote execution

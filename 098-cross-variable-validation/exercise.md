@@ -1,22 +1,19 @@
 # Cross-Variable Validation Exercise
 
-**Exam Question:** What is preventing you from producing a plan based on the error below?
+**Domain:** Input Variables
+**Topic:** Cross-variable validation — conditional requirement on another variable
 
-```
-$ terraform plan
+## Description
 
-Planning failed. Terraform encountered an error while generating this plan.
-╷
-│ Error: Invalid value for variable
-│
-│   on variables.tf line 7:
-│    7: variable "cluster_endpoint" {
-│     ├────────────────
-│     │ var.cluster_endpoint is ""
-│     │ var.create_cluster is false
-│
-│ You must specify a value for cluster_endpoint if create_cluster is false.
-```
+What is preventing you from producing a plan based on the error below
+
+## Learning Objectives
+
+- Examine the validation block
+- Reproduce the error
+- Understand when validation runs
+- Fix the error
+- Test with `terraform validate`
 
 ## Background
 
@@ -131,19 +128,10 @@ The error above occurs because `cluster_endpoint` has a validation block that ch
 
    Same error — validation runs in both `validate` and `plan`.
 
-### Put It Together
-
-What is preventing you from producing a plan based on the error below?
-
-- A. The `cluster_endpoint` variable has no default value, so Terraform cannot evaluate it
-- B. A validation block on `cluster_endpoint` requires a non-empty value when `create_cluster=false`, so input evaluation failed and Terraform cannot produce a plan
-- C. The `create_cluster` variable must be set to `true` before any plan can run
-- D. Terraform requires at least one resource block to generate a plan
-- E. The error is from a failed provider API call during plan generation
-
 ## Files
 
 - `main.tf` — configuration that consumes both variables
 - `variables.tf` — variable declarations with cross-variable validation
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

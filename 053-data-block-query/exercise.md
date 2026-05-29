@@ -1,6 +1,17 @@
 # Data Block — Query Existing Resources Exercise
 
-**Exam Question:** Which code snippet would enable you to query information about existing resources and use that information within your Terraform configuration?
+**Domain:** IaC Concepts
+**Topic:** `data` block — query existing resources
+
+## Description
+
+Which code snippet would enable you to query information about existing resources and use that information within your Terraform configuration
+
+## Learning Objectives
+
+- Examine each option
+- Compare against the other constructs
+- Verify the data source behavior
 
 ## Background
 
@@ -77,57 +88,9 @@ Only the `data` block queries existing infrastructure without creating or modify
 
    The data source queries the AWS API during planning and makes the AMI ID available. The resource uses the fetched value.
 
-### Put It Together
-
-Which code snippet would enable you to query information about existing resources and use that information within your Terraform configuration?
-
-- A.
-  ```hcl
-  data "aws_ami" "example" {
-    most_recent = true
-    owners      = ["self"]
-
-    filter {
-      name   = "tag:Owner"
-      values = ["data-platform"]
-    }
-  }
-  ```
-
-- B.
-  ```hcl
-  module "data-query-servers" {
-    source  = "./modules/app-cluster"
-    servers = 5
-  }
-  ```
-
-- C.
-  ```hcl
-  locals {
-    service_name = "forum"
-    owner        = "Community Team"
-  }
-  ```
-
-- D.
-  ```hcl
-  provider "google" {
-    project = "acme-app"
-    region  = "us-central1"
-  }
-  ```
-
-- E.
-  ```hcl
-  resource "aws_instance" "web" {
-    ami           = "ami-502abc4e6b1ab"
-    instance_type = "m6g.xlarge"
-  }
-  ```
-
 ## Files
 
 - `main.tf` — data block querying AMI + resource using the result
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

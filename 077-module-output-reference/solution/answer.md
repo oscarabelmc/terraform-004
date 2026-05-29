@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -94,12 +94,3 @@ module "ec2" {                 # Level 2: depends on module.sg + module.vpc
 ```
 
 Terraform builds a dependency graph across modules and creates resources in the correct order.
-
-## Exam Tips
-
-- `module.<NAME>.<OUTPUT>` references a **module output**
-- Module outputs are defined in the module's `outputs.tf` using `output` blocks
-- Module output references create **implicit dependencies** between modules
-- The referenced module is always created **before** the module that uses its outputs
-- Common exam trap: confusing module outputs with resource attributes or data sources
-- Another trap: thinking module outputs are accessed via `output.<name>` (they're accessed via `module.<name>.<output_name>`)

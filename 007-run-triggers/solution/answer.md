@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A — To automatically queue a new run in a downstream workspace after another workspace applies successfully.**
 
@@ -28,10 +28,3 @@ This eliminates the need for manual orchestration in multi-workspace environment
 | C — Scheduled re-run | That's a **schedule trigger**. Run triggers are not time-based. |
 | D — Webhook notification | That's a **notification/webhook**. Run triggers actually queue a new run — they don't just send a message. |
 | E — Lock dependent workspace | That's **run queue concurrency control**, not a run trigger. Run triggers queue new runs; they don't block existing runs. |
-
-## Exam Tips
-
-- Key phrase to look for: **"automatically queue a new run"** + **"after another workspace applies successfully"**
-- Run triggers are about **workspace-to-workspace automation**, not about code, time, or notifications
-- They only fire on **apply** — a plan-only run or a failed run will not trigger downstream workspaces
-- Run triggers and VCS triggers are **independent** — a workspace can have both, either, or neither

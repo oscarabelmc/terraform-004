@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A — Terraform is an immutable, declarative Infrastructure as Code language based on HashiCorp Configuration Language or JSON.**
 
@@ -20,11 +20,3 @@ Each keyword in the statement corresponds to a fundamental characteristic of Ter
 | B — Mutable, procedural scripting | **Mutable** is wrong — Terraform replaces resources (immutable). **Procedural** is wrong — Terraform is declarative, you don't write step-by-step instructions. **Scripting** is wrong — it's a configuration language, not a general-purpose scripting language. |
 | C — Only supports HCL | Wrong — Terraform also accepts JSON syntax (`.tf.json` files). The functional difference between HCL and JSON is zero. |
 | D — Imperative, only JSON | **Imperative** is wrong — Terraform is declarative, you specify the end state, not the steps. **Only JSON** is wrong — HCL is the primary syntax and more commonly used. |
-
-## Exam Tips
-
-- The three key words to remember: **immutable**, **declarative**, **HCL or JSON**
-- Terraform is **NOT** procedural, imperative, or mutable — these are common exam distractors
-- JSON support is often overlooked — the exam tests that both HCL and JSON are valid
-- Immutability is demonstrated by the `-/+` symbol in `terraform plan` output
-- The `lifecycle { create_before_destroy }` block is an exception that allows safe replacement, but the underlying operation is still a replacement (immutable pattern)

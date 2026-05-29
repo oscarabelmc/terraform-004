@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A**, **C**, **D**, **E**, and **F**.
 
@@ -106,12 +106,3 @@ Key advantages:
 - Collaboration and documentation
 - Cost savings
 - Disaster recovery
-
-## Exam Tips
-
-- IaC advantages: **consistent, repeatable, automated, recoverable, accessible**
-- IaC does **not** replace application programming languages
-- IaC is declarative (desired state), not imperative (step-by-step)
-- Code review, Git history, and team collaboration are key IaC benefits
-- Common exam trap: thinking IaC replaces application code (it manages infrastructure, not applications)
-- Another trap: overlooking disaster recovery as an IaC advantage (code-defined infra is fully recoverable)

@@ -1,6 +1,17 @@
 # Module Output Passing Exercise
 
-**Exam Question:** Your root module calls a database module that outputs the connection string. It then calls a webapp module that needs this connection string. How do you correctly pass the database connection string from the database module to the webapp module?
+**Domain:** Modules
+**Topic:** Passing module outputs between modules — `module.<name>.<output>`
+
+## Description
+
+Your root module calls a database module that outputs the connection string. It then calls a webapp module that needs this connection string. How do you correctly pass the database connection string from the database module to the webapp module
+
+## Learning Objectives
+
+- Inspect the module structure
+- See it working
+- Experiment with incorrect syntax
 
 ## Steps
 
@@ -85,31 +96,11 @@
    db_connection_str = module.database.connection_string
    ```
 
-### Put It Together
-
-```hcl
-module "database" {
-  source = "./modules/database"
-  name   = "prod-db"
-}
-
-module "webapp" {
-  source            = "./modules/webapp"
-  db_connection_str = ???
-}
-```
-
-Which syntax correctly passes the database connection string from the database module to the webapp module?
-
-- A. `db_connection_str = output.database.connection_string`
-- B. `db_connection_str = module.database.connection_string`
-- C. `db_connection_str = var.database.connection_string`
-- D. Define the output inside the database module pointing to webapp
-
 ## Files
 - `main.tf` — root module passing `module.database.connection_string` to webapp
 - `modules/database/` — produces connection_string output
 - `modules/database/outputs.tf` — declares the output
 - `modules/webapp/` — consumes db_connection_str input
 - `modules/webapp/main.tf` — writes the connection string to a config file
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

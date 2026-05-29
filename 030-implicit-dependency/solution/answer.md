@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -71,13 +71,3 @@ resource "aws_instance" "web_server" {
   # No attribute reference to the bucket, but needs it to exist first
 }
 ```
-
-## Exam Tips
-
-- **Implicit** = Terraform infers it from attribute references (automatic)
-- **Explicit** = you declare it with `depends_on` (manual override)
-- `depends_on` takes a **list of resource/module addresses**: `[resource_type.name, module.name]`
-- Terraform's dependency graph ensures: creation goes **dependency first**, destruction goes in **reverse**
-- If you see `resource.other_resource.attribute`, that's an implicit dependency
-- If you see `depends_on = [...]`, that's an explicit dependency
-- The question asks for "implicit dependency" — look for attribute references, not `depends_on`

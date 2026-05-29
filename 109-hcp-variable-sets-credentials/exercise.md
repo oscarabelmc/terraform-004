@@ -1,6 +1,19 @@
 # HCP Terraform Variable Sets for Credentials Exercise
 
-**Exam Question:** One of your application teams needs to share third-party credentials across multiple workspaces. What is the most appropriate way to configure HCP Terraform and easily meet these requirements? (Select three.)
+**Domain:** HCP Terraform
+**Topic:** HCP Terraform variable sets for sharing credentials across workspaces
+
+## Description
+
+One of your application teams needs to share third-party credentials across multiple workspaces. What is the most appropriate way to configure HCP Terraform and easily meet these requirements? (Select three.)
+
+## Learning Objectives
+
+- Understand the three components
+- Step 1: Group workspaces into a project
+- Step 2: Create a variable set with credentials
+- Step 3: Apply the variable set to the project
+- Verify the configuration
 
 ## Background
 
@@ -139,19 +152,9 @@ Without variable sets:                   With variable sets:
 
    The credentials are shared across all workspaces in the project while workspaces in other projects remain isolated.
 
-### Put It Together
-
-One of your application teams needs to share third-party credentials across multiple workspaces. What is the most appropriate way to configure HCP Terraform and easily meet these requirements? (Select three.)
-
-- A. Apply the variable set to the project
-- B. Group the team's workspaces into a project
-- C. Create a variable set that includes the third-party credentials
-- D. Store the credentials in each workspace's individual variables
-- E. Hardcode the credentials in each workspace's Terraform configuration
-- F. Use a separate HCP Terraform organization for each workspace
-
 ## Files
 
 - `main.tf` — example config using the `tfe` provider to manage projects, workspaces, and variable sets
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

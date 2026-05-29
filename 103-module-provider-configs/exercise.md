@@ -1,6 +1,19 @@
 # Module Provider Configurations Exercise
 
-**Exam Question:** Which statements are true about provider configurations in modules? (Select three.)
+**Domain:** Modules
+**Topic:** Provider configurations in modules — inheritance, explicit passing, restrictions
+
+## Description
+
+Which statements are true about provider configurations in modules? (Select three.)
+
+## Learning Objectives
+
+- Default provider inheritance
+- Explicit provider passing with `providers` argument
+- Provider blocks in modules
+- When to use each approach
+- Verify with the config
 
 ## Background
 
@@ -167,21 +180,11 @@ These rules enable flexible provider management while maintaining module reusabi
 
    Both the inherited and explicitly-passed provider configurations work correctly.
 
-### Put It Together
-
-Which statements are true about provider configurations in modules? (Select three.)
-
-- A. The `providers` argument in a module block allows explicit passing of specific provider configurations
-- B. Child modules must always define their own provider blocks for proper isolation
-- C. Modules containing provider blocks cannot be used with the `for_each` argument
-- D. Child modules automatically inherit the default provider configurations from their parent module
-- E. The `provider` attribute in a resource block overrides module-level provider configurations
-- F. Modules containing provider blocks can still be used with `depends_on` if providers are passed explicitly
-
 ## Files
 
 - `main.tf` — root module showing default + explicit provider passing
 - `modules/child/main.tf` — child module without provider blocks (inherits from parent)
 - `modules/provider-child/main.tf` — child module WITH provider blocks (incompatible with for_each)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

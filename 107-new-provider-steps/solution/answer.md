@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The two correct answers are: **A and B**.
 
@@ -88,13 +88,3 @@ Without these declarations, Terraform doesn't know which provider plugin to down
 | "The `required_providers` block alone is enough" | No — you also need a `provider` block to configure it (or the provider must have no required config). |
 | "A `provider` block alone is enough" | No — without `required_providers`, Terraform uses a default source lookup, which may fail for non-HashiCorp providers. |
 | "`terraform init` only needs to run once ever" | No — you must re-run `init` whenever you add a new provider or change version constraints. |
-
-## Exam Tips
-
-- **Two steps:** declare (config) + initialize (CLI)
-- `terraform init` is the **only** command that downloads provider plugins
-- `required_providers` + `provider` block = the declaration step
-- Common exam trap: thinking `terraform plan` can substitute for `init`
-- Another trap: thinking providers are installed globally via package managers
-- Key phrase: **"before a new Terraform provider can be used"** → the question is about the setup steps, not ongoing usage
-- The `provider` block must be in the **root module** (for the default provider) or passed explicitly to child modules

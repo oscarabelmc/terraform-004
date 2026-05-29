@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -84,13 +84,3 @@ This approach is:
 - **Zero risk** — no modifications to infrastructure
 - **Zero cost** — no API calls consumed
 - **Fast** — works even with large state files
-
-## Exam Tips
-
-- `terraform state show` = **read-only** inspection of a resource in state
-- `terraform state list` = **read-only** listing of all managed resources
-- State commands work **offline** (no API calls needed)
-- Never use `apply`, `destroy`, or `import` just to identify managed resources
-- The resource **ID** (e.g., `i-0a1b2c3d`) is the primary key linking state to real infrastructure
-- Common exam trap: using destructive commands (`apply`, `destroy`) for identification
-- Another trap: thinking `terraform import` helps identify managed resources (it adds to state, it doesn't inspect)

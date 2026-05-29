@@ -1,6 +1,11 @@
 # VCS-Driven Workflow Exercise
 
-**Exam Question:** You are using an HCP Terraform workflow that is connected to a VCS repository (VCS-driven workflow) and want to deploy a new resource. Which sequence of steps follows the recommended workflow?
+**Domain:** HCP Terraform
+**Topic:** VCS-driven workflow — code, PR, plan, approve
+
+## Description
+
+You are using an HCP Terraform workflow that is connected to a VCS repository (VCS-driven workflow) and want to deploy a new resource. Which sequence of steps follows the recommended workflow
 
 ## Background
 
@@ -62,18 +67,7 @@ Once the plan is approved:
 └─────────────┘     └──────────────┘     └─────────────┘     └──────────────┘
 ```
 
-### Put It Together
-
-You are using an HCP Terraform workflow that is connected to a VCS repository (VCS-driven workflow) and want to deploy a new resource. Which sequence of steps follows the recommended workflow?
-
-Select the correct order:
-
-- A. Open a PR → merge → run `terraform apply` locally
-- B. Add the resource to the config → open a PR → approve the apply after the plan is generated
-- C. Run `terraform plan` locally → open a PR → run `terraform apply` locally
-- D. Add the resource to the config → run `terraform apply` → open a PR afterward
-- E. Open a PR → add the resource to the config → approve the apply
-
 ## Files
 - `main.tf` — example configuration (simulates a repo with a workspace)
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

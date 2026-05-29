@@ -1,14 +1,18 @@
 # Module Version Update Exercise
 
-**Exam Question:** You maintain an existing Terraform configuration that uses a public module pinned to a specific version. A new minor version 5.3.0 of the module is available, and you want your configuration to use it. What steps are required to update the module version safely? (Select two.)
+**Domain:** Modules
+**Topic:** Safe module version upgrade
 
-```hcl
-module "compute" {
-  source  = "azure/compute/azurerm"
-  version = "5.2.0"
-  # …module inputs…
-}
-```
+## Description
+
+You maintain an existing Terraform configuration that uses a public module pinned to a specific version. A new minor version 5.3.0 of the module is available, and you want your configuration to use it. What steps are required to update the module version safely? (Select two.)
+
+## Learning Objectives
+
+- Examine the pinned module
+- Understand how module versions work
+- Safely upgrade the module
+- Verify the upgrade
 
 ## Background
 
@@ -106,26 +110,9 @@ Simply editing the `version` argument in code is not enough — Terraform caches
 
    Review the plan to ensure the new module version doesn't introduce unexpected changes. A minor version bump should be backward-compatible, but it's always good practice to review.
 
-### Put It Together
-
-You maintain an existing Terraform configuration that uses a public module pinned to a specific version. A new minor version 5.3.0 of the module is available, and you want your configuration to use it. What steps are required to update the module version safely? (Select two.)
-
-```hcl
-module "compute" {
-  source  = "azure/compute/azurerm"
-  version = "5.2.0"
-  # …module inputs…
-}
-```
-
-- A. Change `version = "5.2.0"` to `version = "5.3.0"`
-- B. Update the version argument to allow 5.3.0 using `version = "~> 5.3.0"`
-- C. Run `terraform apply` to download the new module version
-- D. Run `terraform init -upgrade` to download the new module version
-- E. Delete the `.terraform` directory and re-run `terraform init`
-
 ## Files
 
 - `main.tf` — config with Azure module pinned to version 5.2.0
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

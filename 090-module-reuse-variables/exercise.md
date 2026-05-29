@@ -1,8 +1,18 @@
 # Module Reuse via Variables Exercise
 
-**Exam Question:** A module creates VMs with the vSphere provider. It includes arguments such as `datastore = "DS1"`, `network_label = "VM Network"`, and `folder = "Dev/Apps"`. You need the same module to work in Lab, QA, and Prod vCenter environments without code changes.
+**Domain:** Modules
+**Topic:** Module reuse via variables across environments
 
-What is the most appropriate change to enable the reuse of this module?
+## Description
+
+A module creates VMs with the vSphere provider. It includes arguments such as `datastore = "DS1"`, `network_label = "VM Network"`, and `folder = "Dev/Apps"`. You need the same module to work in Lab, QA, and Prod vCenter environments without code changes.
+
+## Learning Objectives
+
+- The problem: hardcoded values
+- The solution: parameterize with variables
+- Provide environment-specific values
+- The data flow
 
 ## Background
 
@@ -98,18 +108,6 @@ Modules with **hardcoded values** are tied to a single environment. To make a mo
 
    No code changes — only the `.tfvars` file changes between environments.
 
-### Put It Together
-
-A module creates VMs with the vSphere provider. It includes arguments such as `datastore = "DS1"`, `network_label = "VM Network"`, and `folder = "Dev/Apps"`. You need the same module to work in Lab, QA, and Prod vCenter environments without code changes.
-
-What is the most appropriate change to enable the reuse of this module?
-
-- A. Copy the module into separate directories for each environment
-- B. Convert the hardcoded values to input variables and provide environment-specific settings via tfvars or variable sets at plan/apply
-- C. Use environment variables with the `TF_VAR_` prefix for each environment
-- D. Create separate provider configurations for each environment
-- E. Use `terraform workspace` to manage environment-specific values
-
 ## Files
 
 - `main.tf` — root module with parameterized variables
@@ -118,4 +116,5 @@ What is the most appropriate change to enable the reuse of this module?
 - `qa.tfvars` — QA environment values
 - `prod.tfvars` — Prod environment values
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

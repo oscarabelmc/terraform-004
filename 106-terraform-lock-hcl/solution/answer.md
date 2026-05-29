@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -84,13 +84,3 @@ terraform init -upgrade
 ```
 
 Without `-upgrade`, `init` uses the versions in the lock file. With `-upgrade`, it fetches the newest versions matching the constraint and updates the lock file.
-
-## Exam Tips
-
-- **Lock file = provider version lock** (like `package-lock.json` for npm)
-- Created/updated by **`terraform init` only** — not `plan`, `apply`, or `validate`
-- **Commit it to version control** — ensures reproducible builds
-- Tracks **providers only**, not modules
-- Use `terraform init -upgrade` to update to newer matching versions
-- Common exam trap: confusing `.terraform.lock.hcl` with `.terraform/` directory or `terraform.tfstate`
-- Another trap: thinking `plan` or `apply` modifies the lock file — only `init` does

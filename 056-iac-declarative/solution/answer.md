@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -62,12 +62,3 @@ Write config  ──→  terraform plan  ──→  terraform apply
 | **Rollback** | ✅ State versioning | ❌ Manual reversal |
 | **Error recovery** | Automatic (re-plan) | Manual debugging |
 | **Parallelism** | Automatic | Manual |
-
-## Exam Tips
-
-- IaC = **declarative**, not imperative
-- Declarative = describe desired end state, tool figures out steps
-- Terraform generates a **plan** before applying — a key differentiator
-- Imperative = step-by-step commands (e.g., `aws CLI` in a bash script)
-- Declarative enables **drift detection**, **idempotency**, **automated ordering**
-- Common exam trap: thinking IaC is about scripting API calls — it's about declaring desired state

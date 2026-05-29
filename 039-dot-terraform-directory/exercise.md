@@ -1,6 +1,19 @@
 # .terraform/ Directory Exercise
 
-**Exam Question:** You are reviewing Terraform code from a colleague and discover a `.terraform/` directory. What is the purpose of this directory?
+**Domain:** IaC Workflow
+**Topic:** Purpose of `.terraform/` directory
+
+## Description
+
+You are reviewing Terraform code from a colleague and discover a `.terraform/` directory. What is the purpose of this directory
+
+## Learning Objectives
+
+- Start with a clean state
+- Run terraform init
+- Examine each component
+- Understand what .terraform/ is NOT
+- .gitignore
 
 ## Background
 
@@ -97,17 +110,8 @@ When you run `terraform init`, Terraform creates a `.terraform/` directory in th
    *.tfstate.backup
    ```
 
-### Put It Together
-
-You are reviewing Terraform code from a colleague and discover a `.terraform/` directory. What is the purpose of this directory?
-
-- A. The `.terraform/` directory stores Terraform's local working data, including installed provider and module plugins and backend metadata
-- B. The `.terraform/` directory stores the Terraform state file
-- C. The `.terraform/` directory stores Terraform configuration files
-- D. The `.terraform/` directory stores Terraform logs
-- E. The `.terraform/` directory stores backups of previously applied configurations
-
 ## Files
 
 - `main.tf` — simple config to initialize
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

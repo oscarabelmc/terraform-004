@@ -1,6 +1,18 @@
 # Run Triggers Exercise
 
-**Exam Question:** In HCP Terraform, what is the purpose of using a run trigger?
+**Domain:** HCP Terraform
+**Topic:** Run triggers — auto-queue downstream runs after apply
+
+## Description
+
+In HCP Terraform, what is the purpose of using a run trigger
+
+## Learning Objectives
+
+- Understand the workspace relationship
+- Without run triggers
+- With run triggers
+- Key details
 
 ## Background
 
@@ -58,17 +70,8 @@ To configure this in HCP Terraform:
 - Multiple downstream workspaces can be triggered from a single upstream workspace
 - A downstream workspace can have multiple upstream triggers
 
-### Put It Together
-
-What is the purpose of a run trigger in HCP Terraform?
-
-- A. To automatically queue a new run in a downstream workspace after another workspace applies successfully
-- B. To trigger a workspace run when a Git push is made to the repository
-- C. To re-run a workspace's last plan at a scheduled interval
-- D. To send a webhook notification when a run completes
-- E. To lock a workspace when a dependent workspace has a run in progress
-
 ## Files
 - `main.tf` — upstream workspace config (networking)
 - `downstream/main.tf` — downstream workspace config (app)
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

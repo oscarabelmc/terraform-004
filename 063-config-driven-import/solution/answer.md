@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -73,14 +73,3 @@ With config-driven import, `terraform import` as a standalone CLI command is **n
 | **Repeatable?** | No — ephemeral command | Yes — block is in code |
 | **Git-committable?** | No | Yes |
 | **Introduced** | Terraform 0.7+ | Terraform 1.5+ |
-
-## Exam Tips
-
-- Config-driven import uses `import` blocks in `.tf` files (Terraform 1.5+)
-- Run `terraform plan` first to preview, then `terraform apply` to execute
-- The plan shows **"X to import"** — not "X to add" or "X to create"
-- After import succeeds, remove the `import` block (optional but clean)
-- The `import` block requires both `to` (resource address) and `id` (real-world ID)
-- The `import` block does **not** create infrastructure — it adopts existing resources into state
-- Common exam trap: confusing config-driven import with the legacy `terraform import` CLI command
-- Another trap: thinking `terraform refresh` can import resources (it only syncs existing state)

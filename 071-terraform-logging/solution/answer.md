@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -92,13 +92,3 @@ TF_LOG=TRACE terraform plan
 **Objective 2b** — Differentiate between Terraform commands and subcommands.
 
 Understanding logging (`TF_LOG`) as a diagnostic tool for troubleshooting Terraform operations and provider interactions.
-
-## Exam Tips
-
-- `TF_LOG` enables Terraform logging — levels: TRACE, DEBUG, INFO, WARN, ERROR, JSON
-- Logs show **API requests/responses** between Terraform and providers
-- Logs are **read-only** — they diagnose but don't fix or prevent
-- `TF_LOG_PATH` redirects logs to a file instead of stderr
-- Logging **slows down** operations — don't leave it on in production
-- Common exam trap: thinking logging fixes or prevents changes (it only observes)
-- Another trap: not knowing that logging can expose sensitive data

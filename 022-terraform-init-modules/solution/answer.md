@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — Run `terraform init` to install the module into the current working directory.**
 
@@ -46,13 +46,3 @@ After `init` completes, modules are available in `.terraform/modules/` and Terra
 | C — `terraform get` before `init` | `terraform get` was the old command for downloading modules, but `terraform init` handles everything (`get` is redundant). `init` runs `get` internally. |
 | D — `terraform apply` | `apply` also does not download modules. It will fail with the same "Module not installed" error as `plan`. |
 | E — Manual copy | Never manually manipulate `.terraform/`. Terraform manages this directory exclusively through `init`. |
-
-## Exam Tips
-
-- Always run `terraform init` **after** adding a new module block — this is the standard workflow
-- `terraform init` handles **everything**: backends, providers, and modules
-- The error message "Module not installed" is a clear indicator that `init` is needed
-- Re-run `terraform init` to:
-  - Update module versions (when version constraints change)
-  - Download newly added modules
-  - Refresh the `.terraform.lock.hcl` file

@@ -1,6 +1,18 @@
 # Terraform Validate Exercise
 
-**Exam Question:** Bryan is drafting new Terraform code and wants to verify that the configuration is syntactically valid and internally consistent without contacting any remote services. Which command should he run?
+**Domain:** IaC Workflow
+**Topic:** `terraform validate` — syntax without remote calls
+
+## Description
+
+Bryan is drafting new Terraform code and wants to verify that the configuration is syntactically valid and internally consistent without contacting any remote services. Which command should he run
+
+## Learning Objectives
+
+- Run validate on a correct config
+- What validate checks
+- Intentionally break the config
+- Validate vs Plan
 
 ## Background
 
@@ -110,18 +122,9 @@ Terraform provides multiple validation mechanisms at different stages:
 
    Use `validate` during development (every file save), `plan` before committing or applying.
 
-### Put It Together
-
-Bryan is drafting new Terraform code and wants to verify that the configuration is syntactically valid and internally consistent without contacting any remote services. Which command should he run?
-
-- A. `terraform plan`
-- B. `terraform validate`
-- C. `terraform apply`
-- D. `terraform fmt`
-- E. `terraform refresh`
-
 ## Files
 
 - `main.tf` — example config for validation
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

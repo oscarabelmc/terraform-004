@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The three correct answers are: **A, B, and C**.
 
@@ -73,15 +73,3 @@ Remote backends provide a **single source of truth** that all team members read 
 | Requires network | ✅ No | ❌ Yes |
 | Requires extra infra | ✅ No | ❌ Yes (S3, etc.) |
 | Backup/versioning | ❌ Manual | ✅ Often built-in |
-
-## Exam Tips
-
-- **Three correct:** A (security), B (complexity), C (collaboration)
-- Local = simple but no security/collaboration
-- Remote = secure/collaborative but more complex
-- Encryption: remote ✅, local ❌ (opposite of the distractor)
-- State locking: remote ✅, local ❌
-- Number of providers: **not affected** by state backend choice
-- Common exam trap: getting the encryption direction backwards (D)
-- Another trap: thinking local state has some advantage for provider support (E)
-- Key phrase: **"tradeoffs"** implies weighing pros and cons — the three correct answers each describe a different tradeoff dimension

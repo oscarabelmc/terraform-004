@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -85,14 +85,3 @@ output "vpc_id" {
 - DNS names and endpoints
 - Subnet and security group IDs
 - Connection strings and credentials (marked `sensitive = true`)
-
-## Exam Tips
-
-- **Module outputs are the public API** of a module — without them, nothing is accessible outside
-- Error message "Unsupported attribute" + `module.X.Y` = missing output block
-- Outputs are declared in the module, referenced from the root as `module.<name>.<output_name>`
-- Module inputs = `variable` blocks (what you pass **in**)
-- Module outputs = `output` blocks (what you get **out**)
-- You cannot access a module's resources directly — only through outputs
-- `terraform output` also only shows root module outputs — child module outputs are private
-- Common exam scenario: "I'm trying to reference a value from a module but Terraform says it doesn't have that attribute" — missing output block

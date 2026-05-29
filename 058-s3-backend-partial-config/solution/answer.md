@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -67,12 +67,3 @@ Terraform merges the partial block in code with CLI/supplemental config at init 
 | **CLI flags** | `terraform init -backend-config="key=val"` | CI/CD pipelines, ad-hoc |
 | **Config file** | `terraform init -backend-config=file.tfbackend` | Team development, multiple environments |
 | **Combined** | `-backend-config` flag + partial block | Most flexible — type in code, details in flags |
-
-## Exam Tips
-
-- **Backend blocks cannot reference variables** — use `-backend-config` instead
-- The **backend type** (e.g., `s3`, `azurerm`, `gcs`) is not sensitive and can stay in code
-- Partial config supports multiple `-backend-config` flags — they merge
-- Common exam trap: thinking `terraform.tfvars` or `variable` blocks can be used in backend configuration (they cannot — backends are processed before variables)
-- `terraform init -reconfigure` discards existing backend config and re-initializes
-- `terraform init -migrate-state` copies existing state to the new backend

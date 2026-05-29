@@ -1,17 +1,18 @@
 # Module Source — Public Registry Exercise
 
-**Exam Question:** You are performing a code review of a colleague's Terraform code and see the following code. Where is this module stored?
+**Domain:** Modules
+**Topic:** Public registry source format
 
-```hcl
-module "vault-aws-tgw" {
-  source  = "terraform-aws-modules/transit-gateway/aws"
-  version = "3.0.3"
+## Description
 
-  client_id      = var.tgw_client
-  hvn_id         = var.hvn
-  route_table_id = var.rtb_id
-}
-```
+You are performing a code review of a colleague's Terraform code and see the following code. Where is this module stored
+
+## Learning Objectives
+
+- Examine the source format
+- Understand the public registry naming convention
+- Compare with other source formats
+- Understand versioning with the public registry
 
 ## Background
 
@@ -90,29 +91,9 @@ Terraform modules can come from several sources. The `source` argument uses a pr
 
    The `version` argument is only valid for **registry modules** (public or private). Local and git sources use different versioning mechanisms (git tags/refs).
 
-### Put It Together
-
-You are performing a code review of a colleague's Terraform code and see the following code. Where is this module stored?
-
-```hcl
-module "vault-aws-tgw" {
-  source  = "terraform-aws-modules/transit-gateway/aws"
-  version = "3.0.3"
-
-  client_id      = var.tgw_client
-  hvn_id         = var.hvn
-  route_table_id = var.rtb_id
-}
-```
-
-- A. The Terraform public registry
-- B. A private registry on a remote server
-- C. A local filesystem path
-- D. A Git repository
-- E. An HTTP URL
-
 ## Files
 
 - `main.tf` — module block with public registry source
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

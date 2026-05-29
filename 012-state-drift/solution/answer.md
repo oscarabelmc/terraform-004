@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C — Real infrastructure has changed outside Terraform and no longer matches the desired state.**
 
@@ -38,10 +38,3 @@ When you run `terraform plan`, Terraform:
 | B — Approved but unapplied plan | That's a **pending plan** or **speculative plan**. Drift specifically refers to unmanaged changes to real resources. |
 | D — State has more resources than config | That's a **state-to-config mismatch**, not necessarily drift. Drift means real infra has changed, not just the config. |
 | E — Resource failed during apply | That's an **apply failure**. Drift can happen at any time (even long after a successful apply). |
-
-## Exam Tips
-
-- The key phrase: **"changed outside Terraform"** — if it was changed by `terraform apply`, it's not drift, it's an intentional change
-- Drift is detected during the **refresh** phase of `terraform plan`
-- `terraform plan -refresh-only` is the safe way to preview drift without proposing config changes
-- In HCP Terraform, drift detection can be scheduled automatically to alert when resources have been modified outside of Terraform

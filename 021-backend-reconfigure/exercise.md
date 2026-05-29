@@ -1,6 +1,19 @@
 # Backend Reconfigure Exercise
 
-**Exam Question:** You've decided to change your backend configuration from S3 to HCP Terraform. After updating the backend block, you run `terraform init`. Which flag should you use to reconfigure the backend without copying the existing state?
+**Domain:** State Management
+**Topic:** Backend reconfiguration — `terraform init -reconfigure`
+
+## Description
+
+You've decided to change your backend configuration from S3 to HCP Terraform. After updating the backend block, you run `terraform init`. Which flag should you use to reconfigure the backend without copying the existing state
+
+## Learning Objectives
+
+- Initial setup with local backend
+- Simulate changing the backend
+- Try `terraform init` without flags
+- Use `-reconfigure` (the correct answer)
+- Compare `-migrate-state` (the alternative)
 
 ## Steps
 
@@ -81,17 +94,8 @@
 
    This prompts: "Do you want to copy existing state to the new backend?" This is the right flag when you **do** want to preserve state history.
 
-### Put It Together
-
-You've decided to change your backend configuration from S3 to HCP Terraform. After updating the backend block, you run `terraform init`. Which flag should you use to reconfigure the backend **without** copying the existing state?
-
-- A. `terraform init`
-- B. `terraform init -reconfigure`
-- C. `terraform init -migrate-state`
-- D. `terraform apply -reconfigure`
-- E. `terraform backend -reconfigure`
-
 ## Files
 - `main.tf` — configuration with local backend (starting point)
-- `solution/backend-hcp-terraform.tf` — alternative backend config for HCP Terraform
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+- `solution/` — reference implementation
+

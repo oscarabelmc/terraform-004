@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -102,13 +102,3 @@ output "<name>" {
   depends_on  = [<resources>]  # Optional: explicit dependencies
 }
 ```
-
-## Exam Tips
-
-- **Outputs** are the **only** way to pass data out of a module
-- Reference outputs as `module.<module_name>.<output_name>`
-- The root module acts as the **glue** — it wires outputs from one module to inputs of another
-- Terraform creates implicit dependencies based on these references
-- Common error: "unsupported attribute" on `module.X.Y` — missing output block
-- Three-step pattern: **create → export → pass** (create in module A, export via output, pass as input to module B)
-- If you need a value from one module in another module, it must go through the **root module** — modules cannot directly reference each other

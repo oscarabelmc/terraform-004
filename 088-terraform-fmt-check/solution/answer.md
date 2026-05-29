@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -62,12 +62,3 @@ fi
 | `terraform fmt -check -recursive` | ✅ Yes | All subdirs | Non-zero if issues |
 | `terraform fmt -diff` | ❌ No (rewrites) | Shows diff of changes | 0 |
 | `terraform fmt -check -diff` | ✅ Yes | Shows diff without applying | Non-zero if issues |
-
-## Exam Tips
-
-- `terraform fmt -check` = **CI/CD formatting gate** — read-only, fails on issues
-- `terraform fmt` = **local formatting tool** — rewrites files
-- `-recursive` = include all subdirectories
-- The command exits with **non-zero** when formatting issues exist
-- Common exam trap: using `terraform fmt` in CI/CD (it modifies files — use `-check` instead)
-- Another trap: confusing `validate` with `fmt` (validate checks syntax, fmt checks formatting)

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -77,13 +77,3 @@ Network Team                     Application Team
 | Look up IP ranges | `data.aws_ip_ranges` |
 | Read existing resource group | `data.azurerm_resource_group` |
 | Fetch secrets from Vault | `data.vault_generic_secret` |
-
-## Exam Tips
-
-- **Data sources = read-only** — they never create or modify infrastructure
-- Use data sources to reference infrastructure owned by **other teams** or **other Terraform configs**
-- Data source attributes are accessed with `data.<type>.<name>.<attribute>` (e.g., `data.azurerm_virtual_network.prod.location`)
-- Data sources create **implicit dependencies** — resources using them wait for the data to be fetched
-- If the data source fails (e.g., VNet doesn't exist), the entire plan fails — this is a safety feature
-- Common exam trap: using a `resource` block instead of a `data` block when you only need to read existing infrastructure
-- Another trap: hardcoding values from existing resources instead of using a data source to read them dynamically

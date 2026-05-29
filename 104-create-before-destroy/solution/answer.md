@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -102,13 +102,3 @@ resource "aws_db_instance" "db" {
 | `prevent_destroy = true` | Block all destroys | N/A (blocks changes) |
 | `ignore_changes` | Ignore attribute drift | N/A (tolerates drift) |
 | `postcondition` | Validate after create | N/A (validation only) |
-
-## Exam Tips
-
-- **Key phrase:** "ensure the new database is created before the old one is destroyed" → `create_before_destroy`
-- This is a `lifecycle` block meta-argument, not a resource attribute or a separate command
-- Default behavior is **destroy-before-create** (can cause downtime)
-- `create_before_destroy` is set **per resource**, not globally
-- Common exam trap: confusing `create_before_destroy` with `prevent_destroy` (opposite purposes)
-- Another trap: thinking `depends_on` can change the creation/destruction order of a single resource being replaced
-- If names must be globally unique, `create_before_destroy` alone won't work — you need a naming strategy too

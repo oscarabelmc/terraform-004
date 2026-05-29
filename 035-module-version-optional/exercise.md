@@ -1,6 +1,18 @@
 # Module Version Argument Exercise
 
-**Exam Question:** You're using a module from the Terraform registry for your infrastructure. When defining the configuration, is it necessary to specify a version argument in the module block?
+**Domain:** Modules
+**Topic:** `version` in module block is optional but recommended
+
+## Description
+
+You're using a module from the Terraform registry for your infrastructure. When defining the configuration, is it necessary to specify a version argument in the module block
+
+## Learning Objectives
+
+- Module block without version
+- Add a version constraint
+- Observe the effect of omitting version
+- Version constraint syntax
 
 ## Background
 
@@ -70,18 +82,9 @@ When using a module from the Terraform Registry (or any external source), you ca
    version = "~> 5.0, < 5.2" # Combined
    ```
 
-### Put It Together
-
-You're using a module from the Terraform registry for your infrastructure. When defining the configuration, is it necessary to specify a version argument in the module block?
-
-- A. No, the version argument is optional, but it is recommended to ensure consistent and reproducible deployments
-- B. Yes, the version argument is required for all registry modules
-- C. No, the version argument should never be specified because it prevents automatic updates
-- D. Yes, but only for modules from private registries
-- E. No, the version argument is only needed for local modules
-
 ## Files
 
 - `main.tf` — module block with and without version constraint
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

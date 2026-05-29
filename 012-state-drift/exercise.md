@@ -1,6 +1,18 @@
 # State Drift Exercise
 
-**Exam Question:** In Terraform, what does "drift" mean in the context of a workspace's state?
+**Domain:** State Management
+**Topic:** What is "drift" in the context of state?
+
+## Description
+
+In Terraform, what does "drift" mean in the context of a workspace's state
+
+## Learning Objectives
+
+- Establish baseline
+- Simulate drift
+- Detect drift
+- Recovery options
 
 ## Steps
 
@@ -76,16 +88,7 @@
 
    State now records the modified content. The manual change is accepted.
 
-### Put It Together
-
-In Terraform, what does "drift" mean in the context of a workspace's state?
-
-- A. An error in the configuration syntax that prevents Terraform from running.
-- B. A planned change that has been approved but not yet applied.
-- C. Real infrastructure has changed outside Terraform and no longer matches the desired state.
-- D. The state file contains more resources than the configuration defines.
-- E. A resource failed during the last `terraform apply` and must be re-created.
-
 ## Files
 - `main.tf` — creates a local file you can edit to simulate drift
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

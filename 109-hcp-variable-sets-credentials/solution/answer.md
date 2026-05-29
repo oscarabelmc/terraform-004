@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The three correct answers are: **A, B, and C**.
 
@@ -98,13 +98,3 @@ Sensitive variables:
 | **Easy rotation** | Change the variable set value, all workspaces pick it up |
 | **Security** | Sensitive flag masks values; no hardcoding in config |
 | **Isolation** | Different projects can have different credential sets |
-
-## Exam Tips
-
-- **Three correct answers:** project grouping + variable set + apply to project
-- Variable sets are the **correct mechanism** for sharing variables across multiple workspaces
-- Applying to a **project** is better than applying to individual workspaces when all workspaces need the same credentials
-- Key phrase: **"share third-party credentials across multiple workspaces"** → variable set + project
-- Common exam trap: thinking individual workspace variables are the right approach (too much duplication)
-- Another trap: confusing variable sets (sharing variables) with policy sets (enforcing compliance)
-- For the exam, remember: project = workspace group, variable set = variable group, project variable set = combine both

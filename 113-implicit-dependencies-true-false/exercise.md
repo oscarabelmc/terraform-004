@@ -1,6 +1,18 @@
 # Implicit Dependencies — True or False Exercise
 
-**Exam Question:** True or False? Terraform can only manage dependencies between resources if the `depends_on` argument is explicitly set for the dependent resources.
+**Domain:** State & DAG Management
+**Topic:** Implicit vs explicit dependencies — `depends_on` required?
+
+## Description
+
+True or False? Terraform can only manage dependencies between resources if the `depends_on` argument is explicitly set for the dependent resources.
+
+## Learning Objectives
+
+- Implicit dependencies (the default)
+- Explicit dependencies with `depends_on`
+- The dependency graph
+- When `depends_on` is necessary
 
 ## Background
 
@@ -112,15 +124,9 @@ The statement claims Terraform **can only** manage dependencies via `depends_on`
    | **Destroy ordering** | Override default destroy order (reverse of create) |
    | **Indirect dependency** | A depends on C through B, but only A and C are in config |
 
-### Put It Together
-
-True or False? Terraform can only manage dependencies between resources if the `depends_on` argument is explicitly set for the dependent resources.
-
-- A. True
-- B. False
-
 ## Files
 
 - `main.tf` — config demonstrating implicit dependency via attribute reference
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

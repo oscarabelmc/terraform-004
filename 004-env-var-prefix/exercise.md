@@ -1,6 +1,17 @@
 # Environment Variable Prefix Exercise
 
-**Exam Question:** When assigning a value to a Terraform input variable through an environment variable, which prefix string is necessary?
+**Domain:** Input Variables
+**Topic:** Environment variable prefix — `TF_VAR_`
+
+## Description
+
+When assigning a value to a Terraform input variable through an environment variable, which prefix string is necessary
+
+## Learning Objectives
+
+- Correct prefix
+- Set all variables via `TF_VAR_`
+- Alternative methods and precedence
 
 ## Steps
 
@@ -60,16 +71,7 @@
 
    Which value wins? The `.tfvars` file has **higher precedence** than `TF_VAR_` env vars.
 
-### Put It Together
-
-What prefix is required to set a Terraform input variable via an environment variable?
-
-- A. `TERRAFORM_`
-- B. `TF_VAR_`
-- C. `TF_INPUT_`
-- D. `VAR_`
-- E. No prefix — Terraform reads all environment variables automatically
-
 ## Files
 - `main.tf` — declares four typed input variables with no defaults
-- `solution/answer.md` — explanation of the prefix, format, and precedence
+- `solution/` — reference implementation
+

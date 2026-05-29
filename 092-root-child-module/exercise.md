@@ -1,13 +1,18 @@
 # Root Module vs Child Module Exercise
 
-**Exam Question:** You are reviewing the following Terraform configuration in `main.tf`. Which statements about this configuration are correct? (Select two.)
+**Domain:** Modules
+**Topic:** Root vs child module identification
 
-```hcl
-module "servers" {
-  source  = "./modules/local-cluster"
-  servers = 5
-}
-```
+## Description
+
+You are reviewing the following Terraform configuration in `main.tf`. Which statements about this configuration are correct? (Select two.)
+
+## Learning Objectives
+
+- Identify the root module
+- Identify local child modules
+- How the module relationship works
+- Module source types
 
 ## Background
 
@@ -93,27 +98,11 @@ Every Terraform configuration has a **root module** — the directory where you 
    source = "https://example.com/module.zip"
    ```
 
-### Put It Together
-
-You are reviewing the following Terraform configuration in `main.tf`. Which statements about this configuration are correct? (Select two.)
-
-```hcl
-module "servers" {
-  source  = "./modules/local-cluster"
-  servers = 5
-}
-```
-
-- A. `local-cluster` refers to a local child module on disk
-- B. `main.tf` is the root (calling) module
-- C. `local-cluster` is a module from the Terraform public registry
-- D. `servers = 5` sets an output value of the child module
-- E. The module `local-cluster` cannot accept any input variables
-
 ## Files
 
 - `main.tf` — root module calling a local child module
 - `outputs.tf` — root module outputs
 - `modules/local-cluster/main.tf` — child module
 - `modules/local-cluster/outputs.tf` — child module outputs
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

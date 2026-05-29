@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A** and **B**.
 
@@ -62,14 +62,3 @@ Remote state is appropriate for:
 | Access control | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Versioning | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Works offline | ✅ | ❌ | ❌ | ❌ | ❌ |
-
-## Exam Tips
-
-- Local state is **simple** and **offline** — two key exam descriptors
-- Remote state = **shared**, **locked**, **encrypted**, **access-controlled**
-- The `.terraform.lock.hcl` is **not** a locking mechanism — it's a dependency lock file
-- State locking is only available with **remote backends that support it**
-- Common exam pattern: "Which backend features are missing in local state?" — locking, shared access, encryption
-- If the question says "two team members running apply simultaneously" — think about locking (remote) vs no locking (local)
-- Local state path defaults to `terraform.tfstate` in the working directory
-- Backend migration is done via `terraform init -migrate-state` or `terraform init -reconfigure`

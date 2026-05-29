@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A**, **C**, and **F**.
 
@@ -55,10 +55,3 @@ State records dependencies used for:
 │ 3. Metadata   ─── Tracks dependencies, version, serial         │
 └──────────────────────────────────────────────────────────────┘
 ```
-
-## Exam Tips
-
-- **Three reasons**: mapping, caching, metadata
-- State is **not** for: syntax fixing, encrypting data, validating creds
-- Without state, Terraform would try to create duplicate resources
-- Common exam trap: thinking state encrypts data or validates credentials

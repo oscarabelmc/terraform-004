@@ -1,6 +1,18 @@
 # Module Initialization Exercise
 
-**Exam Question:** You added a new module block to an existing Terraform configuration to reuse infrastructure code from a remote source. What do you need to do so that Terraform downloads the module and makes it available in your working directory?
+**Domain:** Modules
+**Topic:** Module installation — `terraform init` downloads modules
+
+## Description
+
+You added a new module block to an existing Terraform configuration to reuse infrastructure code from a remote source. What do you need to do so that Terraform downloads the module and makes it available in your working directory
+
+## Learning Objectives
+
+- Add a module block
+- Try to plan before initializing
+- Run `terraform init` (the correct answer)
+- Apply to confirm
 
 ## Steps
 
@@ -80,18 +92,9 @@
    terraform output
    ```
 
-### Put It Together
-
-You added a new module block to an existing Terraform configuration to reuse infrastructure code from a remote source. What do you need to do so that Terraform downloads the module and makes it available in your working directory?
-
-- A. Run `terraform plan` to download the module during planning
-- B. Run `terraform init` to install the module into the current working directory
-- C. Run `terraform get` as a separate step before `terraform init`
-- D. Run `terraform apply` — modules are downloaded automatically during apply
-- E. Manually copy the module files into the `.terraform/` directory
-
 ## Files
 - `main.tf` — configuration with a module block
 - `modules/demo/` — example local module (remote sources work the same way)
 - `modules/demo/main.tf` — creates a random_pet resource
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

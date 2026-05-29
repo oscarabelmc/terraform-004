@@ -1,20 +1,18 @@
 # Config-Driven Import Exercise
 
-**Exam Question:** You have an existing Google Cloud Storage bucket that was created manually. You want to bring it under Terraform management using a modern config-driven approach, so you add the following configuration:
+**Domain:** IaC Workflow
+**Topic:** Config-driven import with `import` block
 
-```hcl
-import {
-  to = google_storage_bucket.data_lake
-  id = "imported-data-lake"
-}
+## Description
 
-resource "google_storage_bucket" "data_lake" {
-  name     = "imported-data-lake"
-  location = "US"
-}
-```
+You have an existing Google Cloud Storage bucket that was created manually. You want to bring it under Terraform management using a modern config-driven approach, so you add the following configuration:
 
-What command(s) should you run next?
+## Learning Objectives
+
+- Examine the import block
+- Run plan to preview the import
+- Apply to complete the import
+- How config-driven import differs
 
 ## Background
 
@@ -123,32 +121,9 @@ Terraform 1.5+ introduced **config-driven import** using `import` blocks. Unlike
 
    The resource remains managed by Terraform. The `import` block is only needed for the initial import operation.
 
-### Put It Together
-
-You have an existing Google Cloud Storage bucket that was created manually. You want to bring it under Terraform management using a modern config-driven approach, so you add the following configuration:
-
-```hcl
-import {
-  to = google_storage_bucket.data_lake
-  id = "imported-data-lake"
-}
-
-resource "google_storage_bucket" "data_lake" {
-  name     = "imported-data-lake"
-  location = "US"
-}
-```
-
-What command(s) should you run next?
-
-- A. `terraform import google_storage_bucket.data_lake imported-data-lake`
-- B. `terraform refresh` to sync state with the existing bucket
-- C. Run `terraform plan` followed by `terraform apply` to import the resource
-- D. `terraform apply -auto-approve` to immediately import without review
-- E. `terraform state rm` followed by `terraform apply`
-
 ## Files
 
 - `main.tf` — config with import block and matching resource
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

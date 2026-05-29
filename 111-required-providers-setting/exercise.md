@@ -1,6 +1,18 @@
 # Required Providers Setting Exercise
 
-**Exam Question:** In the top-level `terraform` block, which setting specifies a provider's source and version constraints?
+**Domain:** IaC Workflow
+**Topic:** `required_providers` — setting in terraform block for source + version
+
+## Description
+
+In the top-level `terraform` block, which setting specifies a provider's source and version constraints
+
+## Learning Objectives
+
+- Examine the terraform block
+- Break down the source and version
+- What happens without required_providers
+- Compare with other terraform block settings
 
 ## Background
 
@@ -114,18 +126,9 @@ The `required_providers` block is where you declare which provider plugins Terra
    | `backend` | Configure state storage backend | `backend "s3" { bucket = "..." }` |
    | `cloud` | Configure HCP Terraform integration | `cloud { organization = "..." }` |
 
-### Put It Together
-
-In the top-level `terraform` block, which setting specifies a provider's source and version constraints?
-
-- A. `required_version`
-- B. `required_providers`
-- C. `backend`
-- D. `provider`
-- E. `provider_source`
-
 ## Files
 
 - `main.tf` — config with `required_providers` in the terraform block
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

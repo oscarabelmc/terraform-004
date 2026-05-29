@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -96,15 +96,3 @@ variable "name" {
 | `try()` | Try expression, fallback on error | `try(var.input, "default")` |
 | `regex()` | Match pattern | `regex("^[a-z]+$", var.name)` |
 | `range()` | Check numeric range | `var.count >= 1 && var.count <= 10` |
-
-## Exam Tips
-
-- Validation is checked during **validate** and **plan** — before any resource operations
-- `condition` must be `true` — if `false`, the `error_message` is shown
-- `error_message` is **required** — omitting it causes a validation error
-- Variables that are **not set** and have no default are caught at the same stage (plan/validate)
-- Multiple validations on one variable = all must pass (AND logic)
-- `can()` is useful for validating format with `regex()` or type assertions
-- Validation **cannot** reference other variables or resource attributes — only the variable itself via `var.`
-- Common exam question: validation blocks are evaluated during the **plan** phase
-- The `condition` expression must reference the variable as `var.variable_name`, not just `variable_name`

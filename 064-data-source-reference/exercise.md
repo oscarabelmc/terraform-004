@@ -1,6 +1,18 @@
 # Data Source Reference Exercise
 
-**Exam Question:** Your company has a centralized network team that manages all Azure Virtual Networks. Your application team needs to deploy virtual machines into the prod-network VNet, which the network team created. What is the correct approach in your Terraform configuration?
+**Domain:** IaC Concepts
+**Topic:** Data source to reference existing VNet
+
+## Description
+
+Your company has a centralized network team that manages all Azure Virtual Networks. Your application team needs to deploy virtual machines into the prod-network VNet, which the network team created. What is the correct approach in your Terraform configuration
+
+## Learning Objectives
+
+- Examine the data source approach
+- Understand what a data source does
+- Why data sources are the right approach
+- Verify with plan
 
 ## Background
 
@@ -120,18 +132,9 @@ When infrastructure is managed by a different team or created outside your Terra
 
    Notice: **no VNet actions** — the data source reads it without proposing changes.
 
-### Put It Together
-
-Your company has a centralized network team that manages all Azure Virtual Networks. Your application team needs to deploy virtual machines into the prod-network VNet, which the network team created. What is the correct approach in your Terraform configuration?
-
-- A. Create a new VNet with a different name alongside the existing one
-- B. Use a data block to reference the existing VNet, then create your VM resources that use attributes from the data source
-- C. Copy the VNet's attributes as hardcoded values into your configuration
-- D. Use `terraform import` to take over management of the VNet from the network team
-- E. Ask the network team to recreate the VNet using your Terraform configuration
-
 ## Files
 
 - `main.tf` — data source reading existing VNet, resources using its attributes
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

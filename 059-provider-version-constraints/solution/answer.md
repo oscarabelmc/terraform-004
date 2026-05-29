@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -48,13 +48,3 @@ This ensures:
 = 5.0.0   =  exactly 5.0.0      (pinned — no updates)
 >= 5.0, < 6.0 = explicit range  (same as ~> 5.0)
 ```
-
-## Exam Tips
-
-- Providers and Terraform Core are **independently versioned** and **independently released**
-- Always use `required_providers` with a `version` constraint in production
-- The `~>` (pessimistic) operator is the most common and recommended approach
-- A provider **major version bump** (e.g., 5.x → 6.x) indicates potential breaking changes
-- Version constraints are specified in `required_providers`, not in `provider` blocks
-- `terraform init -upgrade` respects version constraints but allows upgrading within them
-- Common exam trap: thinking constraints are for performance or that they're required — they're neither; they're for **stability and reproducibility**

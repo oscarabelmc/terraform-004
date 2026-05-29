@@ -1,6 +1,18 @@
 # Sensitive Data and State Best Practices Exercise
 
-**Exam Question:** Your team uses Vault for short-lived credentials and stores Terraform state in a remote backend. Which statements reflect best practices for managing sensitive data and state? (Select four.)
+**Domain:** Security
+**Topic:** Sensitive data and state best practices
+
+## Description
+
+Your team uses Vault for short-lived credentials and stores Terraform state in a remote backend. Which statements reflect best practices for managing sensitive data and state? (Select four.)
+
+## Learning Objectives
+
+- Examine sensitive data in config
+- Understand what `sensitive = true` does and doesn't do
+- Compare local vs remote state security
+- State access best practices
 
 ## Background
 
@@ -126,19 +138,9 @@ Terraform state contains **all resource attributes** — including those that ma
    - Additional state controls are **still required**
    - Vault reduces secret exposure but does not eliminate the need for state security
 
-### Put It Together
-
-Your team uses Vault for short-lived credentials and stores Terraform state in a remote backend. Which statements reflect best practices for managing sensitive data and state? (Select four.)
-
-- A. Marking an output `sensitive = true` prevents its value from being stored in the state file.
-- B. Terraform state can include sensitive data, so it is essential to restrict access to the state and audit any changes.
-- C. A properly configured remote backend improves security via encryption and access controls.
-- D. HCP Terraform encrypts state at rest (and in transit) and provides RBAC to restrict who can access state.
-- E. Using Vault ensures that secrets never appear in state, so additional controls on state aren't required.
-- F. When using local state, the state file is stored in plain text by default.
-
 ## Files
 
 - `main.tf` — config with sensitive data (RDS password, IAM login profile)
 - `outputs.tf` — outputs including sensitive values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

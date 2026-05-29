@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -84,15 +84,3 @@ Before:                         After:
 | **AzureRM** | `backend "azurerm" { storage_account_name, container_name, key }` | ✅ (built-in) |
 | **GCS** | `backend "gcs" { bucket, prefix }` | ✅ (built-in) |
 | **Local** | No block (default) | ❌ |
-
-## Exam Tips
-
-- **Two steps only:** `backend` block → `terraform init`
-- `terraform init` is the **only** command that handles backend configuration and migration
-- The `-migrate-state` flag auto-confirms the migration prompt
-- The `-reconfigure` flag discards current backend config without copying state
-- Terraform prompts for confirmation before migrating (unless `-migrate-state` is used)
-- The original local state is always backed up (`.backup` suffix)
-- Key phrase: **"moving a project to a remote backend"** → implies existing state needs migration
-- Common exam trap: thinking you can run `apply` or `plan` to switch backends
-- Another trap: thinking Terraform auto-discovers S3 buckets

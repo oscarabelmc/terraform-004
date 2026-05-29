@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -104,13 +104,3 @@ Child variable: var.env
         ▼
 Resource attribute: "production-app"
 ```
-
-## Exam Tips
-
-- **Two things:** declare in child + pass from root
-- Child modules **never** inherit root variables automatically
-- The module block argument name (`env = ...`) must match the child's declared variable name
-- This applies to **all** child modules, not just local ones (also registry modules)
-- Common exam trap: thinking child modules can access root `var.*` directly
-- Another trap: confusing variable passing with **outputs** (outputs go child→parent, variables go parent→child)
-- Key phrase: **"What is the correct way to make this work?"** → the answer is always declare + pass

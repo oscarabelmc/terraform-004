@@ -1,6 +1,18 @@
 # State Show — Identifying Managed Resources Exercise
 
-**Exam Question:** Rahul deployed multiple VMs outside the Terraform workflow, and now your team is unsure which VM is managed by Terraform. What approach would best help you identify the Terraform-managed VM without making any changes to the infrastructure?
+**Domain:** State Management
+**Topic:** Identify managed resources with `terraform state show`
+
+## Description
+
+Rahul deployed multiple VMs outside the Terraform workflow, and now your team is unsure which VM is managed by Terraform. What approach would best help you identify the Terraform-managed VM without making any changes to the infrastructure
+
+## Learning Objectives
+
+- Examine the config
+- State inspection commands
+- The identification workflow
+- Alternative approaches and why they're worse
 
 ## Background
 
@@ -100,18 +112,9 @@ Terraform's state file tracks every resource it manages. When VMs are created bo
    | Tags in config | ❌ No (but requires planning) | ✅ Yes | ⚠️ Only if tags were set |
    | Cloud console search | ❌ No | ❌ No | ⚠️ Manual, error-prone |
 
-### Put It Together
-
-Rahul deployed multiple VMs outside the Terraform workflow, and now your team is unsure which VM is managed by Terraform. What approach would best help you identify the Terraform-managed VM without making any changes to the infrastructure?
-
-- A. Run `terraform apply` to see which VMs Terraform tries to modify
-- B. Use Terraform state commands `terraform state show` to match the tracked VM's ID with the list of active VMs
-- C. Delete all VMs and recreate them with Terraform
-- D. Run `terraform destroy` and see which VMs get deleted
-- E. Use the `terraform import` command to import all VMs
-
 ## Files
 
 - `main.tf` — config with managed EC2 instances
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

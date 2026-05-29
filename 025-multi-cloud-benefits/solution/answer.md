@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -87,11 +87,3 @@ deny[msg] {
 | C — Eliminates the need for cloud provider expertise | You still need to understand each cloud's services, quotas, and limitations. Terraform abstracts the workflow, not the cloud-specific concepts. |
 | D — Runs faster than cloud-native tools | Performance depends on API latency, number of resources, and provider efficiency. Terraform is not inherently faster. |
 | E — Requires fewer lines of code than any cloud-native template | Line count varies by resource complexity. Terraform is often more concise, but this is not the primary benefit of a single tool for multi-cloud. |
-
-## Exam Tips
-
-- The key phrase in the question is **"using a single tool"** — the answer must explain *why unified > separate*
-- Think about **workflow consistency** (same commands), **code reuse** (modules work across providers), **CI/CD** (one pipeline), and **policy** (cross-cloud enforcement)
-- Common exam trap: confusing "single tool" with "single provider" — Terraform supports multiple providers, the tool itself is unified
-- Terraform's value in multi-cloud is **operational consistency**, not elimination of cloud-specific knowledge
-- Multi-cloud ≠ multi-provider in your code — you declare resources per cloud in the same config

@@ -1,6 +1,18 @@
 # Sensitive Input Values Exercise
 
-**Exam Question:** The security team requires that you protect sensitive input values, such as API keys or passwords, in Terraform. Which methods follow Terraform guidance for reducing accidental exposure of secrets? (Select two.)
+**Domain:** Security
+**Topic:** Protect sensitive input values
+
+## Description
+
+The security team requires that you protect sensitive input values, such as API keys or passwords, in Terraform. Which methods follow Terraform guidance for reducing accidental exposure of secrets? (Select two.)
+
+## Learning Objectives
+
+- Examine the wrong approach (hardcoded secrets)
+- Mark variables as sensitive
+- Use external secrets at runtime
+- What NOT to do
 
 ## Background
 
@@ -107,20 +119,11 @@ Terraform configurations often need secrets — database passwords, API tokens, 
    password = "super-secret-123"  # terraform.tfvars should be in .gitignore
    ```
 
-### Put It Together
-
-The security team requires that you protect sensitive input values, such as API keys or passwords, in Terraform. Which methods follow Terraform guidance for reducing accidental exposure of secrets? (Select two.)
-
-- A. Provide secrets as short-lived, ephemeral values from an external system (e.g., Vault) at runtime instead of hardcoding static credentials in version-controlled Terraform files
-- B. Mark variables as `sensitive` so Terraform redacts their values in CLI output and logs, limiting accidental disclosure during plan and apply
-- C. Store all secrets in a `.tfvars` file committed to the repository for easy access
-- D. Use hardcoded default values in variable declarations so they are never visible in plan output
-- E. Set the `TF_SECRETS` environment variable to automatically encrypt all sensitive values in state
-
 ## Files
 
 - `main.tf` — config using sensitive variable + state inspection
 - `variables.tf` — sensitive variable declaration
 - `outputs.tf` — sensitive output
 - `main-hardcoded.tf` — example of what NOT to do
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

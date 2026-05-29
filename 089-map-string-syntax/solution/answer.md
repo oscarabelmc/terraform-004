@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -67,12 +67,3 @@ default = {
 # Single line
 default = { environment = "prod", owner = "dev-team" }
 ```
-
-## Exam Tips
-
-- Map syntax in HCL = `{ "key" = "value" }` — curly braces, equals signs
-- Not `[]` (that's lists), not `:` (that's JSON)
-- All values must match the declared type (e.g., all strings for `map(string)`)
-- Keys can be quoted or unquoted if they're valid identifiers
-- Common exam trap: using JSON-style `:` or list-style `[]` for maps
-- Another trap: mixing types in a `map(string)` (all values must be strings)

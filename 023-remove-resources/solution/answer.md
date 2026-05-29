@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — Remove the database and backup resource blocks from your configuration, then run `terraform apply`.**
 
@@ -37,11 +37,3 @@ Before apply:                     After apply:
 | C — `terraform state rm` | Only removes the resource from state — the **real infrastructure still exists** and is now orphaned (unmanaged, still running, still costing money). |
 | D — Manually delete in Console | The resource is deleted, but **Terraform state still references it**. The next `terraform plan` will try to recreate it to match the config. You'd need to also run `terraform state rm` — two steps instead of one. |
 | E — `terraform destroy` and recreate | Destroys **all** 50 resources, then you'd need to recreate 49 of them. Massive downtime, risk of data loss, and completely unnecessary. |
-
-## Exam Tips
-
-- **To decommission:** remove the resource block from config → `terraform apply`
-- **To remove from management (but keep running):** `terraform state rm` (use with caution)
-- `terraform destroy` removes **everything** — never use it when you only need to remove specific resources
-- The config is the source of truth — if it's not in the config, Terraform will destroy it on next apply
-- Always run `terraform plan` first to verify only the intended resources will be destroyed

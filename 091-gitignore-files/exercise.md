@@ -1,6 +1,18 @@
 # Terraform GitIgnore Exercise
 
-**Exam Question:** Which of the following Terraform files should be ignored by Git when committing code to a repo?
+**Domain:** Security
+**Topic:** Terraform files to ignore in Git
+
+## Description
+
+Which of the following Terraform files should be ignored by Git when committing code to a repo
+
+## Learning Objectives
+
+- Files that should be ignored
+- Files that SHOULD be committed
+- Standard Terraform .gitignore
+- What happens if you commit state
 
 ## Background
 
@@ -99,18 +111,9 @@ Terraform generates several files that should **not** be committed to version co
    - **Conflicts** — state changes on every apply, causing merge conflicts
    - **No locking** — Git doesn't provide state locking
 
-### Put It Together
-
-Which of the following Terraform files should be ignored by Git when committing code to a repo?
-
-- A. `main.tf`
-- B. `terraform.tfstate`
-- C. `outputs.tf`
-- D. `variables.tf`
-- E. `terraform.lock.hcl`
-
 ## Files
 
 - `main.tf` — example config
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

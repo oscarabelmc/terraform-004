@@ -1,6 +1,18 @@
 # Provider as a Plugin Exercise
 
-**Exam Question:** Which of the following is considered a Terraform plugin?
+**Domain:** IaC Concepts
+**Topic:** A Terraform provider is a plugin — plugin-based architecture
+
+## Description
+
+Which of the following is considered a Terraform plugin
+
+## Learning Objectives
+
+- Understand plugins in Terraform
+- How provider plugins work
+- Providers vs Terraform Core
+- Provider plugin lifecycle
 
 ## Background
 
@@ -131,18 +143,9 @@ Terraform has a **plugin-based architecture**. The core binary handles state man
        └── Core terminates provider process when done
    ```
 
-### Put It Together
-
-Which of the following is considered a Terraform plugin?
-
-- A. `required_providers` block
-- B. Provider
-- C. `terraform plan` command
-- D. State file (`terraform.tfstate`)
-- E. Module from the Terraform Registry
-
 ## Files
 
 - `main.tf` — config that declares a provider and uses it
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

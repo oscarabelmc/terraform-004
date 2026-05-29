@@ -1,6 +1,18 @@
 # Refresh-Only Plan Exercise
 
-**Exam Question:** A resource was changed manually outside of Terraform. You don't want to make any changes yet, but you want to see how the state would be updated to match the current real-world values. Which command should you run?
+**Domain:** State Management
+**Topic:** Preview state drift without making changes
+
+## Description
+
+A resource was changed manually outside of Terraform. You don't want to make any changes yet, but you want to see how the state would be updated to match the current real-world values. Which command should you run
+
+## Learning Objectives
+
+- Create the baseline
+- Simulate outside change
+- Compare approaches
+- Apply the refresh (optional)
 
 ## Steps
 
@@ -59,17 +71,8 @@
 
    The state is now updated. Running `terraform plan` again shows no changes.
 
-### Put It Together
-
-A resource was changed manually outside of Terraform. You don't want to make any changes yet, but you want to see how the state would be updated to match the current real-world values. Which command should you run?
-
-- A. `terraform plan -refresh-only`
-- B. `terraform plan`
-- C. `terraform refresh`
-- D. `terraform apply`
-- E. `terraform validate`
-
 ## Files
 - `main.tf` — creates a local file you can edit manually
 - `outputs.tf` — outputs for verification
-- `solution/answer.md` — explanation and command comparison
+- `solution/` — reference implementation
+

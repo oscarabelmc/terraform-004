@@ -1,6 +1,20 @@
 # Infrastructure as Code Advantages Exercise
 
-**Exam Question:** What are the advantages of using Infrastructure as Code? (Select five.)
+**Domain:** IaC Concepts
+**Topic:** Advantages of IaC
+
+## Description
+
+What are the advantages of using Infrastructure as Code? (Select five.)
+
+## Learning Objectives
+
+- Examine an IaC config
+- Consistency and standardization
+- Repeatability and reuse
+- Automation and disaster recovery
+- Accessibility and ease of learning
+- What IaC does NOT do
 
 ## Background
 
@@ -99,19 +113,9 @@ Infrastructure as Code (IaC) is the practice of managing and provisioning infras
 
    HCL is for **infrastructure provisioning**, not application logic. You still write applications in Go, Python, Java, .NET, etc. IaC and application code are complementary, not competing.
 
-### Put It Together
-
-What are the advantages of using Infrastructure as Code? (Select five.)
-
-- A. Infrastructure as Code gives the user the ability to recreate an application's infrastructure for disaster recovery scenarios
-- B. Infrastructure as Code easily replaces development languages such as Go and .Net for application development
-- C. Infrastructure as Code provides configuration consistency and standardization among deployments
-- D. Infrastructure as Code enables users to automate a manual task for easier deployment
-- E. Infrastructure as Code is easily repeatable, allowing the user to reuse code to deploy similar yet different resources
-- F. Infrastructure as Code is relatively easy to learn and write, regardless of a user's prior coding experience
-
 ## Files
 
 - `main.tf` — reusable, parameterized config demonstrating IaC advantages
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

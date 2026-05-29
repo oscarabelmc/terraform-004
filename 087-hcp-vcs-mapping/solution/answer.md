@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — 1**.
 
@@ -44,10 +44,3 @@ HCP Terraform's workspace-to-VCS mapping is **one-to-one**:
 | A — 0 | Possible if you use CLI-driven or API-driven runs, but when VCS-connected, there's always exactly 1 VCS repo. The question assumes a VCS-connected workspace. |
 | C — 5 | No — a workspace cannot be mapped to multiple repos. |
 | D — Unlimited | No — there's a hard limit of one repo per workspace. |
-
-## Exam Tips
-
-- HCP Terraform workspace = **1 VCS repository**
-- Multiple repos → multiple workspaces
-- Workspace can also be **VCS-independent** (CLI-driven or API-driven)
-- Common exam trap: thinking a workspace can link to multiple repos

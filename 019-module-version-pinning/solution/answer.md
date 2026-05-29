@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — to pin a specific module release and avoid unexpected upgrades**.
 
@@ -47,11 +47,3 @@ module "vpc" {
 | C — Enable parallel downloads | Terraform downloads modules in parallel by default regardless of `version`. |
 | D — Authenticate with private registry | Authentication uses `~/.terraformrc` or `TERRAFORM_CONFIG` environment variables, not `version`. |
 | E — Optional with no effect | Version pinning has a **major effect** — it determines which module release is used. Omitting it is a risk. |
-
-## Exam Tips
-
-- The key phrase: **"pin a specific module release"** — reproducibility across environments and teams
-- Without `version`, different `terraform init` runs may download different module versions
-- `~>` (pessimistic constraint) is the most common pattern: `~> 3.0` means "any 3.x but not 4.0"
-- Only **registry modules** use the `version` argument — local and git-sourced modules do not
-- `terraform init -upgrade` overrides the lock file but still respects version constraints

@@ -1,6 +1,18 @@
 # IaC vs Manual Console/CLI Exercise
 
-**Exam Question:** Management wants to understand how adopting Infrastructure as Code with Terraform differs from your current method of using the console and CLI to deploy and manage infrastructure. Which statement correctly identifies a major difference?
+**Domain:** IaC Concepts
+**Topic:** IaC vs manual console/CLI — versioned, reusable, shared
+
+## Description
+
+Management wants to understand how adopting Infrastructure as Code with Terraform differs from your current method of using the console and CLI to deploy and manage infrastructure. Which statement correctly identifies a major difference
+
+## Learning Objectives
+
+- Examine the IaC approach
+- Compare IaC with manual console/CLI
+- Key differences table
+- Demo: IaC workflow vs manual
 
 ## Background
 
@@ -106,18 +118,9 @@ Managing infrastructure through a cloud console (clicking through a web UI) or v
    # 4. No audit trail of who approved what
    ```
 
-### Put It Together
-
-Management wants to understand how adopting Infrastructure as Code with Terraform differs from your current method of using the console and CLI to deploy and manage infrastructure. Which statement correctly identifies a major difference?
-
-- A. Infrastructure as Code requires more manual steps than using the console
-- B. Infrastructure as Code makes it harder to track changes since everything is automated
-- C. Infrastructure as Code allows infrastructure to be described using a configuration syntax that can be versioned, reused, and shared
-- D. Infrastructure as Code eliminates the need for any cloud credentials
-- E. Infrastructure as Code is only suitable for small deployments
-
 ## Files
 
 - `main.tf` — config demonstrating IaC approach
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

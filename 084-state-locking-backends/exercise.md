@@ -1,6 +1,18 @@
 # State Locking — Remote Backend Support Exercise
 
-**Exam Question:** True or False? All remote backends in Terraform support state locking by default, so you never need to worry about concurrent modifications when using any remote backend.
+**Domain:** State Management
+**Topic:** State locking — not all remote backends support it by default
+
+## Description
+
+True or False? All remote backends in Terraform support state locking by default, so you never need to worry about concurrent modifications when using any remote backend.
+
+## Learning Objectives
+
+- Examine an S3 backend with locking
+- Backend locking support matrix
+- Why locking matters
+- Checking your backend's locking
 
 ## Background
 
@@ -101,15 +113,9 @@ State locking prevents concurrent modifications to Terraform state, which could 
 
    This should only be used when you're certain no operation is actively using the lock.
 
-### Put It Together
-
-True or False? All remote backends in Terraform support state locking by default, so you never need to worry about concurrent modifications when using any remote backend.
-
-- A. True
-- B. False
-
 ## Files
 
 - `main.tf` — S3 backend with DynamoDB locking
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

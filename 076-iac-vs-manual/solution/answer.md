@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -74,13 +74,3 @@ aws ec2 create-vpc --cidr-block 10.0.0.0/16
 ## Objective Reference
 
 This question tests the fundamental understanding of IaC vs manual infrastructure management — a core concept assessed in the Terraform Associate exam.
-
-## Exam Tips
-
-- IaC = **versioned, reusable, shareable** configuration code
-- Manual = **ephemeral, non-repeatable, non-shareable** CLI commands
-- IaC enables Git workflows: commit, review, merge, deploy
-- IaC does **not** eliminate cloud credentials or provider-specific needs
-- IaC is valuable at **any scale**, especially large/complex deployments
-- Common exam trap: thinking IaC makes things harder or more manual (it does the opposite)
-- Another trap: thinking IaC eliminates cloud credentials (it still needs auth, just manages it differently)

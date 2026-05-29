@@ -1,6 +1,18 @@
 # Selective Resource Removal Exercise
 
-**Exam Question:** Your organization manages a Google Cloud project with 50 resources across multiple services. You need to decommission only the Cloud SQL database instance and its backup policy while keeping all other infrastructure running. What is the most appropriate approach?
+**Domain:** IaC Workflow
+**Topic:** Selective resource decommission — remove from config, then `apply`
+
+## Description
+
+Your organization manages a Google Cloud project with 50 resources across multiple services. You need to decommission only the Cloud SQL database instance and its backup policy while keeping all other infrastructure running. What is the most appropriate approach
+
+## Learning Objectives
+
+- Baseline: multiple resources managed
+- Remove the database resources from config
+- Run `terraform apply` (the correct approach)
+- Compare with other approaches (why they're wrong)
 
 ## Steps
 
@@ -80,17 +92,8 @@
 | Manually delete in cloud console | Works but Terraform state is now **out of sync** — next plan will try to recreate |
 | Restore from backup | Doesn't address the decommission requirement |
 
-### Put It Together
-
-Your organization manages a Google Cloud project with 50 resources across multiple services. You need to decommission only the Cloud SQL database instance and its backup policy while keeping all other infrastructure running. What is the most appropriate approach?
-
-- A. Run `terraform destroy -target=google_sql_database_instance.main`
-- B. Remove the database and backup resource blocks from your configuration, then run `terraform apply`
-- C. Run `terraform state rm` on the database and backup resources
-- D. Manually delete the resources in the Google Cloud Console
-- E. Run `terraform destroy` and recreate everything except the database
-
 ## Files
 - `main.tf` — configuration with 5 resources (database + others)
-- `solution/after-removal.tf` — configuration with database blocks removed
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+- `solution/` — reference implementation
+

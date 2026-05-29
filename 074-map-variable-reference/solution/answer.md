@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -80,12 +80,3 @@ locals {
 **Objective 4d** — Understand and use complex types.
 
 `map(string)` is a collection of string key-value pairs. Access values using bracket notation: `var.<name>["<key>"]`.
-
-## Exam Tips
-
-- Use **bracket notation** `["key"]` for all map accesses — it always works
-- **Dot notation** `.key` only works if the key is a valid identifier (alphanumeric + underscores, no hyphens)
-- Keys with hyphens, dots, spaces, or special characters **require** bracket notation
-- Always prefix with `var.` when accessing variables
-- Common exam trap: using dot notation with hyphenated keys (it's parsed as subtraction)
-- Another trap: forgetting the `var.` prefix

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — They are module-specific inputs that are passed into the child module used for resource creation.**
 
@@ -46,11 +46,3 @@ main.tf:                        variables.tf:
 | C — Built-in functions | Terraform functions include `cidrsubnet()`, `join()`, etc. `name`/`cidr`/`azs` are user-defined variable names, not functions. |
 | D — Hardcoded defaults | The module may have defaults, but the purpose of an argument is to **override** them. The question code passes root variables — these are not hardcoded. |
 | E — Automatically assigned attributes | Terraform does not auto-assign arguments. Every value in a `module` block must be explicitly passed or use a default. |
-
-## Exam Tips
-
-- Module arguments = **inputs** (what you **pass** to the module)
-- Module outputs = **outputs** (what you **get back** from the module)
-- The code `name = var.vpc_name` means: "set the module's `name` input to the value of `var.vpc_name`"
-- Inside the child module, you always reference inputs as `var.*` (e.g., `var.name`)
-- If a module variable has no `default` and no caller value is provided, Terraform will prompt for it

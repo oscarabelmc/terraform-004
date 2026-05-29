@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -88,14 +88,3 @@ The cache structure mirrors the working directory structure:
 | `terraform init -upgrade` | Re-checks registry for newer versions matching constraints |
 | Version constraint changed | Downloads new version |
 | `.terraform/` deleted | Must re-download on next `init` |
-
-## Exam Tips
-
-- Default location: **`.terraform/providers/`** in the current working directory
-- Path pattern: `<registry>/<namespace>/<type>/<version>/<platform>`
-- Each project has its own copy of provider plugins
-- Global cache is **optional** — configured via `plugin_cache_dir` in `.terraformrc`
-- `.terraform/` is in `.gitignore` — providers are never committed
-- Deleting `.terraform/` and re-running `init` re-downloads everything
-- Common exam scenario: "Where does Terraform store downloaded providers?" — `.terraform/providers/`
-- Common exam trap: confusing `.terraform/` with `~/.terraform.d/` — the former is per-project, the latter is user-wide config

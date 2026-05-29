@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -82,13 +82,3 @@ This is powerful but has an important constraint:
 | **Must match** | `var.enable_https ? var.protocol == "HTTPS" : true` |
 | **Mutually exclusive** | `var.use_custom ? var.custom_name != "" : var.default_name != ""` |
 | **Range depends on flag** | `var.scaling ? var.max_capacity > var.min_capacity : true` |
-
-## Exam Tips
-
-- **Cross-variable validation** = a validation block on one variable referencing another variable
-- The error message in the exam question is your biggest clue: "Invalid value for variable" at the **variable** level, not the resource level
-- Validation runs during **input evaluation** — before `plan`, before `apply`, before any provider interaction
-- The `condition` expression uses a **ternary**: `condition ? true_result : false_result`
-- When a validation block references another variable, both variables must be provided or have defaults
-- Common exam trap: confusing variable validation errors with resource-level errors, provider errors, or syntax errors
-- Another trap: thinking `terraform validate` only checks syntax — it also evaluates variable validation blocks if variable values are available

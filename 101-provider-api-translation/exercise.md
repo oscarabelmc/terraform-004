@@ -1,6 +1,17 @@
 # Provider as API Translation Layer Exercise
 
-**Exam Question:** Which of the following best describes a Terraform provider?
+**Domain:** IaC Concepts
+**Topic:** A provider translates API interactions between Terraform and the service
+
+## Description
+
+Which of the following best describes a Terraform provider
+
+## Learning Objectives
+
+- Understand what a provider does
+- How translation works
+- Provider vs other concepts
 
 ## Background
 
@@ -91,18 +102,9 @@ Terraform Core (HCL config)
    | **Data source** | ❌ | A data source is a **read-only resource** exposed by the provider. The provider handles the API call, but the data source itself isn't the provider. |
    | **`required_providers` block** | ❌ | This is a **configuration declaration** that tells Terraform which provider plugins to download. Not a plugin itself. |
 
-### Put It Together
-
-Which of the following best describes a Terraform provider?
-
-- A. A collection of Terraform configuration files that define reusable infrastructure components
-- B. A plugin that Terraform uses to translate the API interactions with the service or provider
-- C. A command-line tool used to format Terraform configuration files
-- D. A built-in Terraform function for transforming values
-- E. A remote backend that stores Terraform state files
-
 ## Files
 
 - `main.tf` — config demonstrating provider usage
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

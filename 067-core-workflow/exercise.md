@@ -1,6 +1,19 @@
 # Core Terraform Workflow Exercise
 
-**Exam Question:** What are the three core steps that make up the Terraform workflow? (Select three.)
+**Domain:** IaC Workflow
+**Topic:** Three core steps of Terraform workflow
+
+## Description
+
+What are the three core steps that make up the Terraform workflow? (Select three.)
+
+## Learning Objectives
+
+- Step 1: Write
+- Step 2: Plan
+- Step 3: Apply
+- The continuous loop
+- What is NOT a core step
 
 ## Background
 
@@ -88,19 +101,9 @@ The Terraform workflow consists of three fundamental steps that form a continuou
    | `terraform fmt` | ❌ No | Formatting is a code quality tool, not a workflow step |
    | `terraform init` | ❌ No | Initialization is a prerequisite, not a workflow step |
 
-### Put It Together
-
-What are the three core steps that make up the Terraform workflow? (Select three.)
-
-- A. Write — Author infrastructure as code.
-- B. Destroy — Deprovision and remove all infrastructure resources.
-- C. Validate — Verify the syntax and internal consistency.
-- D. Import — Bring in existing infrastructure resources under management.
-- E. Plan — Preview changes before applying.
-- F. Apply — Provision reproducible infrastructure.
-
 ## Files
 
 - `main.tf` — example config to walk through Write → Plan → Apply
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

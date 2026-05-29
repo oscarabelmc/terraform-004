@@ -1,12 +1,18 @@
 # Module Variable Access Exercise
 
-**Exam Question:** A root module includes several variables in `terraform.tfvars`. You add a child module as shown below. What values can the child module access by default?
+**Domain:** Modules
+**Topic:** Child module variable isolation — no auto-inheritance
 
-```hcl
-module "web" {
-  source = "./modules/web"
-}
-```
+## Description
+
+A root module includes several variables in `terraform.tfvars`. You add a child module as shown below. What values can the child module access by default
+
+## Learning Objectives
+
+- Examine the root module
+- Examine the child module
+- How to pass variables to a child module
+- Module isolation
 
 ## Background
 
@@ -145,22 +151,6 @@ Root-level variables from `terraform.tfvars` are not visible inside child module
    - All module inputs are **explicit** — you can see exactly what each module receives by reading the module block
    - This makes modules **reusable** — they don't depend on root variables existing
 
-### Put It Together
-
-A root module includes several variables in `terraform.tfvars`. You add a child module as shown below. What values can the child module access by default?
-
-```hcl
-module "web" {
-  source = "./modules/web"
-}
-```
-
-- A. All root module variables from `terraform.tfvars` are automatically accessible
-- B. Only values passed to it via the module block since root variables are not automatically accessible inside the module
-- C. The child module can access `var.region` and `var.environment` but not `var.instance_type`
-- D. The child module can access `terraform.tfvars` directly using `tfvars.region`
-- E. The child module automatically inherits all root variables if they have default values
-
 ## Files
 
 - `main.tf` — root module with empty module block
@@ -169,4 +159,5 @@ module "web" {
 - `modules/web/main.tf` — child module expecting `instance_type`
 - `modules/web/outputs.tf` — child module outputs
 - `outputs.tf` — root module outputs
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

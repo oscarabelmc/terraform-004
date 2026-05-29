@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The three correct answers are: **A, B, and C**.
 
@@ -40,12 +40,3 @@ Because `terraform show` prints the entire state without arguments, it's the go-
 |---------|-----------|-------|------------|
 | `terraform show` | None | Entire state | Plan files (saved output) |
 | `terraform state show` | Resource address (required) | Single resource | State only |
-
-## Exam Tips
-
-- `terraform show` = **broad** (full state / plan, no args needed)
-- `terraform state show` = **targeted** (single resource, address required)
-- `terraform state` is a family of subcommands: `list`, `show`, `mv`, `rm`, `pull`, `push` — all require specific arguments
-- Don't confuse `terraform show` with `terraform state show` — they sound similar but behave very differently
-- If the question mentions "no arguments" → think `terraform show`
-- If the question mentions "resource address" → think `terraform state show`

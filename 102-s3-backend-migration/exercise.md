@@ -1,6 +1,19 @@
 # S3 Backend Migration Exercise
 
-**Exam Question:** You're moving a project to a remote backend so the state is stored in Amazon S3. How do you correctly configure and initialize the backend?
+**Domain:** State Management
+**Topic:** S3 backend configuration and state migration
+
+## Description
+
+You're moving a project to a remote backend so the state is stored in Amazon S3. How do you correctly configure and initialize the backend
+
+## Learning Objectives
+
+- Examine the starting config (local state)
+- Add the S3 backend configuration
+- Run `terraform init` to migrate
+- Understand what `init` does with backends
+- Other backend initialization flags
 
 ## Background
 
@@ -130,18 +143,9 @@ New: S3 backend (bucket: my-company-terraform-state)
    | Reconfigure without copying | `terraform init -reconfigure` (discards current backend) |
    | Partial config + CLI values | `terraform init -backend-config="key=value"` |
 
-### Put It Together
-
-You're moving a project to a remote backend so the state is stored in Amazon S3. How do you correctly configure and initialize the backend?
-
-- A. Define the S3 backend in the `terraform` block using a `backend` block, then run `terraform init` to migrate your local state
-- B. Create the S3 bucket manually, then Terraform automatically detects it and stores state there
-- C. Run `terraform apply -backend=s3` to switch to the S3 backend
-- D. Define the backend in a separate `backend.tf` file and run `terraform plan` to migrate
-- E. Set the `TF_BACKEND` environment variable to `s3` and run `terraform apply`
-
 ## Files
 
 - `main.tf` — config that starts with local backend, then adds S3 backend block
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

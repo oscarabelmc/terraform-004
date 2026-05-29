@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -92,13 +92,3 @@ Examples:
 | `"= 5.10.0"` | Exact version |
 | `">= 3.0"` | At least 3.0 |
 | `"~> 5.0.0"` | Any 5.0.x |
-
-## Exam Tips
-
-- The setting name is **`required_providers`** (inside the `terraform` block)
-- It specifies **source** (registry path) and **version** (constraint)
-- `required_version` is for Terraform Core, not providers
-- `provider` blocks are **outside** the terraform block and configure instances
-- Common exam trap: confusing `required_providers` with `required_version`
-- Another trap: thinking the `provider` block (which configures region/alias) also specifies source and version
-- Key phrase: **"source and version constraints"** → `required_providers`

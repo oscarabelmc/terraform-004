@@ -1,6 +1,18 @@
 # Terraform Validate After Refactoring Exercise
 
-**Exam Question:** You're refactoring a large Terraform configuration, splitting a monolithic file into multiple smaller files and reorganizing resource blocks. Before running `terraform plan`, what's the fastest way to verify you didn't introduce any syntax errors during the refactoring?
+**Domain:** IaC Workflow
+**Topic:** Fastest syntax check after refactoring — `terraform validate`
+
+## Description
+
+You're refactoring a large Terraform configuration, splitting a monolithic file into multiple smaller files and reorganizing resource blocks. Before running `terraform plan`, what's the fastest way to verify you didn't introduce any syntax errors during the refactoring
+
+## Learning Objectives
+
+- Examine the refactored config
+- Run validate after refactoring
+- Introduce and catch refactoring errors
+- Validate vs plan after refactoring
 
 ## Background
 
@@ -86,19 +98,10 @@ When you split a single `main.tf` into multiple files (`main.tf`, `resources.tf`
 
    After refactoring, run `validate` iteratively as you edit, then `plan` only once before apply.
 
-### Put It Together
-
-You're refactoring a large Terraform configuration, splitting a monolithic file into multiple smaller files and reorganizing resource blocks. Before running `terraform plan`, what's the fastest way to verify you didn't introduce any syntax errors during the refactoring?
-
-- A. Run `terraform plan`
-- B. Run `terraform validate`
-- C. Run `terraform fmt`
-- D. Run `terraform apply` and check for errors
-- E. Manually review all files for syntax errors
-
 ## Files
 
 - `main.tf` — providers, variables, locals
 - `resources.tf` — resources (split from main)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

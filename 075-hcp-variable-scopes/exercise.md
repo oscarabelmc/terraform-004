@@ -1,6 +1,18 @@
 # HCP Terraform Variable Scopes Exercise
 
-**Exam Question:** In HCP Terraform, what scope levels are available for providing variables to workspaces? (Select three.)
+**Domain:** HCP Terraform
+**Topic:** HCP Terraform variable scopes
+
+## Description
+
+In HCP Terraform, what scope levels are available for providing variables to workspaces? (Select three.)
+
+## Learning Objectives
+
+- Examine the variable declaration
+- The three variable scopes
+- Variable precedence
+- What is NOT a valid scope
 
 ## Background
 
@@ -116,17 +128,9 @@ HCP Terraform provides flexible variable scoping to control which workspaces can
 
    Variable sets are scoped to a **single organization**. They cannot be applied across different organizations. Each organization manages its own variables independently.
 
-### Put It Together
-
-In HCP Terraform, what scope levels are available for providing variables to workspaces? (Select three.)
-
-- A. All current and future workspaces and Stacks within a project using a variable set
-- B. Multiple workspaces with a variable set
-- C. All workspaces across multiple HCP Terraform organizations
-- D. A single workspace by defining variables directly in that workspace
-
 ## Files
 
 - `main.tf` — config with variables suitable for different scopes
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,6 +1,19 @@
 # State Locking Exercise
 
-**Exam Question:** Why is state locking necessary when using a remote backend?
+**Domain:** State Management
+**Topic:** State locking with remote backends
+
+## Description
+
+Why is state locking necessary when using a remote backend
+
+## Learning Objectives
+
+- Understanding the remote backend config
+- Simulate concurrent operations (conceptual)
+- Inspect the lock info
+- Force unlock (manual override)
+- Disabling locking (not recommended)
 
 ## Background
 
@@ -96,16 +109,8 @@ State locking prevents this by allowing only one operation to hold the lock at a
 
    This bypasses the lock entirely and is **strongly discouraged** in team environments.
 
-### Put It Together
-
-Why is state locking necessary when using a remote backend?
-
-- A. It prevents concurrent runs from writing to the same state at the same time, avoiding state corruption
-- B. It encrypts the state file during transit
-- C. It tracks who last modified the state file for auditing
-- D. It automatically backs up the state before each change
-
 ## Files
 
 - `main.tf` — remote backend config with DynamoDB state locking
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

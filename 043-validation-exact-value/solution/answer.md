@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -82,13 +82,3 @@ variable "instance_count" {
 - Callers get a clear error instead of mysteriously seeing only 2 instances
 - The module remains flexible for future updates (change validation constraint instead of refactoring)
 - You can add more validations alongside the exact value check
-
-## Exam Tips
-
-- **Exact value enforcement** = `condition = var.variable == <value>` in a validation block
-- Validation runs during **validate** and **plan** phases — before any resource operations
-- The `error_message` is **required** for validation blocks
-- Use `==` for exact value checks, `contains()` for allowed values from a list
-- A `default` value alone does **not** enforce anything — it's just a fallback
-- Hardcoding in a resource block works but makes the module less maintainable and documentable
-- Common exam scenario: "Module must always create exactly N instances" — use variable validation with `==`

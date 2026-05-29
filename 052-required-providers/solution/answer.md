@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -102,14 +102,3 @@ provider "null" {}         # Empty block
 ```
 
 For these, the `provider` block can be empty or omitted — as long as they're in `required_providers`, `terraform init` will download them.
-
-## Exam Tips
-
-- **Two steps**: `required_providers` (what to install) + `provider` (how to configure)
-- `required_providers` goes inside the `terraform {}` block
-- The `source` attribute uses `<namespace>/<type>` format (e.g., `hashicorp/aws`)
-- The `version` attribute uses semver constraints
-- `terraform init` reads `required_providers` and downloads matching versions into `.terraform/providers/`
-- A provider can be declared in `required_providers` without a `provider` block if no configuration is needed
-- Common exam question: "How does Terraform know which provider to install?" — from `required_providers`
-- Common exam trap: thinking the `provider` block alone is sufficient — since Terraform 0.13, `required_providers` is the standard

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — `terraform plan`**.
 
@@ -31,10 +31,3 @@ When reviewing a `terraform plan` output, look for:
 | `-/+` (yellow) | Resource will be **replaced** (destroy then create) | Can this resource handle replacement gracefully? |
 | `~` (blue) | Resource will be **updated in-place** | Are the attribute changes correct? |
 | `<nothing>` | No change | Expected? |
-
-## Exam Tips
-
-- `terraform plan` is the **review** step in the standard Terraform workflow: `init → plan → review → apply`
-- In HCP Terraform, the plan is called a **"speculative plan"** when triggered by a PR — it allows review without any risk
-- The key differentiator: plan shows **what will happen** to infrastructure, not just what the code looks like
-- Traditional code review (PR comments on `.tf` files) is good for code style and logic, but `plan` is essential for understanding the **infrastructure impact**

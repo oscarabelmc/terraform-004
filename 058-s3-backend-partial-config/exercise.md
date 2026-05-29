@@ -1,6 +1,18 @@
 # S3 Partial Backend Configuration Exercise
 
-**Exam Question:** You're configuring an S3 backend for your Terraform project. You want to keep sensitive values, such as the bucket name and region, out of version control while keeping other backend configuration in your code. Which approach correctly implements partial backend configuration?
+**Domain:** State Management
+**Topic:** S3 partial backend configuration
+
+## Description
+
+You're configuring an S3 backend for your Terraform project. You want to keep sensitive values, such as the bucket name and region, out of version control while keeping other backend configuration in your code. Which approach correctly implements partial backend configuration
+
+## Learning Objectives
+
+- Examine the partial backend config
+- Initialize with partial config
+- Alternative: partial config file
+- Why partial configuration matters
 
 ## Background
 
@@ -98,18 +110,9 @@ Terraform supports **partial backend configuration** — declaring the backend t
 
    Environment variables injected by the CI/CD system provide the sensitive values, while the backend type remains in the committed code.
 
-### Put It Together
-
-You're configuring an S3 backend for your Terraform project. You want to keep sensitive values, such as the bucket name and region, out of version control while keeping other backend configuration in your code. Which approach correctly implements partial backend configuration?
-
-- A. Define the full backend block in code with all values, including bucket name and region
-- B. Define the backend block with only the type, then pass the bucket and region values using the `-backend-config` flag during `terraform init`
-- C. Omit the backend block entirely and pass all values using `-backend-config` during `terraform init`
-- D. Use `terraform.tfvars` to store the bucket name and region with `sensitive = true`
-- E. Define the backend block with placeholder values and use `sed` to replace them before each `terraform init`
-
 ## Files
 
 - `main.tf` — config with partial S3 backend declaration (type only)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

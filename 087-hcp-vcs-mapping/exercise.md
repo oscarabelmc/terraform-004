@@ -1,6 +1,17 @@
 # HCP Terraform — VCS Workspace Mapping Exercise
 
-**Exam Question:** In HCP Terraform, how many VCS repositories can a workspace be mapped to?
+**Domain:** HCP Terraform
+**Topic:** HCP Terraform — one VCS repo per workspace
+
+## Description
+
+In HCP Terraform, how many VCS repositories can a workspace be mapped to
+
+## Learning Objectives
+
+- Understand workspace-VCS relationship
+- How the VCS-driven workflow works
+- How to handle multiple repos
 
 ## Background
 
@@ -64,17 +75,9 @@ In HCP Terraform, a **workspace** is an environment where Terraform runs are exe
    | One monorepo with multiple projects | One workspace per project directory, repo settings with paths |
    | CI/CD from non-VCS source | Use CLI-driven or API-driven runs |
 
-### Put It Together
-
-In HCP Terraform, how many VCS repositories can a workspace be mapped to?
-
-- A. 0
-- B. 1
-- C. 5
-- D. Unlimited
-
 ## Files
 
 - `main.tf` — config with cloud block
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -76,14 +76,3 @@ module.vpc.aws_internet_gateway.main
 $ terraform state list | grep aws_instance.web
 aws_instance.web    # ← present in state
 ```
-
-## Exam Tips
-
-- **`state list`** = list only, no details
-- **`state show`** = one resource, full details
-- **`show`** = everything, full dump
-- Key phrase: **"complete list of all resources" + "don't need detailed attributes"** → `state list`
-- `state list` supports `-state=<path>` to inspect a specific state file
-- The output includes module-qualified addresses for resources in child modules
-- Common exam trap: confusing `state list` (addresses only) with `state show` (detailed single resource) or `show` (full dump)
-- Another trap: thinking `plan` or `output` can show the full resource inventory

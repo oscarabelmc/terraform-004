@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A**, **C**, and **D**.
 
@@ -101,12 +101,3 @@ Inputs:
      }
 6. Run terraform init to download
 ```
-
-## Exam Tips
-
-- Registry shows: **inputs, outputs, dependencies**, README, resources
-- You do **not** download modules — you reference them via `source`
-- `terraform init` handles module downloads automatically
-- The **version** field pins the module version for reproducibility
-- Common exam trap: thinking you need to manually download registry modules
-- Another trap: overlooking the dependencies section (providers, TF version requirements)

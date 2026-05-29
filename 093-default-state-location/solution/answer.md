@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -52,12 +52,3 @@ Current Working Directory
 | **Locking** | ❌ No (OS file lock only) | ✅ Via DynamoDB (S3) |
 | **Team sharing** | ❌ Not possible | ✅ Yes |
 | **Audit logging** | ❌ No | ✅ Via CloudTrail |
-
-## Exam Tips
-
-- **No backend block = local backend** = `terraform.tfstate` in the current directory
-- Local state is **plain text JSON** — never commit to VCS
-- Local state is **single-user only** — not suitable for teams
-- Remote backends require explicit configuration
-- Common exam trap: thinking state is not stored by default (it always is — locally)
-- Another trap: assuming state goes to a remote location without configuration

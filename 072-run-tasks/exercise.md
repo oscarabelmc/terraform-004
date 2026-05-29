@@ -1,6 +1,17 @@
 # HCP Terraform Run Tasks Exercise
 
-**Exam Question:** Your organization wants to ensure that third-party security scanning tools can review Terraform plans before any infrastructure changes are applied. Which HCP Terraform feature allows you to integrate external tools into the workflow between the plan and apply phases?
+**Domain:** HCP Terraform
+**Topic:** HCP Terraform run tasks
+
+## Description
+
+Your organization wants to ensure that third-party security scanning tools can review Terraform plans before any infrastructure changes are applied. Which HCP Terraform feature allows you to integrate external tools into the workflow between the plan and apply phases
+
+## Learning Objectives
+
+- Examine the HCP Terraform workflow
+- Understanding Run Tasks
+- Run tasks vs other HCP features
 
 ## Background
 
@@ -80,18 +91,9 @@ Run tasks are the mechanism for plugging external tools (security scanners, comp
    7. If FAIL → block apply, notify the team
    ```
 
-### Put It Together
-
-Your organization wants to ensure that third-party security scanning tools can review Terraform plans before any infrastructure changes are applied. Which HCP Terraform feature allows you to integrate external tools into the workflow between the plan and apply phases?
-
-- A. Sentinel policies
-- B. Run tasks
-- C. State versioning
-- D. Workspace variables
-- E. Module registry
-
 ## Files
 
 - `main.tf` — config with HCP Terraform cloud block
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

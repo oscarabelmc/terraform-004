@@ -1,6 +1,17 @@
 # Sensitive Data and State Exercise
 
-**Exam Question:** Which statements about sensitive data and Terraform state are correct? (Select two.)
+**Domain:** State Management
+**Topic:** Sensitive data in state — stored as plaintext despite `sensitive = true`
+
+## Description
+
+Which statements about sensitive data and Terraform state are correct? (Select two.)
+
+## Learning Objectives
+
+- Set up with a sensitive value
+- Prove sensitive values are in state
+- Why this matters
 
 ## Steps
 
@@ -53,17 +64,9 @@
 
    Output: `(sensitive)` — redacted in terminal, but still visible in the raw state file.
 
-### Put It Together
-
-Which statements about sensitive data and Terraform state are correct? (Select two.)
-
-- A. Sensitive outputs are never stored in state, only displayed at apply time.
-- B. The state file can contain sensitive values in plaintext by default.
-- C. Using local state automatically encrypts secrets on disk without extra steps.
-- D. Marking a variable `sensitive = true` does not prevent it from being written to state.
-
 ## Files
 - `main.tf` — uses the sensitive variable in resources
 - `variables.tf` — declares `db_password` with `sensitive = true`
 - `outputs.tf` — declares `db_password` output with `sensitive = true`
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

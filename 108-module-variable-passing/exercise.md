@@ -1,6 +1,18 @@
 # Module Variable Passing Exercise
 
-**Exam Question:** You have a root module that calls the child module `modules/web`. In `modules/web/main.tf`, a developer added `name = "${var.env}-app"`. What is the correct way to make this work?
+**Domain:** Modules
+**Topic:** Passing variables from root module to child module
+
+## Description
+
+You have a root module that calls the child module `modules/web`. In `modules/web/main.tf`, a developer added `name = "${var.env}-app"`. What is the correct way to make this work
+
+## Learning Objectives
+
+- The problem: root variables aren't inherited
+- The fix: declare in child, pass from root
+- Verify it works
+- The full variable flow
 
 ## Background
 
@@ -145,16 +157,6 @@ Root module                          Child module (modules/web)
 
    Each layer must **declare** the variable and **pass** it to the next layer. Variables are never automatically inherited.
 
-### Put It Together
-
-You have a root module that calls the child module `modules/web`. In `modules/web/main.tf`, a developer added `name = "${var.env}-app"`. What is the correct way to make this work?
-
-- A. Declare `variable "env" {}` in the child module and pass it from root using `env = var.env`
-- B. The child module automatically inherits `var.env` from the root — no changes needed
-- C. Use `terraform output` to read the env value in the child module
-- D. Set the `env` variable in `modules/web/terraform.tfvars`
-- E. Use `data.terraform_remote_state` to read the root variable
-
 ## Files
 
 - `main.tf` — root module (needs module argument for env)
@@ -162,4 +164,5 @@ You have a root module that calls the child module `modules/web`. In `modules/we
 - `modules/web/main.tf` — child module referencing `var.env`
 - `modules/web/variables.tf` — child variable declaration (to be created)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

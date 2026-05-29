@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A — True**.
 
@@ -63,12 +63,3 @@ The exam trick: `sensitive = true` masks display only — the state file always 
 | State access controls (IAM/RBAC) | Restricts who can read state | ✅ Limits exposure |
 | Vault/Secrets provider | Fetches secrets at runtime | ⚠️ Result may still be in state |
 | Never store secrets in config | Use external secrets manager | ✅ Best practice |
-
-## Exam Tips
-
-- `sensitive = true` = **display only** — does not protect state
-- State always contains **plain text** resource attributes
-- Anyone with state access can read `sensitive` values
-- Protect state with: encryption, access controls, audit logging
-- Common exam trap: thinking `sensitive = true` keeps values out of state
-- Always remember: state is the source of truth and contains all attribute values regardless of `sensitive` settings

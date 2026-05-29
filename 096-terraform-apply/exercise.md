@@ -1,6 +1,18 @@
 # Terraform Apply Exercise
 
-**Exam Question:** What happens when a `terraform apply` command is executed?
+**Domain:** IaC Workflow
+**Topic:** `terraform apply` executes changes to reach desired state
+
+## Description
+
+What happens when a `terraform apply` command is executed
+
+## Learning Objectives
+
+- Understand what apply does
+- Apply with and without a plan file
+- Apply behavior
+- What apply does NOT do
 
 ## Background
 
@@ -87,18 +99,9 @@
    - Import resources (that's `import`)
    - Destroy everything (that's `destroy`, which is apply with empty config)
 
-### Put It Together
-
-What happens when a `terraform apply` command is executed?
-
-- A. Validates the syntax of the configuration files
-- B. Applies the changes required in the target infrastructure in order to reach the desired configuration
-- C. Downloads the required providers and modules
-- D. Formats the configuration files to canonical style
-- E. Destroys all resources in the configuration
-
 ## Files
 
 - `main.tf` — config for apply demo
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

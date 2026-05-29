@@ -1,6 +1,19 @@
 # Terraform Import CLI — Write Config First Exercise
 
-**Exam Question:** You want to start managing resources that were not originally provisioned through infrastructure as code. Before you can import the resources, what must you do before running the `terraform import` command?
+**Domain:** IaC Workflow
+**Topic:** Before `terraform import`, write matching resource blocks first
+
+## Description
+
+You want to start managing resources that were not originally provisioned through infrastructure as code. Before you can import the resources, what must you do before running the `terraform import` command
+
+## Learning Objectives
+
+- Understand the legacy import workflow
+- Simulate existing resources
+- Write matching configuration (the required first step)
+- Run `terraform import` CLI
+- Compare legacy CLI vs config-driven import
 
 ## Background
 
@@ -119,20 +132,11 @@ The `terraform import` CLI command (available since Terraform 0.7+) is the legac
     | **Granularity** | One resource per command | Multiple resources in one apply |
     | **Terraform version** | 0.7+ (legacy) | 1.5+ (modern, preferred) |
 
-### Put It Together
-
-You want to start managing resources that were not originally provisioned through infrastructure as code. Before you can import the resources, what must you do before running the `terraform import` command?
-
-- A. Run `terraform init` to download provider plugins
-- B. Update the Terraform configuration file to include new resource blocks that match the resources you want to import
-- C. Remove the existing state file so there are no conflicts
-- D. Run `terraform plan` to preview what the import will do
-- E. Add an `import` block to the configuration
-
 ## Files
 
 - `main.tf` — starter configuration (needs resource blocks)
 - `outputs.tf` — output values
 - `modules/existing/` — simulates resources created outside Terraform
 - `modules/existing/main.tf` — the "manually created" resources
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

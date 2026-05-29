@@ -1,6 +1,19 @@
 # Infrastructure as Code Advantages Exercise
 
-**Exam Question:** What are some advantages of using Infrastructure as Code in an organization? (Select three.)
+**Domain:** IaC Concepts
+**Topic:** Advantages of Infrastructure as Code
+
+## Description
+
+What are some advantages of using Infrastructure as Code in an organization? (Select three.)
+
+## Learning Objectives
+
+- Examine an IaC configuration
+- Understand declarative vs imperative
+- Version control and collaboration
+- Multi-cloud management
+- Human-readable configuration
 
 ## Background
 
@@ -84,18 +97,9 @@ Infrastructure as Code (IaC) is the practice of managing infrastructure through 
 
    Compare to raw API calls, CloudFormation JSON, or imperative scripts — HCL is much more readable.
 
-### Put It Together
-
-What are some advantages of using Infrastructure as Code in an organization? (Select three.)
-
-- A. IaC allows you to save your configurations in version control, enabling safe collaboration on infrastructure
-- B. IaC is written as an imperative approach, where specific commands need to be executed in the correct order
-- C. IaC code can be used to manage infrastructure on multiple cloud platforms
-- D. IaC uses a human-readable configuration language to help you write infrastructure code quickly
-- E. IaC requires manual steps to deploy infrastructure each time
-
 ## Files
 
 - `main.tf` — IaC example showing declarative, multi-cloud, human-readable config
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

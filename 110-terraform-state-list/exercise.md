@@ -1,6 +1,18 @@
 # Terraform State List Exercise
 
-**Exam Question:** Your team manages infrastructure across multiple AWS regions using Terraform. You want to see a complete list of all resources currently tracked in your Terraform state file, but don't need the detailed attributes of each resource. Which command should you use?
+**Domain:** State Management
+**Topic:** `terraform state list` — list all tracked resources without attributes
+
+## Description
+
+Your team manages infrastructure across multiple AWS regions using Terraform. You want to see a complete list of all resources currently tracked in your Terraform state file, but don't need the detailed attributes of each resource. Which command should you use
+
+## Learning Objectives
+
+- Create some resources
+- List all resources in state
+- Compare with other state commands
+- State list use cases
 
 ## Background
 
@@ -120,18 +132,9 @@ Terraform's `state` subcommands allow you to inspect and manipulate state. The m
 
    Gives you the total number of resources in state.
 
-### Put It Together
-
-You want to see a complete list of all resources currently tracked in your Terraform state file, but don't need the detailed attributes of each resource. Which command should you use?
-
-- A. `terraform state list`
-- B. `terraform state show <address>`
-- C. `terraform show`
-- D. `terraform plan`
-- E. `terraform output`
-
 ## Files
 
 - `main.tf` — config with multiple resources across simulated regions
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

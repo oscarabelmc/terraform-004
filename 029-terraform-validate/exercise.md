@@ -1,6 +1,19 @@
 # Terraform Validate Exercise
 
-**Exam Question:** Which Terraform command checks modules, attribute names, and value types to ensure the configuration is syntactically valid and internally consistent?
+**Domain:** IaC Workflow
+**Topic:** `terraform validate` — syntax, attribute names, types
+
+## Description
+
+Which Terraform command checks modules, attribute names, and value types to ensure the configuration is syntactically valid and internally consistent
+
+## Learning Objectives
+
+- Start with a valid config
+- Introduce a syntax error
+- Introduce a type error
+- Introduce an invalid attribute name
+- Fix the config and validate clean
 
 ## Background
 
@@ -120,20 +133,11 @@ Before running `terraform plan` or `terraform apply`, it's good practice to vali
    Success! The configuration is valid.
    ```
 
-### Put It Together
-
-Which Terraform command checks modules, attribute names, and value types to ensure the configuration is syntactically valid and internally consistent?
-
-- A. `terraform validate`
-- B. `terraform fmt`
-- C. `terraform plan`
-- D. `terraform init`
-- E. `terraform apply`
-
 ## Files
 
 - `main.tf` — starter configuration (valid initially)
 - `variables.tf` — input variable declarations
 - `outputs.tf` — output definitions
-- `solution/answer.md` — explanation and exam tips
-- `solution/main.tf` — corrected configuration
+- `solution/` — reference implementation
+- `solution/` — reference implementation
+

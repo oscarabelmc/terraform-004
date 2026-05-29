@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — `terraform fmt -recursive`**.
 
@@ -38,10 +38,3 @@ Without `-recursive`, it only formats the current directory. Adding `-recursive`
 | C — `terraform format` | **No such command.** The correct name is `fmt`. |
 | D — `terraform lint` | **No such command.** Terraform has no built-in linter. |
 | E — `terraform fmt` | Correct for a single directory, but **missing `-recursive`** which is needed for subdirectories. |
-
-## Exam Tips
-
-- `terraform fmt` rewrites files in place — it's the fastest way to fix formatting across a whole project.
-- In CI/CD, use `terraform fmt -check -recursive` to enforce formatting standards.
-- If you want to format JSON files too, use `-json` flag (e.g., `terraform fmt -json`).
-- The command is **`fmt`** (format), not `format`, `lint`, or `style`.

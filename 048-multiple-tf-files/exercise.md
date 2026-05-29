@@ -1,6 +1,18 @@
 # Multiple .tf Files — Order Independence Exercise
 
-**Exam Question:** You have split a large module into multiple `.tf` files and rearranged several resource blocks without changing any arguments or references. What impact should this have when running a `terraform plan`?
+**Domain:** IaC Workflow
+**Topic:** Multiple `.tf` files merged automatically
+
+## Description
+
+You have split a large module into multiple `.tf` files and rearranged several resource blocks without changing any arguments or references. What impact should this have when running a `terraform plan`
+
+## Learning Objectives
+
+- Examine the single-file config
+- Split into multiple files
+- Compare the plans
+- Understand Terraform's file loading
 
 ## Background
 
@@ -78,20 +90,11 @@ Terraform processes all `.tf` files in a directory together — they are parsed 
    - File names, block order, and comments have **zero effect** on the plan
    - `override.tf` / `override.tf.json` is the only file treated specially (loaded last)
 
-### Put It Together
-
-You have split a large module into multiple `.tf` files and rearranged several resource blocks without changing any arguments or references. What impact should this have when running a `terraform plan`?
-
-- A. No changes — block order doesn't affect the plan because Terraform parses all `.tf` files in a module together during execution
-- B. The plan shows resource destruction and recreation in the new order
-- C. Terraform will fail to parse the configuration because blocks are in different files
-- D. The plan is still the same but resources are created in alphabetical order
-- E. Resources change order in the plan output, but the execution is the same
-
 ## Files
 
 - `single-file/main.tf` — all resources in one file
 - `split-files/vpc.tf` — VPC resource
 - `split-files/subnets.tf` — subnet resources
 - `split-files/outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

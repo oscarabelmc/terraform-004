@@ -1,8 +1,19 @@
 # Dependency Graph Exercise
 
-**Question:** What is the purpose of Terraform's dependency graph?
+**Domain:** State & DAG Management
+**Topic:** Dependency graph — resource ordering & parallelism
 
-**Goal:** See the dependency graph in action — how Terraform determines resource ordering and parallelism.
+## Description
+
+1. **Review `main.tf`** — Note the dependencies between resources:
+
+## Learning Objectives
+
+- Review `main.tf`
+- Run `terraform init && terraform plan`
+- Visualize the graph:
+- Observe:
+- Check your understanding
 
 ## Steps
 
@@ -38,4 +49,5 @@ terraform graph | dot -Tsvg > graph.svg && open graph.svg
 - `main.tf` — resources with various dependency patterns
 - `outputs.tf` — outputs for verification  
 - `variables.tf` — empty placeholder
-- `solution/answer.md` — explanation
+- `solution/` — reference implementation
+

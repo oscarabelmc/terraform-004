@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — False**.
 
@@ -76,13 +76,3 @@ If you must use a backend without locking (e.g., HTTP), you need external coordi
 - Ensure only one person runs Terraform at a time
 - Use CI/CD pipelines with serialized execution
 - Accept the risk of concurrent modification
-
-## Exam Tips
-
-- **Not all backends support locking** — always verify
-- S3 locking requires a **separate DynamoDB table** configuration
-- AzureRM, GCS, Consul, Postgres have **native locking**
-- HTTP, local, Kubernetes backends do **not** support locking
-- Locking prevents **state corruption** from concurrent writes
-- Common exam trap: assuming all backends lock by default
-- Another trap: thinking S3 locks without DynamoDB (it doesn't)

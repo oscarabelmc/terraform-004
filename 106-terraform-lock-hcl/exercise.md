@@ -1,6 +1,19 @@
 # .terraform.lock.hcl Dependency Lock File Exercise
 
-**Exam Question:** What is the `.terraform.lock.hcl` file and when does Terraform create or modify it?
+**Domain:** IaC Workflow
+**Topic:** `.terraform.lock.hcl` — dependency lock file created/updated by `init`
+
+## Description
+
+What is the `.terraform.lock.hcl` file and when does Terraform create or modify it
+
+## Learning Objectives
+
+- Examine the config
+- Run `terraform init` to create the lock file
+- How the lock file ensures reproducibility
+- When the lock file changes
+- Should you commit `.terraform.lock.hcl`?
 
 ## Background
 
@@ -137,18 +150,9 @@ When:  created/updated by terraform init
 
    The `.terraform/` directory and `*.tfstate` files are ignored. The `.terraform.lock.hcl` file is **not** ignored — it should be tracked.
 
-### Put It Together
-
-What is the `.terraform.lock.hcl` file and when does Terraform create or modify it?
-
-- A. A configuration file that defines provider versions; it is created by `terraform plan`
-- B. A dependency lock file used by Terraform; it is created or updated every time you run `terraform init`
-- C. A state backup file created when you run `terraform apply`
-- D. A log file that records all API calls made by providers during `terraform apply`
-- E. A module cache file that stores downloaded modules from the registry
-
 ## Files
 
 - `main.tf` — config with providers to demonstrate lock file creation
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

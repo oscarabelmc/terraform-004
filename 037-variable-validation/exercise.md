@@ -1,17 +1,19 @@
 # Variable Validation Exercise
 
-**Exam Question:** Your configuration includes a validation block in a variable, as shown below. A user sets `instance_count = 15`. When does Terraform report the validation error?
+**Domain:** Input Variables
+**Topic:** Variable validation error timing
 
-```hcl
-variable "instance_count" {
-  type = number
+## Description
 
-  validation {
-    condition     = var.instance_count > 0 && var.instance_count <= 10
-    error_message = "Instance count must be between 1 and 10."
-  }
-}
-```
+Your configuration includes a validation block in a variable, as shown below. A user sets `instance_count = 15`. When does Terraform report the validation error
+
+## Learning Objectives
+
+- Examine the validation block
+- Test with a valid value
+- Test with an invalid value
+- Test with validate
+- Verify no resources are created
 
 ## Background
 
@@ -92,19 +94,10 @@ Terraform's `validation` block allows you to define custom constraints on variab
 
    The error was caught during planning/validation, so TerraForm never reached the apply phase.
 
-### Put It Together
-
-Your configuration includes a validation block in a variable. A user sets `instance_count = 15`. When does Terraform report the validation error?
-
-- A. During `terraform validate` or `terraform plan`, before attempting to create any resources
-- B. During `terraform apply`, when trying to create the resources
-- C. During `terraform destroy`, when trying to remove resources
-- D. During `terraform init`, when downloading providers
-- E. Only during `terraform validate`, not during `terraform plan`
-
 ## Files
 
 - `main.tf` — config that consumes `instance_count`
 - `variables.tf` — variable with validation block
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

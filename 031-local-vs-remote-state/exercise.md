@@ -1,6 +1,18 @@
 # Local vs Remote State Exercise
 
-**Exam Question:** Which statements accurately describe tradeoffs between local and remote Terraform state? (Select two.)
+**Domain:** State Management
+**Topic:** Local vs remote state tradeoffs
+
+## Description
+
+Which statements accurately describe tradeoffs between local and remote Terraform state? (Select two.)
+
+## Learning Objectives
+
+- Local state (default behavior)
+- Local state limitations (simulated)
+- Remote state configuration
+- Compare the tradeoffs
 
 ## Background
 
@@ -112,17 +124,8 @@ Terraform stores information about managed infrastructure in a **state file**. T
    | Backup/recovery | Manual | Automated (versioning) |
    | Cost | Free | Storage costs apply |
 
-### Put It Together
-
-Which statements accurately describe tradeoffs between local and remote Terraform state? (Select two.)
-
-- A. Local state is simple and works offline, but lacks shared access, locking, and org-level controls
-- B. Remote state centralizes storage with encryption, locking, and access policies for collaboration
-- C. Local state provides better security because it stays on your machine
-- D. Remote state is required for all Terraform deployments
-- E. Local state supports locking via the `.terraform.lock` file
-
 ## Files
 
 - `main.tf` — starter config (for local state demo)
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

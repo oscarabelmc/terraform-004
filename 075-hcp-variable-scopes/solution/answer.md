@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A**, **B**, and **D**.
 
@@ -137,13 +137,3 @@ HCP Terraform supports three variable scope levels:
 3. Global variable set (all workspaces in project)
 
 Variables cannot span organizations.
-
-## Exam Tips
-
-- Three scopes: **single workspace**, **variable set (multiple)**, **global variable set (all in project)**
-- Variable sets cannot cross **organization boundaries**
-- Workspace-level variables **override** variable sets
-- Global variable sets apply to **current and future** workspaces
-- Variable sets are defined in **Settings → Variable Sets**
-- Common exam trap: thinking variable sets span organizations (they don't)
-- Another trap: confusing variable sets with workspace variables — variable sets are reusable across workspaces

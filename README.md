@@ -30,7 +30,7 @@ Each exercise directory contains:
 
 ## Exercises
 
-| # | Concept | Domain | Directory |
+| # | Topic | Domain | Directory |
 |---|---------|--------|-----------|
 | 1 | Provider initialization — `terraform init` | Infrastructure as Code (IaC) Workflow | [001-provider-initialization](./001-provider-initialization) |
 | 2 | Dependency graph — resource ordering & parallelism | State & DAG Management | [002-dependency-graph](./002-dependency-graph) |
@@ -78,35 +78,35 @@ Each exercise directory contains:
 | 44 | Why not commit `terraform.tfstate` to VCS | State Management | [044-state-no-vcs](./044-state-no-vcs) |
 | 45 | Import blocks to adopt existing resources | IaC Workflow | [045-import-resources](./045-import-resources) |
 | 46 | `alias` — duplicate provider configurations | IaC Workflow | [046-provider-alias](./046-provider-alias) |
-| 47 | Advantages of Infrastructure as Code (select three) | IaC Concepts | [047-iac-advantages](./047-iac-advantages) |
+| 47 | Advantages of Infrastructure as Code | IaC Concepts | [047-iac-advantages](./047-iac-advantages) |
 | 48 | Multiple `.tf` files merged automatically | IaC Workflow | [048-multiple-tf-files](./048-multiple-tf-files) |
 | 49 | Expose and pass module outputs between modules | Modules | [049-passing-outputs](./049-passing-outputs) |
 | 50 | Data sources — read-only API queries | IaC Concepts | [050-data-sources](./050-data-sources) |
 | 51 | Apply a saved plan file | IaC Workflow | [051-saved-plan-apply](./051-saved-plan-apply) |
 | 52 | `required_providers` block | IaC Workflow | [052-required-providers](./052-required-providers) |
 | 53 | `data` block — query existing resources | IaC Concepts | [053-data-block-query](./053-data-block-query) |
-| 54 | Protect sensitive input values (select two) | Security | [054-sensitive-secrets](./054-sensitive-secrets) |
+| 54 | Protect sensitive input values | Security | [054-sensitive-secrets](./054-sensitive-secrets) |
 | 55 | Provider plugin storage location after `init` | IaC Workflow | [055-provider-plugins-location](./055-provider-plugins-location) |
 | 56 | Declarative IaC vs imperative scripts | IaC Concepts | [056-iac-declarative](./056-iac-declarative) |
-| 57 | Why Terraform requires state (select three) | State Management | [057-why-state](./057-why-state) |
+| 57 | Why Terraform requires state | State Management | [057-why-state](./057-why-state) |
 | 58 | S3 partial backend configuration | State Management | [058-s3-backend-partial-config](./058-s3-backend-partial-config) |
 | 59 | Provider version constraints | Modules | [059-provider-version-constraints](./059-provider-version-constraints) |
 | 60 | How `terraform plan` determines changes | IaC Workflow | [060-plan-state-comparison](./060-plan-state-comparison) |
 | 61 | Resource creation order via DAG | State & DAG Management | [061-resource-creation-order](./061-resource-creation-order) |
-| 62 | Safe module version upgrade (select two) | Modules | [062-module-version-update](./062-module-version-update) |
+| 62 | Safe module version upgrade | Modules | [062-module-version-update](./062-module-version-update) |
 | 63 | Config-driven import with `import` block | IaC Workflow | [063-config-driven-import](./063-config-driven-import) |
 | 64 | Data source to reference existing VNet | IaC Concepts | [064-data-source-reference](./064-data-source-reference) |
-| 65 | Multi-cloud benefits of Terraform (select two) | IaC Concepts | [065-multi-cloud-benefits](./065-multi-cloud-benefits) |
-| 66 | Sensitive data and state best practices (select four) | Security | [066-sensitive-data-state-best-practices](./066-sensitive-data-state-best-practices) |
+| 65 | Multi-cloud benefits of Terraform | IaC Concepts | [065-multi-cloud-benefits](./065-multi-cloud-benefits) |
+| 66 | Sensitive data and state best practices | Security | [066-sensitive-data-state-best-practices](./066-sensitive-data-state-best-practices) |
 | 67 | Three core steps of Terraform workflow | IaC Workflow | [067-core-workflow](./067-core-workflow) |
-| 68 | Advantages of IaC (select five) | IaC Concepts | [068-iac-advantages](./068-iac-advantages) |
+| 68 | Advantages of IaC | IaC Concepts | [068-iac-advantages](./068-iac-advantages) |
 | 69 | `terraform validate` — syntax without remote calls | IaC Workflow | [069-terraform-validate](./069-terraform-validate) |
-| 70 | Actions during `terraform init` (select three) | IaC Workflow | [070-terraform-init](./070-terraform-init) |
+| 70 | Actions during `terraform init` | IaC Workflow | [070-terraform-init](./070-terraform-init) |
 | 71 | Terraform logging with `TF_LOG` | Troubleshooting | [071-terraform-logging](./071-terraform-logging) |
 | 72 | HCP Terraform run tasks | HCP Terraform | [072-run-tasks](./072-run-tasks) |
 | 73 | What `terraform plan` does against remote state | IaC Workflow | [073-terraform-plan-execution](./073-terraform-plan-execution) |
 | 74 | Map variable bracket notation `["build-tag"]` | Input Variables | [074-map-variable-reference](./074-map-variable-reference) |
-| 75 | HCP Terraform variable scopes (select three) | HCP Terraform | [075-hcp-variable-scopes](./075-hcp-variable-scopes) |
+| 75 | HCP Terraform variable scopes | HCP Terraform | [075-hcp-variable-scopes](./075-hcp-variable-scopes) |
 | 76 | IaC vs manual console/CLI — versioned, reusable, shared | IaC Concepts | [076-iac-vs-manual](./076-iac-vs-manual) |
 | 77 | Module output reference `module.vpc.default_sg_id` | Modules | [077-module-output-reference](./077-module-output-reference) |
 | 78 | Identify managed resources with `terraform state show` | State Management | [078-state-show-identify](./078-state-show-identify) |
@@ -138,19 +138,22 @@ Each exercise directory contains:
 | 104 | `create_before_destroy` — avoid downtime during resource recreation | State & DAG Management | [104-create-before-destroy](./104-create-before-destroy) |
 | 105 | `terraform apply -replace` — force resource recreation without config changes | IaC Workflow | [105-terraform-apply-replace](./105-terraform-apply-replace) |
 | 106 | `.terraform.lock.hcl` — dependency lock file created/updated by `init` | IaC Workflow | [106-terraform-lock-hcl](./106-terraform-lock-hcl) |
-| 107 | Steps required before using a new provider (select two) | IaC Workflow | [107-new-provider-steps](./107-new-provider-steps) |
+| 107 | Steps required before using a new provider | IaC Workflow | [107-new-provider-steps](./107-new-provider-steps) |
 | 108 | Passing variables from root module to child module | Modules | [108-module-variable-passing](./108-module-variable-passing) |
 | 109 | HCP Terraform variable sets for sharing credentials across workspaces | HCP Terraform | [109-hcp-variable-sets-credentials](./109-hcp-variable-sets-credentials) |
 | 110 | `terraform state list` — list all tracked resources without attributes | State Management | [110-terraform-state-list](./110-terraform-state-list) |
 | 111 | `required_providers` — setting in terraform block for source + version | IaC Workflow | [111-required-providers-setting](./111-required-providers-setting) |
-| 112 | Multiple providers in a single configuration (true/false) | IaC Workflow | [112-multiple-providers](./112-multiple-providers) |
-| 113 | Implicit vs explicit dependencies — `depends_on` required? (true/false) | State & DAG Management | [113-implicit-dependencies-true-false](./113-implicit-dependencies-true-false) |
-| 114 | Local vs remote state — tradeoffs (select three) | State Management | [114-local-vs-remote-state-tradeoffs](./114-local-vs-remote-state-tradeoffs) |
+| 112 | Multiple providers in a single configuration | IaC Workflow | [112-multiple-providers](./112-multiple-providers) |
+| 113 | Implicit vs explicit dependencies — `depends_on` required? | State & DAG Management | [113-implicit-dependencies-true-false](./113-implicit-dependencies-true-false) |
+| 114 | Local vs remote state — tradeoffs | State Management | [114-local-vs-remote-state-tradeoffs](./114-local-vs-remote-state-tradeoffs) |
 
 ## Contributing
 
 New exercises are welcome! Open a PR with:
 
-- A numbered exercise directory (e.g., `003-*`)
-- An `exercise.md` with clear steps
-- Starter config files and a `solution/answer.md`
+- A numbered exercise directory (e.g., `115-*`)
+- An `exercise.md` with Domain, Topic, Description, Learning Objectives, and clear steps
+- Starter config files (`main.tf`, `outputs.tf`, etc.)
+- A `solution/` directory with an explanation of the concept
+
+

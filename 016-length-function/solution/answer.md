@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C — `length(var.subnet_cidrs)`**.
 
@@ -42,11 +42,3 @@ length(var.subnet_cidrs)
 | C — `length()` | **Correct.** |
 | D — `size()` | **No such function.** |
 | E — `element()` | This is a real function, but it returns the **element at a specific index** (e.g., `element(["a","b"], 1)` → `"b"`), not the count of elements. |
-
-## Exam Tips
-
-- `length()` works on **lists**, **maps**, and **strings** — the exam tests all three
-- `count` is a **meta-argument**, not a function — don't confuse them
-- `element()` returns a value from a list by index, not the count
-- Common pattern: `count = length(var.x)` to create one resource per element
-- For strings, `length("terraform")` returns `9` (characters)

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A — True**.
 
@@ -57,14 +57,3 @@ graph LR
 | `module.name.output` | ✅ Implicit | `subnet_id = module.vpc.public_subnet_id` |
 | `var.name` | ❌ (input variable, not a resource) | `instance_type = var.instance_type` |
 | `local.name` | ❌ (local value, not a resource) | `name = local.resource_name` |
-
-## Exam Tips
-
-- **Count the attribute references** — each `resource_type.name.attribute` = one implicit dependency
-- A single resource can have multiple implicit dependencies (as shown here)
-- Resources with no dependency chain run **in parallel**
-- Resources with dependencies run **in sequence**
-- Destroy order is the **reverse** of create order (attachment destroyed first, then volume and instance)
-- The `terraform graph` command visualizes all dependencies
-- Common exam pattern: a resource has multiple `id`/`arn`/`name` references — each is a separate implicit dependency
-- The question asks about "both" — look for multiple `resource.attribute` references in the config

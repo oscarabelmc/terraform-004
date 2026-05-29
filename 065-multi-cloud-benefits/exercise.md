@@ -1,6 +1,18 @@
 # Multi-Cloud Benefits Exercise
 
-**Exam Question:** What benefits would you see by using a multi-cloud and provider-agnostic tool like Terraform? (Select two.)
+**Domain:** IaC Concepts
+**Topic:** Multi-cloud benefits of Terraform
+
+## Description
+
+What benefits would you see by using a multi-cloud and provider-agnostic tool like Terraform? (Select two.)
+
+## Learning Objectives
+
+- Examine a multi-cloud config
+- The consistent workflow
+- Benefits of provider-agnostic IaC
+- What Terraform does NOT do
 
 ## Background
 
@@ -96,17 +108,9 @@ Terraform is a **provider-agnostic** infrastructure as code tool. The same HCL s
 
    Terraform does not eliminate these — it expects them to be configured per provider.
 
-### Put It Together
-
-What benefits would you see by using a multi-cloud and provider-agnostic tool like Terraform? (Select two.)
-
-- A. Programmatically standardizes pricing and usage models across all cloud platforms
-- B. Reduces operational overhead by allowing teams to learn and govern a single tool across all environments
-- C. Delivers a consistent declarative workflow and language across providers and hypervisors
-- D. Removes the need for provider-specific credentials or authentication flows
-
 ## Files
 
 - `main.tf` — multi-cloud config with AWS, Azure, and GCP resources
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

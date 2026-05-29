@@ -1,6 +1,20 @@
 # Terraform Format Exercise
 
-**Exam Question:** After creating several Terraform configurations, you want to quickly format the files without editing each one manually. How can you update all the files at once?
+**Domain:** IaC Workflow
+**Topic:** Format all config files — `terraform fmt -recursive`
+
+## Description
+
+After creating several Terraform configurations, you want to quickly format the files without editing each one manually. How can you update all the files at once
+
+## Learning Objectives
+
+- View the current formatting chaos:
+- Format all files in this directory:
+- Check if files are already formatted:
+- Preview changes without applying:
+- Format subdirectories recursively:
+- List files that were changed:
 
 ## Steps
 
@@ -58,18 +72,9 @@
    terraform fmt -list
    ```
 
-### Put It Together
-
-Which command updates all Terraform configuration files in a directory and its subdirectories with proper formatting?
-
-- A. `terraform validate`
-- B. `terraform fmt -recursive`
-- C. `terraform format`
-- D. `terraform lint`
-- E. `terraform fmt`
-
 ## Files
 - `main.tf` — deliberately poorly formatted
 - `outputs.tf` — also poorly formatted
 - `subdir/main.tf` — nested file to test `-recursive`
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

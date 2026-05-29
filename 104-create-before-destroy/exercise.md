@@ -1,6 +1,19 @@
 # Create Before Destroy Exercise
 
-**Exam Question:** You have a SQL Database that's currently in production with live data. You need to change the database's pricing tier, but the change requires destroying and recreating the database. You want to ensure the new database is created before the old one is destroyed to avoid downtime. What should you add to your resource configuration?
+**Domain:** State & DAG Management
+**Topic:** `create_before_destroy` — avoid downtime during resource recreation
+
+## Description
+
+You have a SQL Database that's currently in production with live data. You need to change the database's pricing tier, but the change requires destroying and recreating the database. You want to ensure the new database is created before the old one is destroyed to avoid downtime. What should you add to your resource configuration
+
+## Learning Objectives
+
+- Understand the problem
+- Add create_before_destroy
+- Verify the execution order
+- Important caveats
+- Compare lifecycle options
 
 ## Background
 
@@ -132,18 +145,9 @@ Default (destroy then create):        create_before_destroy = true:
    | `ignore_changes` | Ignore specific attribute changes (drift tolerance) |
    | `postcondition` | Validate resource attributes after creation (exercise #079) |
 
-### Put It Together
-
-You have a SQL Database that's currently in production with live data. You need to change the database's pricing tier, but the change requires destroying and recreating the database. You want to ensure the new database is created before the old one is destroyed to avoid downtime. What should you add to your resource configuration?
-
-- A. Add `depends_on` to ensure the new database is created first
-- B. Add a `lifecycle` block with `create_before_destroy = true`
-- C. Add `prevent_destroy = true` to the lifecycle block
-- D. Use `terraform taint` to mark the resource for recreation
-- E. Set `force_recreate = true` in the resource configuration
-
 ## Files
 
 - `main.tf` — config with SQL database resource needing SKU change
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

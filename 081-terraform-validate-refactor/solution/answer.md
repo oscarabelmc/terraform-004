@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -82,13 +82,3 @@ while editing:
 terraform plan            # 10-30 seconds — full check
 terraform apply           # deploy
 ```
-
-## Exam Tips
-
-- `terraform validate` = **fastest syntax/reference check** — runs offline
-- Always run validate after **any** code change, especially refactoring
-- Validate requires `terraform init` first (provider schemas needed)
-- Validate does **not** need cloud credentials or state access
-- `terraform fmt` formats code but does **not** validate it
-- Common exam trap: thinking plan is the fastest way to check syntax (validate is faster)
-- Another trap: running `apply` to validate (always use validate first, then plan, then apply)

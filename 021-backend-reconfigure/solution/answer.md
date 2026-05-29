@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — `terraform init -reconfigure`**.
 
@@ -66,11 +66,3 @@ State is **copied** to the new backend. The local file remains as a backup.
 | C — `terraform init -migrate-state` | This **copies** existing state — the question explicitly says "without copying the existing state." |
 | D — `terraform apply -reconfigure` | `-reconfigure` is a flag on `terraform init`, not `terraform apply`. No such flag exists on `apply`. |
 | E — `terraform backend -reconfigure` | `terraform backend` is **not a valid Terraform command**. Backend configuration is managed through `terraform init`. |
-
-## Exam Tips
-
-- Remember the two flags: `-reconfigure` (discard state) vs `-migrate-state` (copy state)
-- The question keywords: **"without copying the existing state"** → `-reconfigure`
-- If the question says **"copy existing state"** → `-migrate-state`
-- Both flags are on `terraform init` — not on `apply`, `plan`, or a non-existent `backend` command
-- Terraform will **error** if you change the backend block and run `terraform init` without either flag — it forces you to make an explicit choice

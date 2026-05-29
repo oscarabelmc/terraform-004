@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — False**.
 
@@ -99,13 +99,3 @@ Attribute Reference             depends_on
 │    • Destroy order (reverse of create) │
 └────────────────────────────────────────┘
 ```
-
-## Exam Tips
-
-- **False** — implicit dependencies are the primary mechanism
-- `depends_on` is **supplemental** — only needed when implicit detection doesn't apply
-- Any cross-resource attribute reference creates an implicit dependency
-- The key phrase: **"can only"** — an absolute statement that makes the answer False
-- Common exam trap: thinking `depends_on` is required for all dependencies
-- Another trap: not realizing that attribute references automatically create dependencies
-- Remember: Terraform prefers implicit dependencies over explicit ones

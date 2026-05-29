@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The three correct answers are: **A, C, and E**.
 
@@ -60,10 +60,3 @@ Run `terraform init` and the provider is downloaded — Terraform recognizes it 
 |--------|-------------------|
 | **B — Running `terraform init`** | `init` is the *mechanism* that downloads providers, but it doesn't *establish* the dependency. The dependency must exist first (via A, C, or E) for `init` to have anything to download. |
 | **D — `depends_on` pointing to a provider** | `depends_on` works at the **resource level**, not the provider level. You cannot write `depends_on = [provider.random]` — Terraform does not allow provider references in `depends_on`. |
-
-## Exam Tips
-
-- Three ways to establish a provider dependency: **resource/data block** → A, **state** → C, **declaration** → E.
-- `terraform init` does NOT establish a dependency — it fulfills one that already exists.
-- `depends_on` cannot target a provider; it only targets resources and modules.
-- The `required_providers` block alone (inside `terraform {}`) is part of answer E.

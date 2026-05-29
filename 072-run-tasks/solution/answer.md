@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -81,14 +81,3 @@ After Apply ──→ Post-apply webhooks (notifications)
 ## Objective Reference
 
 This question tests understanding of HCP Terraform features — specifically run tasks as the mechanism for integrating external security/compliance tools into the plan-review-apply workflow.
-
-## Exam Tips
-
-- **Run tasks** = external tools between plan and apply
-- **Sentinel** = policy as code during plan evaluation (built-in, not external)
-- Run tasks receive **plan JSON** and return **pass/fail**
-- Security scanners (Snyk, Checkov, tfsec) are common run task integrations
-- Cost estimators (Infracost) also use run tasks
-- Multiple run tasks can run sequentially or in parallel
-- A failing run task **blocks apply** completely
-- Common exam trap: confusing run tasks with Sentinel policies (Sentinel is built-in policy engine, run tasks are for external tools)

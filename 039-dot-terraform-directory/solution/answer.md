@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -82,13 +82,3 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 ```
-
-## Exam Tips
-
-- `.terraform/` = **local working data** (plugins, modules, backend metadata)
-- Created by `terraform init`, destroyed by `rm -rf .terraform/`
-- Always in `.gitignore` — never committed to version control
-- Does **not** contain the actual state file
-- Can be safely deleted and regenerated
-- Common exam scenario: "You cloned a Terraform repo but `terraform plan` fails with `could not load plugin`" — forgot to run `terraform init` (which creates `.terraform/`)
-- Common exam trap: confusing `.terraform/` with `terraform.tfstate`

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A** and **B**.
 
@@ -99,14 +99,3 @@ Configuration (.tf) ──→ Version Control ──→ Visible to all with repo
 | Never commit `.tfvars` with secrets | VCS history |
 | Use `TF_VAR_` for ad-hoc values | Config files |
 | Rotate secrets regularly | All exposure points |
-
-## Exam Tips
-
-- **Two correct methods**: external runtime secrets + `sensitive = true`
-- `sensitive = true` redacts from CLI/logs but **not** from state
-- State stores all values in **plaintext** regardless of `sensitive`
-- Hardcoding secrets in `.tf` files or `.tfvars` (committed) is wrong
-- External secret stores (Vault, AWS Secrets Manager, etc.) keep secrets out of code
-- `TF_VAR_` prefix passes secrets at runtime without saving to files
-- Common exam trap: thinking `sensitive = true` encrypts values in state — it doesn't
-- Common exam trap: thinking default values in variables are safe — they're in code, visible in VCS

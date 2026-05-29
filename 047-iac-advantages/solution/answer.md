@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A**, **C**, and **D**.
 
@@ -91,13 +91,3 @@ HCL is significantly more readable than:
 | **Drift detection** | Plan shows what differs from desired state |
 | **Collaboration** | PRs, code review, team workflows |
 | **Self-documenting** | Config IS documentation |
-
-## Exam Tips
-
-- **Three key advantages** of IaC: version control, multi-cloud, human-readable
-- IaC is **declarative** (desired state), not imperative (step-by-step)
-- Terraform is **idempotent** — applying the same config produces the same result
-- IaC enables **collaboration** through standard software engineering practices
-- IaC is **platform-agnostic** — works across cloud providers
-- Common exam question: "Which statements describe IaC advantages?" — look for VCS, multi-cloud, human-readable
-- Common exam trap: "IaC is imperative" — this is false for Terraform

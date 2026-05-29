@@ -1,6 +1,19 @@
 # Validation — Enforce Exact Value Exercise
 
-**Exam Question:** Your team is building a reusable Terraform module for web servers. The module must always create exactly two instances, and you want Terraform to fail if a caller tries to use any other value during plan or apply. Which approach should you use to enforce this requirement?
+**Domain:** Input Variables
+**Topic:** Validation block — enforce exact instance count
+
+## Description
+
+Your team is building a reusable Terraform module for web servers. The module must always create exactly two instances, and you want Terraform to fail if a caller tries to use any other value during plan or apply. Which approach should you use to enforce this requirement
+
+## Learning Objectives
+
+- Examine the module variable
+- Test with the correct value
+- Test with incorrect values
+- Alternative approaches that don't work
+- Multiple conditions
 
 ## Background
 
@@ -98,19 +111,10 @@ Variable `validation` blocks can enforce **any** condition on a variable value, 
 
    While `instance_count` enforces an exact value, other variables can use `contains()` to allow a set of valid values.
 
-### Put It Together
-
-Your team is building a reusable Terraform module for web servers. The module must always create exactly two instances, and you want Terraform to fail if a caller tries to use any other value during plan or apply. Which approach should you use to enforce this requirement?
-
-- A. Add a validation block that checks the variable equals 2 and provides an error message if it does not
-- B. Hardcode `count = 2` in the resource and remove the variable
-- C. Add a comment in the README explaining the module requires 2 instances
-- D. Use `depends_on` to ensure exactly 2 instances
-- E. Set `default = 2` on the variable and rely on users not changing it
-
 ## Files
 
 - `main.tf` — module resource using `var.instance_count`
 - `variables.tf` — variable with validation enforcing exact value
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

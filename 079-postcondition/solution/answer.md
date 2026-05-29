@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -84,14 +84,3 @@ resource "aws_instance" "example" {
 - `self` refers to the resource's post-creation attributes
 - You can have multiple postconditions
 - Postconditions apply to `create`, `read`, and `update` operations
-
-## Exam Tips
-
-- **Postcondition** = validate after resource creation (use `self.attribute`)
-- **Precondition** = validate before resource creation
-- **Check block** = informational validation (does not block apply)
-- **Variable validation** = validates input variables only
-- `self` is only available in `precondition` and `postcondition` within `lifecycle` blocks
-- Postconditions are defined in the `lifecycle` block of a resource or data source
-- Common exam trap: confusing postcondition with variable validation or check blocks
-- Another trap: using precondition when you need to validate a runtime attribute (use postcondition instead)

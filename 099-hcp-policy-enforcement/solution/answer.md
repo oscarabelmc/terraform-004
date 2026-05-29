@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -67,14 +67,3 @@ Each policy set runs only on the workspaces it's scoped to, with its configured 
 4. User clicks "Override & Continue"
 5. Run proceeds (override is logged in audit trail)
 ```
-
-## Exam Tips
-
-- **Policy set** = group of policies with a shared enforcement level and scope
-- **Enforcement level** is configured on the **policy set** in HCP Terraform, not in the policy code
-- Multiple policy sets can be attached to the same workspace (all are evaluated)
-- Policy sets can be scoped to: **specific workspaces**, **projects**, or **entire organization**
-- Key phrase: **"varying requirements"** → indicates different enforcement levels are needed
-- Common exam trap: thinking enforcement level is set inside the Sentinel policy file
-- Another trap: confusing policy sets (compliance checks) with run tasks (external tool integration, exercise #072)
-- For the exam, remember the three levels: `advisory`, `soft-mandatory`, `hard-mandatory`

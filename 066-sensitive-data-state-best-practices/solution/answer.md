@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **B**, **C**, **D**, and **F**.
 
@@ -107,13 +107,3 @@ Key points:
 - HCP Terraform encrypts state at rest and in transit with RBAC
 - `sensitive = true` does NOT prevent state storage — only masks CLI output
 - Vault helps but does not eliminate the need for state security
-
-## Exam Tips
-
-- **State always contains plain text** — regardless of `sensitive = true` on variables or outputs
-- Remote backends with encryption and access controls are the **recommended approach**
-- HCP Terraform encrypts state **at rest** and **in transit** with **RBAC**
-- Local state = **no encryption, plain text** — never commit to VCS
-- Vault reduces secret exposure but **does not remove the need for state security**
-- Common exam trap: thinking `sensitive = true` keeps data out of state (it only masks CLI output)
-- Another trap: thinking Vault eliminates all state security concerns (state still needs protection)

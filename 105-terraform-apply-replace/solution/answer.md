@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -67,14 +67,3 @@ The resource shows `-/+` (replace) in the plan even though nothing in the config
 | **Drifted resource** | Manual changes made via console that you want to reset to config |
 | **Testing** | Verify that resource creation logic works correctly |
 | **Recovery** | Resource in a failed state that can't be updated in-place |
-
-## Exam Tips
-
-- **Key flag:** `-replace=<resource_address>` on `terraform apply`
-- This is the **modern** replacement for `terraform taint` (Terraform 1.1+)
-- Works with any resource address: `-replace=aws_instance.web`, `-replace=module.vpc.aws_subnet.subnet`
-- Can specify multiple `-replace` flags in one command
-- **Does not require** any configuration changes — it forces replacement
-- The plan shows `"as requested"` next to the replaced resource
-- Common exam trap: confusing `-replace` with `-target` (target limits scope, replace forces recreation)
-- Another trap: thinking `terraform taint` is still the correct answer — it's legacy since Terraform 1.1

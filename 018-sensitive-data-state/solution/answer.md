@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The two correct statements are: **B and D**.
 
@@ -62,11 +62,3 @@ The `sensitive` attribute is a **display-level redaction**, not a **storage-leve
 | **Terraform Cloud/Enterprise** | State is encrypted at rest in HCP Terraform's backend |
 | **Sensitive variables in HCP Terraform** | Marked as sensitive in workspace variables — written to state but encrypted in-transit and at-rest in HCP Terraform |
 | **External secrets (Vault)** | Avoid storing secrets in state entirely by using `vault` provider to read secrets at plan/apply time |
-
-## Exam Tips
-
-- `sensitive = true` **does not** keep values out of state — it only hides them in CLI output
-- State = **plaintext JSON** regardless of `sensitive` flags
-- Best practice: use a **remote backend with encryption** (S3 + KMS, Terraform Cloud, etc.)
-- If you see "sensitive values are never stored in state" — remember, **false**
-- If you see "local state auto-encrypts" — **false**, no auto-encryption

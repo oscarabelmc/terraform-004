@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -98,14 +98,3 @@ terraform destroy -lock=false
 ```
 
 This is **not recommended** in team environments — it recreates the exact concurrency problem locking is designed to prevent.
-
-## Exam Tips
-
-- Locking prevents **concurrent writes** that cause **state corruption**
-- S3 alone does **not** support locking — you must add a **DynamoDB table**
-- The DynamoDB table must have a primary key called `LockID` (String)
-- `terraform force-unlock <LOCK_ID>` to break a stale lock
-- `-lock=false` disables locking for a single command (dangerous in teams)
-- Locking is about **write conflicts**, not about authentication or encryption
-- Know which backends support locking and which don't
-- The lock error message tells you **who**, **what operation**, and **when**

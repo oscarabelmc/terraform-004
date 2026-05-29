@@ -1,6 +1,18 @@
 # Postcondition Validation Exercise
 
-**Exam Question:** You're deploying a GCP Compute Engine instance and want to verify that the instance receives a public IP address after creation. If it doesn't, you want Terraform to fail with an error. Which validation mechanism should you use?
+**Domain:** IaC Workflow
+**Topic:** Postcondition in lifecycle block
+
+## Description
+
+You're deploying a GCP Compute Engine instance and want to verify that the instance receives a public IP address after creation. If it doesn't, you want Terraform to fail with an error. Which validation mechanism should you use
+
+## Learning Objectives
+
+- Examine the postcondition
+- How postconditions work
+- Compare with other validation mechanisms
+- Postcondition use cases
 
 ## Background
 
@@ -138,18 +150,9 @@ A **postcondition** is the correct choice when you need to verify a resource's a
    }
    ```
 
-### Put It Together
-
-You're deploying a GCP Compute Engine instance and want to verify that the instance receives a public IP address after creation. If it doesn't, you want Terraform to fail with an error. Which validation mechanism should you use?
-
-- A. Variable validation block
-- B. Precondition in the lifecycle block
-- C. Postcondition in the lifecycle block
-- D. Check block
-- E. `terraform validate` command
-
 ## Files
 
 - `main.tf` — config with postcondition to verify public IP assignment
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

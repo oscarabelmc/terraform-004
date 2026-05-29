@@ -1,25 +1,18 @@
 # Resource Reference Exercise
 
-**Exam Question:** You're deploying AWS infrastructure and writing the configuration as shown below. What does the reference `aws_vpc.main.id` in the subnet configuration accomplish?
+**Domain:** State & DAG Management
+**Topic:** Resource attribute reference creates implicit dependency
 
-```hcl
-resource "aws_vpc" "main" {
-  cidr_block = "10.5.0.0/16"
+## Description
 
-  tags = {
-    Name = "production-vpc"
-  }
-}
+You're deploying AWS infrastructure and writing the configuration as shown below. What does the reference `aws_vpc.main.id` in the subnet configuration accomplish
 
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.5.2.0/24"
+## Learning Objectives
 
-  tags = {
-    Name = "ref-public-subnet"
-  }
-}
-```
+- Examine the reference
+- Understand what the reference provides
+- Verify the dependency
+- What happens if you remove the reference?
 
 ## Background
 
@@ -93,18 +86,9 @@ Terraform uses **attribute references** (`resource_type.name.attribute`) to pass
 
    The implicit dependency is gone. Terraform may attempt to create the VPC and subnet **in parallel**, or the subnet first — which would fail because the VPC doesn't exist yet. The reference both retrieves the value **and** orders the resources.
 
-### Put It Together
-
-What does the reference `aws_vpc.main.id` in the subnet configuration accomplish?
-
-- A. It retrieves the VPC's ID and creates an implicit dependency
-- B. It only retrieves the VPC's ID value
-- C. It only creates an explicit dependency via `depends_on`
-- D. It validates that the VPC CIDR block is valid
-- E. It tags the subnet with the VPC's name
-
 ## Files
 
 - `main.tf` — VPC and subnet with attribute reference
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

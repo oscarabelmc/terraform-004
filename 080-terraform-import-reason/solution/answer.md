@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -82,13 +82,3 @@ This is the **primary reason** to import — not to modify the resource immediat
 | **CLI** | `terraform import <address> <id>` | All versions (legacy) |
 
 Both achieve the same result — the resource is added to state.
-
-## Exam Tips
-
-- Primary reason to import: **bring existing resources under IaC management**
-- Import does **not create** resources (they must already exist)
-- Import does **not modify** resources (they remain as-is)
-- After import, all future changes use the standard IaC workflow
-- Import requires a matching resource block in configuration
-- Common exam trap: thinking import creates or modifies resources (it only adopts them into state)
-- Another trap: thinking import is for emergency changes (it's for adoption into IaC)

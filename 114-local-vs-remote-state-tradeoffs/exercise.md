@@ -1,6 +1,17 @@
 # Local vs Remote State — Tradeoffs Exercise
 
-**Exam Question:** You're comparing local state versus remote state backends for your team's infrastructure. Which statements below correctly describe the key differences or tradeoffs between these approaches? (Select three.)
+**Domain:** State Management
+**Topic:** Local vs remote state — tradeoffs
+
+## Description
+
+You're comparing local state versus remote state backends for your team's infrastructure. Which statements below correctly describe the key differences or tradeoffs between these approaches? (Select three.)
+
+## Learning Objectives
+
+- Local state characteristics
+- Remote state characteristics
+- Compare side by side
 
 ## Background
 
@@ -110,18 +121,9 @@ Local State                        Remote State
    | Offline capability | ✅ Full | ❌ Requires network |
    | Backup/recovery | ❌ Manual | ✅ Versioning/backup |
 
-### Put It Together
-
-Which statements correctly describe the key differences or tradeoffs between local and remote state? (Select three.)
-
-- A. Remote backends typically provide encryption at rest and access controls for state data, while local state security depends entirely on filesystem permissions
-- B. Local state is simple to set up with no additional infrastructure required, while remote backends require configuration and maintenance of backend services
-- C. Remote backends provide centralized state access for team collaboration, while local state requires manual file sharing between team members
-- D. Local state automatically provides encryption at rest and in transit, while remote backends store everything in plaintext by default
-- E. Local state supports more Terraform providers than remote backends because it has direct filesystem access
-
 ## Files
 
 - `main.tf` — config using local state (no backend block)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

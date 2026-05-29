@@ -1,6 +1,17 @@
 # Variable Type — Map Lookup Exercise
 
-**Exam Question:** You are deploying virtual machines across multiple cloud regions. Since images are assigned a unique ID per region, you need to create a variable that looks up the correct ID based on the region name. Which code snippet uses the variable type that is most appropriate for this use case?
+**Domain:** Input Variables
+**Topic:** Variable type `map(string)` for region to image ID lookup
+
+## Description
+
+You are deploying virtual machines across multiple cloud regions. Since images are assigned a unique ID per region, you need to create a variable that looks up the correct ID based on the region name. Which code snippet uses the variable type that is most appropriate for this use case
+
+## Learning Objectives
+
+- Examine the map variable
+- Look up images by region
+- Compare other types (conceptual)
 
 ## Background
 
@@ -111,44 +122,10 @@ This exercise demonstrates why `map(string)` is the correct choice.
 
    This works but is unnecessarily complex compared to a simple `map(string)`. The map is more concise, more readable, and directly supports key-based lookups without iteration.
 
-### Put It Together
-
-You are deploying virtual machines across multiple cloud regions. Since images are assigned a unique ID per region, you need to create a variable that looks up the correct ID based on the region name. Which code snippet uses the variable type that is most appropriate for this use case?
-
-- A.
-  ```hcl
-  variable "image" {
-    type = map(string)
-  }
-  ```
-
-- B.
-  ```hcl
-  variable "image" {
-    type = list(string)
-  }
-  ```
-
-- C.
-  ```hcl
-  variable "image" {
-    type = set(string)
-  }
-  ```
-
-- D.
-  ```hcl
-  variable "image" {
-    type = object({
-      region   = string
-      image_id = string
-    })
-  }
-  ```
-
 ## Files
 
 - `main.tf` — configuration using `map(string)` lookup
 - `variables.tf` — `image` variable as `map(string)` and `region` variable
 - `outputs.tf` — outputs the resolved image ID
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

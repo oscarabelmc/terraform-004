@@ -1,6 +1,19 @@
 # Provider Initialization Exercise
 
-**Scenario:** You added resources from a new provider to an existing configuration and `terraform plan` results in an error about a missing provider.
+**Domain:** Infrastructure as Code (IaC) Workflow
+**Topic:** Provider initialization — `terraform init`
+
+## Description
+
+You added resources from a new provider to an existing configuration and `terraform plan` results in an error about a missing provider.
+
+## Learning Objectives
+
+- Start with the starter config
+- Edit `main.tf`
+- Run `terraform plan`
+- Fix it
+- Run `terraform plan` again
 
 ## Steps
 
@@ -26,4 +39,5 @@ Also add `hashicorp/http` to the `required_providers` block.
 - `main.tf` — your working config
 - `variables.tf` — (empty, ready for use)
 - `outputs.tf` — start with just `pet_name` output
-- `solution/` — peek if you're stuck
+- `solution/` — reference implementation
+

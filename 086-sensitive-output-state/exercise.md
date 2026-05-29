@@ -1,6 +1,18 @@
 # Sensitive Outputs and State Exercise
 
-**Exam Question:** True or False? Marking an output as `sensitive` does not prevent its value from being stored in the Terraform state file.
+**Domain:** Security
+**Topic:** `sensitive = true` does not prevent state storage
+
+## Description
+
+True or False? Marking an output as `sensitive` does not prevent its value from being stored in the Terraform state file.
+
+## Learning Objectives
+
+- Examine the config
+- Apply and observe
+- The value is still in state
+- What sensitive actually does
 
 ## Background
 
@@ -80,15 +92,9 @@ The `sensitive = true` attribute on Terraform outputs is often misunderstood. It
    - ❌ `terraform state pull` — value is visible
    - ❌ API access to remote backend — value is visible
 
-### Put It Together
-
-True or False? Marking an output as `sensitive` does not prevent its value from being stored in the Terraform state file.
-
-- A. True
-- B. False
-
 ## Files
 
 - `main.tf` — config with random_password
 - `outputs.tf` — outputs including sensitive one
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

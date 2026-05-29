@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The three correct statements are: **A, C, and D**.
 
@@ -103,14 +103,3 @@ The child does **not** need to define its own provider block. It uses the parent
 ❌ DON'T: Define provider blocks inside reusable child modules
          (Breaks for_each, count, depends_on)
 ```
-
-## Exam Tips
-
-- **Three correct statements:** A (providers argument), C (no for_each with provider blocks), D (automatic inheritance)
-- Key restriction: modules with `provider` blocks are incompatible with `for_each`, `count`, and `depends_on`
-- The `providers` argument is how you pass provider configurations **explicitly** to child modules
-- Default provider inheritance happens **automatically** — no configuration needed
-- Best practice: child modules should **never** define their own provider blocks
-- Common exam trap: thinking child modules must define their own provider blocks for isolation (they inherit instead)
-- Another trap: thinking `depends_on` works differently — it's blocked just like `for_each` and `count` when the module has `provider` blocks
-- The `provider` attribute does **not** exist on individual resource blocks — provider is set at the module level

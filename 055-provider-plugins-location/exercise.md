@@ -1,6 +1,19 @@
 # Provider Plugin Storage Location Exercise
 
-**Exam Question:** You run `terraform init` in a new working directory. The output shows Terraform downloading the `aws` and `time` provider plugins. On this machine, where does Terraform store those provider plugins?
+**Domain:** IaC Workflow
+**Topic:** Provider plugin storage location after `init`
+
+## Description
+
+You run `terraform init` in a new working directory. The output shows Terraform downloading the `aws` and `time` provider plugins. On this machine, where does Terraform store those provider plugins
+
+## Learning Objectives
+
+- Examine the provider configuration
+- Run terraform init
+- Find the downloaded plugins
+- Understand the directory structure
+- Check the global plugin cache (if configured)
 
 ## Background
 
@@ -97,18 +110,9 @@ When you run `terraform init`, Terraform downloads provider plugins and stores t
 
    When a global cache is configured, Terraform still creates the `.terraform/providers/` structure but uses **hard links** to the cached files instead of downloading them again.
 
-### Put It Together
-
-You run `terraform init` in a new working directory. The output shows Terraform downloading the `aws` and `time` provider plugins. On this machine, where does Terraform store those provider plugins?
-
-- A. The `.terraform/providers` directory in the current working directory
-- B. The `/usr/local/bin/terraform/providers` system directory
-- C. The `~/.terraform/providers` directory in the user's home directory
-- D. The provider plugins are stored in memory and not persisted to disk
-- E. The `terraform.d/providers` directory in the Terraform installation path
-
 ## Files
 
 - `main.tf` — config with aws and time providers
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

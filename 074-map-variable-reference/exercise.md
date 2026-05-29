@@ -1,17 +1,18 @@
 # Map Variable Reference Exercise
 
-**Exam Question:** In an expression, how do you correctly reference the `build-tag` value from the variable declaration below?
+**Domain:** Input Variables
+**Topic:** Map variable bracket notation `["build-tag"]`
 
-```hcl
-variable "metadata" {
-  type    = map(string)
-  default = {
-    owner     = "platform"
-    build-tag = "v5.0.2"
-    service   = "billing"
-  }
-}
-```
+## Description
+
+In an expression, how do you correctly reference the `build-tag` value from the variable declaration below
+
+## Learning Objectives
+
+- Examine the map variable
+- Reference map values
+- Different reference syntaxes
+- Test the references
 
 ## Background
 
@@ -119,29 +120,9 @@ Terraform provides **complex types** for structured data. A `map(string)` is a c
    vpc_name = "app-v5.0.2"
    ```
 
-### Put It Together
-
-In an expression, how do you correctly reference the `build-tag` value from the variable declaration below?
-
-```hcl
-variable "metadata" {
-  type    = map(string)
-  default = {
-    owner     = "platform"
-    build-tag = "v5.0.2"
-    service   = "billing"
-  }
-}
-```
-
-- A. `var.metadata.build-tag`
-- B. `var.metadata["build-tag"]`
-- C. `var.metadata.build_tag`
-- D. `var.metadata("build-tag")`
-- E. `metadata.build-tag`
-
 ## Files
 
 - `main.tf` — config using map variable references
 - `outputs.tf` — outputs showing referenced values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -124,12 +124,3 @@ resource "aws_instance" "web" {
   })
 }
 ```
-
-## Exam Tips
-
-- `merge()` = combine maps; **last value wins** for duplicate keys
-- Use for merging common tags with resource-specific tags
-- `concat()` is for lists, `merge()` is for maps — don't confuse them
-- Override behavior lets resource tags take precedence over common tags when needed
-- Common exam trap: using `concat()` instead of `merge()` for maps
-- Another trap: forgetting that the rightmost map's values take precedence on key conflicts

@@ -1,24 +1,18 @@
 # Resource Creation Order Exercise
 
-**Exam Question:** In the example code below, what order will Terraform create these resources?
+**Domain:** State & DAG Management
+**Topic:** Resource creation order via DAG
 
-```hcl
-variable "existing_disk" { type = string }
+## Description
 
-resource "google_compute_instance" "web" {
-  name         = "order-web-1"
-  machine_type = "e2-micro"
-  zone         = "us-central1-a"
+In the example code below, what order will Terraform create these resources
 
-  boot_disk { initialize_params { image = "debian-cloud/debian-11" } }
-  network_interface { network = "default" access_config {} }
-}
+## Learning Objectives
 
-resource "google_compute_attached_disk" "data" {
-  instance = google_compute_instance.web.name
-  disk     = var.existing_disk
-}
-```
+- Identify the dependencies
+- Visualize the dependency graph
+- Why order matters
+- Verify the creation order plan
 
 ## Background
 
@@ -120,36 +114,9 @@ Terraform builds a **directed acyclic graph (DAG)** to determine resource creati
 
    Resources with no dependencies appear first.
 
-### Put It Together
-
-In the example code below, what order will Terraform create these resources?
-
-```hcl
-variable "existing_disk" { type = string }
-
-resource "google_compute_instance" "web" {
-  name         = "order-web-1"
-  machine_type = "e2-micro"
-  zone         = "us-central1-a"
-
-  boot_disk { initialize_params { image = "debian-cloud/debian-11" } }
-  network_interface { network = "default" access_config {} }
-}
-
-resource "google_compute_attached_disk" "data" {
-  instance = google_compute_instance.web.name
-  disk     = var.existing_disk
-}
-```
-
-- A. Both resources are created simultaneously in parallel
-- B. First — `google_compute_attached_disk.data`, Second — `google_compute_instance.web`
-- C. First — `google_compute_instance.web`, Second — `google_compute_attached_disk.data`
-- D. The order is random and non-deterministic
-- E. The resources are created in alphabetical order by resource name
-
 ## Files
 
 - `main.tf` — GCP config with instance and attached disk
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

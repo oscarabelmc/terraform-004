@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -54,13 +54,3 @@ None of this is shared or recursive.
 | `terraform apply` | No — current directory only |
 
 This is a common exam trap. Only `terraform fmt` has a `-recursive` flag.
-
-## Exam Tips
-
-- `terraform init` is **always per-working-directory**
-- Each subdirectory with `.tf` files is a separate working directory
-- Running `init` in the root does **nothing** for subdirectories
-- Common exam scenario: "You have a monorepo with dev/staging/prod folders — where do you init?"
-- The pattern of separate directories for environments is called **directory-based environment separation**
-- Alternative: **workspaces** (single directory, multiple named states) — but the question explicitly says separate directories
-- If you see "Plugin reinitialization required" — you forgot to run `terraform init` in that directory

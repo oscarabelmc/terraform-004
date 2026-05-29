@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -108,14 +108,3 @@ terraform apply
 ### Step 5: Remove import blocks
 
 After successful import, delete the `import` blocks. The resources are now managed normally.
-
-## Exam Tips
-
-- **Import** = adopt existing resources without disruption
-- Three steps: **write config → add import block → apply**
-- The `import` block is the **modern approach** (Terraform 1.5+)
-- Import blocks map a Terraform address (`to`) to a real-world ID (`id`)
-- After import, you can remove the import blocks
-- Data sources are **read-only** — they don't adopt resources
-- Key phrase in the question: **"without disrupting them"** — eliminates destroy/recreate options
-- Common exam trap: confusing `import` blocks (adopt) with `terraform apply` (create/modify/destroy)

@@ -1,6 +1,18 @@
 # HCP Terraform Private Registry Exercise
 
-**Exam Question:** Which feature of HCP Terraform enables you to publish and maintain a set of custom modules that can only be used within your organization?
+**Domain:** HCP Terraform
+**Topic:** Private registry for org-only modules
+
+## Description
+
+Which feature of HCP Terraform enables you to publish and maintain a set of custom modules that can only be used within your organization
+
+## Learning Objectives
+
+- Private registry vs public registry
+- Using a module from the private registry
+- Publishing a module to the private registry
+- Version constraints with private modules
 
 ## Background
 
@@ -83,18 +95,9 @@ HCP Terraform (formerly Terraform Cloud) provides a **private module registry** 
    }
    ```
 
-### Put It Together
-
-Which feature of HCP Terraform enables you to publish and maintain a set of custom modules that can only be used within your organization?
-
-- A. HCP Terraform private registry
-- B. HCP Terraform workspace
-- C. HCP Terraform run triggers
-- D. HCP Terraform policy sets (Sentinel)
-- E. HCP Terraform variable sets
-
 ## Files
 
 - `main.tf` — example using a module from the private registry
 - `modules/custom-vpc/` — example module that could be published to the private registry
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

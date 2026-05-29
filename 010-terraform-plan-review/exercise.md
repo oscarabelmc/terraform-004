@@ -1,6 +1,18 @@
 # Plan-as-Review Exercise
 
-**Exam Question:** Aside from traditional code reviews, which Terraform command provides an opportunity for team members to review each other's work before deployment?
+**Domain:** IaC Workflow
+**Topic:** `terraform plan` as a review artifact before deployment
+
+## Description
+
+Aside from traditional code reviews, which Terraform command provides an opportunity for team members to review each other's work before deployment
+
+## Learning Objectives
+
+- Establish baseline
+- Simulate a proposed change
+- The review workflow
+- Plan vs other commands
 
 ## Steps
 
@@ -69,17 +81,8 @@ How does `terraform plan` differ from other Terraform commands for review?
 | `terraform apply` | Executes changes — skips review entirely |
 | `terraform init` | Downloads providers — no review value |
 
-### Put It Together
-
-Aside from traditional code reviews, which Terraform command provides an opportunity for team members to review each other's work before deployment?
-
-- A. `terraform apply`
-- B. `terraform plan`
-- C. `terraform validate`
-- D. `terraform init`
-- E. `terraform fmt`
-
 ## Files
 - `main.tf` — baseline config (length = 2)
-- `solution/proposed-change/main.tf` — simulated PR change (length = 5)
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+- `solution/` — reference implementation
+

@@ -1,6 +1,18 @@
 # Merge Function — Tag Composition Exercise
 
-**Exam Question:** Your team maintains a map of common tags to apply to all resources. Each individual resource also needs its own specific tags. To accomplish this, you have `var.common_tags` containing shared tags and `local.resource_tags` containing resource-specific tags. How do you combine both to apply to a resource?
+**Domain:** Functions
+**Topic:** `merge()` function — combine common + resource-specific tags
+
+## Description
+
+Your team maintains a map of common tags to apply to all resources. Each individual resource also needs its own specific tags. To accomplish this, you have `var.common_tags` containing shared tags and `local.resource_tags` containing resource-specific tags. How do you combine both to apply to a resource
+
+## Learning Objectives
+
+- Examine the merge pattern
+- How merge works
+- Last-value-wins behavior
+- Alternative approaches (worse)
 
 ## Background
 
@@ -101,18 +113,9 @@ Terraform's `merge()` function takes one or more maps and returns a single map c
 
    ❌ `concat()` works on lists, not maps. Only `merge()` works for maps.
 
-### Put It Together
-
-Your team maintains a map of common tags to apply to all resources. Each individual resource also needs its own specific tags. To accomplish this, you have `var.common_tags` containing shared tags and `local.resource_tags` containing resource-specific tags. How do you combine both to apply to a resource?
-
-- A. `concat(var.common_tags, local.resource_tags)`
-- B. `merge(var.common_tags, local.resource_tags)`
-- C. `zipmap(var.common_tags, local.resource_tags)`
-- D. `var.common_tags + local.resource_tags`
-- E. `element(var.common_tags, local.resource_tags)`
-
 ## Files
 
 - `main.tf` — config demonstrating merge() with tags
 - `outputs.tf` — outputs showing merged tag results
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

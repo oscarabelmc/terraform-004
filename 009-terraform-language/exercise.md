@@ -1,6 +1,17 @@
 # Terraform Language Exercise
 
-**Exam Question:** Which of the following statements is the most accurate about the Terraform language?
+**Domain:** IaC Concepts
+**Topic:** Terraform language — immutable, declarative, HCL/JSON
+
+## Description
+
+Which of the following statements is the most accurate about the Terraform language
+
+## Learning Objectives
+
+- Declarative (what, not how)
+- Immutability
+- HCL and JSON
 
 ## Background
 
@@ -70,16 +81,8 @@ Understanding how Terraform describes infrastructure is foundational to the exam
 
    Terraform reads both `.tf` and `.tf.json` files in the directory.
 
-### Put It Together
-
-Which of the following statements is the most accurate about the Terraform language?
-
-- A. Terraform is an immutable, declarative Infrastructure as Code language based on HashiCorp Configuration Language or JSON.
-- B. Terraform is a mutable, procedural scripting language for infrastructure management.
-- C. Terraform is a declarative Infrastructure as Code language that only supports HashiCorp Configuration Language.
-- D. Terraform is an immutable, imperative programming language based on JSON.
-
 ## Files
 - `main.tf` — HCL syntax
 - `main.tf.json` — JSON equivalent of the same config
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,6 +1,18 @@
 # IaC — Declarative vs Imperative Exercise
 
-**Exam Question:** What sets Infrastructure as Code (IaC) apart from managing infrastructure directly instead of making raw API calls or executing CLI commands?
+**Domain:** IaC Concepts
+**Topic:** Declarative IaC vs imperative scripts
+
+## Description
+
+What sets Infrastructure as Code (IaC) apart from managing infrastructure directly instead of making raw API calls or executing CLI commands
+
+## Learning Objectives
+
+- Examine a declarative config
+- Compare with the imperative approach
+- Terraform's declarative workflow
+- Why declarative is better for IaC
 
 ## Background
 
@@ -74,18 +86,9 @@ There are two fundamental approaches to infrastructure management:
    | Parallel execution | ✅ Automatic | ❌ Manual |
    | Rollback | ✅ State versioning | ❌ Manual reverse steps |
 
-### Put It Together
-
-What sets Infrastructure as Code (IaC) apart from managing infrastructure directly instead of making raw API calls or executing CLI commands?
-
-- A. Terraform uses declarative configuration to describe the desired end state and generates a plan of action before applying changes
-- B. IaC requires running commands in a specific order that the user must define
-- C. IaC can only be used with a single cloud provider at a time
-- D. Terraform makes raw API calls directly without any abstraction layer
-- E. IaC eliminates the need for configuration files by using interactive prompts
-
 ## Files
 
 - `main.tf` — declarative config showing desired state
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

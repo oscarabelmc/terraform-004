@@ -1,16 +1,17 @@
 # Provider Alias Exercise
 
-**Exam Question:** You configure two `aws` providers in the same module, as shown below, and Terraform returns `Error: Duplicate provider configuration` and says to set an additional argument for alternative configurations. Which argument must you add to the second provider block so both can be used?
+**Domain:** IaC Workflow
+**Topic:** `alias` — duplicate provider configurations
 
-```hcl
-provider "aws" {
-  region = "us-east-1"
-}
+## Description
 
-provider "aws" {
-  region = "ap-south-1"
-}
-```
+You configure two `aws` providers in the same module, as shown below, and Terraform returns `Error: Duplicate provider configuration` and says to set an additional argument for alternative configurations. Which argument must you add to the second provider block so both can be used
+
+## Learning Objectives
+
+- Reproduce the error
+- Fix with alias
+- Use aliased providers in resources
 
 ## Background
 
@@ -100,29 +101,10 @@ Terraform allows multiple configurations of the same provider, but each must hav
    }
    ```
 
-### Put It Together
-
-You configure two `aws` providers in the same module, as shown below, and Terraform returns `Error: Duplicate provider configuration` and says to set an additional argument for alternative configurations. Which argument must you add to the second provider block so both can be used?
-
-```hcl
-provider "aws" {
-  region = "us-east-1"
-}
-
-provider "aws" {
-  region = "ap-south-1"
-}
-```
-
-- A. `alias`
-- B. `profile`
-- C. `name`
-- D. `source`
-- E. `version`
-
 ## Files
 
 - `main.tf` — starter config with duplicate provider error
 - `variables.tf` — input variables
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

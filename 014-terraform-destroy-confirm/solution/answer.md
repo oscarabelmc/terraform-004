@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 **True.**
 
@@ -28,11 +28,3 @@ The user must type `yes` (and press Enter) for the destroy to proceed. Any other
 ## Why the Prompt Exists
 
 `terraform destroy` is **irreversible** — it permanently deletes infrastructure. The confirmation prompt is a safety mechanism to prevent accidental destruction. This is consistent with `terraform apply`, which also prompts by default (unless `-auto-approve` is used).
-
-## Exam Tips
-
-- Default = **prompts** → answer: **True**
-- `-auto-approve` = **no prompt** (must be explicitly passed)
-- `terraform destroy` is equivalent to `terraform apply -destroy`
-- `terraform plan -destroy` gives a **preview** without any prompt or changes
-- The exam may ask both directions: "What flag skips the confirmation?" → `-auto-approve`

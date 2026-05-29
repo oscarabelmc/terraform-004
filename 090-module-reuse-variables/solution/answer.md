@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -63,12 +63,3 @@ Making a module reusable across environments requires **parameterization** — r
 | **`TF_VAR_` environment variables** | CI/CD pipelines, simple values |
 | **Directory structure** | Monorepos with separate env directories |
 | **Terragrunt** | Complex multi-environment setups |
-
-## Exam Tips
-
-- **Hardcoded values = not reusable** — always use variables for environment-specific settings
-- Parameterization enables **same code, different values** across environments
-- Use `tfvars` files or HCP variable sets for environment-specific values
-- No code changes needed between environments — only variable files change
-- Common exam trap: thinking workspaces alone solve environment differences (they separate state, not values)
-- Another trap: copying modules per environment instead of parameterizing

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -70,12 +70,3 @@ This translation happens for every CRUD operation (create, read, update, delete)
 | Resource ID (`i-abc123`) | API resource identifier |
 | State (`terraform.tfstate`) | API response attributes |
 | Dependencies | API call ordering |
-
-## Exam Tips
-
-- **Provider = API translation plugin** — this is the best single-sentence description
-- The provider is **not** the service itself — it's the bridge *to* the service
-- Each provider handles: authentication, schema validation, API calls, response mapping, error handling
-- Common exam trap: confusing a provider (plugin) with a module (config), a backend (state storage), or a built-in command
-- Another trap: thinking the provider *is* the API — it's a translator *to* the API
-- The phrase **"translate the API interactions"** is a key signal phrase on the exam for the provider definition

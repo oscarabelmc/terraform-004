@@ -1,13 +1,19 @@
 # Module Output Export Exercise
 
-**Exam Question:** You are calling a child module named `network` from your root module. In your root module, you attempt to reference the VPC ID as displayed below. When you run `terraform plan`, Terraform returns an error that `vpc_id` is not a valid attribute for `module.network`. What is the most likely cause of this error?
+**Domain:** Modules
+**Topic:** Missing module output — unsupported attribute error
 
-```hcl
-resource "aws_subnet" "primary_core" {
-  vpc_id     = module.network.vpc_id
-  cidr_block = "10.5.0.0/23"
-}
-```
+## Description
+
+You are calling a child module named `network` from your root module. In your root module, you attempt to reference the VPC ID as displayed below. When you run `terraform plan`, Terraform returns an error that `vpc_id` is not a valid attribute for `module.network`. What is the most likely cause of this error
+
+## Learning Objectives
+
+- Examine the broken config
+- Reproduce the error
+- Fix by adding an output block
+- Understand the access boundary
+- Multiple outputs
 
 ## Background
 
@@ -96,20 +102,11 @@ Root Module
 
    The module exports the VPC ID, CIDR, and public subnets — each value that the root module needs must have its own output block.
 
-### Put It Together
-
-You are calling a child module named `network` from your root module. In your root module, you attempt to reference the VPC ID as `module.network.vpc_id`. When you run `terraform plan`, Terraform returns an error that `vpc_id` is not a valid attribute for `module.network`. What is the most likely cause of this error?
-
-- A. The network module did not define an output block that exports the VPC ID
-- B. The VPC resource does not have an `id` attribute
-- C. The root module must use `depends_on` before accessing module outputs
-- D. The module source is incorrect and cannot be downloaded
-- E. The `module.network` block needs a `version` argument
-
 ## Files
 
 - `main.tf` — root module referencing `module.network.vpc_id`
 - `modules/network/main.tf` — network module (missing output initially)
 - `modules/network/variables.tf` — module inputs
 - `modules/network/outputs.tf` — **fixed version** with output blocks
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

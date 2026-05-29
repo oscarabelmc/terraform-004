@@ -1,18 +1,19 @@
 # Passing Module Outputs Exercise
 
-**Exam Question:** You're invoking a module that creates a subnet. The root load balancer module requires that subnet's ID. How should you expose the ID and pass it to the load balancer module?
+**Domain:** Modules
+**Topic:** Expose and pass module outputs between modules
 
-```hcl
-# modules/subnets/main.tf
-resource "aws_subnet" "main" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.subnet_cidr
+## Description
 
-  tags = {
-    Name = "outputs-subnet"
-  }
-}
-```
+You're invoking a module that creates a subnet. The root load balancer module requires that subnet's ID. How should you expose the ID and pass it to the load balancer module
+
+## Learning Objectives
+
+- Examine the broken state
+- Examine the load balancer module
+- Fix by adding an output to the subnet module
+- Verify the data flow
+- Test with a plan
 
 ## Background
 
@@ -101,16 +102,6 @@ Module internals are **private** — resources created inside a module cannot be
 
    The plan shows subnet creation first, then load balancer — Terraform correctly orders them based on the implicit dependency created by the output reference.
 
-### Put It Together
-
-You're invoking a module that creates a subnet. The root load balancer module requires that subnet's ID. How should you expose the ID and pass it to the load balancer module?
-
-- A. Add an output block to the subnet module and pass the value to the load balancer module using `module.subnets.subnet_id`
-- B. Reference the resource directly in the load balancer module: `aws_subnet.main.id`
-- C. Hardcode the subnet ID in the load balancer module's configuration
-- D. Use `terraform output` to capture the subnet ID and pass it as an environment variable
-- E. Create a data source in the load balancer module to look up the subnet
-
 ## Files
 
 - `main.tf` — root module calling both subnets and load_balancer
@@ -119,4 +110,5 @@ You're invoking a module that creates a subnet. The root load balancer module re
 - `modules/subnets/outputs.tf` — **the fix**: exports subnet_id
 - `modules/load_balancer/main.tf` — load balancer resource
 - `modules/load_balancer/variables.tf` — expects subnet_id input
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

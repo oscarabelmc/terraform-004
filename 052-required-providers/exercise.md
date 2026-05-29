@@ -1,6 +1,19 @@
 # Required Providers Exercise
 
-**Exam Question:** How do you specify which provider Terraform should install for a configuration?
+**Domain:** IaC Workflow
+**Topic:** `required_providers` block
+
+## Description
+
+How do you specify which provider Terraform should install for a configuration
+
+## Learning Objectives
+
+- Examine the required_providers block
+- The matching provider block
+- Understand how they work together
+- Multiple providers
+- Run terraform init
 
 ## Background
 
@@ -112,18 +125,9 @@ Terraform uses a two-part mechanism to specify providers:
 
    The providers specified in `required_providers` are downloaded.
 
-### Put It Together
-
-How do you specify which provider Terraform should install for a configuration?
-
-- A. Define the provider in `required_providers` and add a matching `provider` block in the configuration
-- B. Install the provider manually using a package manager like `apt` or `brew`
-- C. Set the `TF_PROVIDER` environment variable before running `terraform init`
-- D. Add the provider path to the Terraform configuration file's `provider` block only
-- E. The provider is automatically detected from the resource types used in the configuration
-
 ## Files
 
 - `main.tf` — terraform block with required_providers + provider configuration
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,23 +1,18 @@
 # Module Output Reference Exercise
 
-**Exam Question:** In the snippet below, where does the value for `vpc_security_group_ids` come from?
+**Domain:** Modules
+**Topic:** Module output reference `module.vpc.default_sg_id`
 
-```hcl
-module "ec2_instances" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "4.3.0"
+## Description
 
-  name            = "pr0d-east-app"
-  instance_count  = 2
-  ami             = "ami-0c5204531f799e5-2"
-  instance_type   = "t3.micro"
+In the snippet below, where does the value for `vpc_security_group_ids` come from
 
-  vpc_security_group_ids = [module.vpc.default_security_group_id]
-  subnet_id              = module.vpc.public_subnets[0]
+## Learning Objectives
 
-  tags = { Owner = "ref-team", Env = "pr0d-east" }
-}
-```
+- Examine the module references
+- How module outputs work
+- The data flow
+- Dependencies created by module references
 
 ## Background
 
@@ -115,35 +110,9 @@ Modules in Terraform can **output** values that other parts of the configuration
 
    Terraform ensures the VPC module is fully created before the EC2 module starts provisioning resources.
 
-### Put It Together
-
-In the snippet below, where does the value for `vpc_security_group_ids` come from?
-
-```hcl
-module "ec2_instances" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "4.3.0"
-
-  name            = "pr0d-east-app"
-  instance_count  = 2
-  ami             = "ami-0c5204531f799e5-2"
-  instance_type   = "t3.micro"
-
-  vpc_security_group_ids = [module.vpc.default_security_group_id]
-  subnet_id              = module.vpc.public_subnets[0]
-
-  tags = { Owner = "ref-team", Env = "pr0d-east" }
-}
-```
-
-- A. A hardcoded string in the configuration
-- B. An attribute from a data source
-- C. The output of another module
-- D. A variable defined in the same configuration
-- E. A resource attribute from a resource in the same module
-
 ## Files
 
 - `main.tf` — config with two modules referencing each other
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

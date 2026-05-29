@@ -1,6 +1,18 @@
 # Terraform Registry Module Information Exercise
 
-**Exam Question:** You discovered a module on the Terraform Registry that will provision the resources you need. What other information can you find on the Terraform Registry to help you quickly use this module? (Select three.)
+**Domain:** Modules
+**Topic:** Registry module info — inputs, outputs, dependencies
+
+## Description
+
+You discovered a module on the Terraform Registry that will provision the resources you need. What other information can you find on the Terraform Registry to help you quickly use this module? (Select three.)
+
+## Learning Objectives
+
+- Examine a registry module usage
+- What the registry page provides
+- What the registry does NOT provide
+- Registry page sections
 
 ## Background
 
@@ -102,17 +114,9 @@ The [Terraform Registry](https://registry.terraform.io/) is the primary source f
    └───────────────────────────────────────────────┘
    ```
 
-### Put It Together
-
-You discovered a module on the Terraform Registry that will provision the resources you need. What other information can you find on the Terraform Registry to help you quickly use this module? (Select three.)
-
-- A. Dependencies to use the module
-- B. A download button to quickly get the module code
-- C. A list of outputs
-- D. Required input variables
-
 ## Files
 
 - `main.tf` — config using a registry module
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

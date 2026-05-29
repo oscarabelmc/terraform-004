@@ -1,6 +1,19 @@
 # Why Terraform Requires State Exercise
 
-**Exam Question:** Your team is discussing why Terraform maintains a state file. Which of the following are valid reasons why Terraform requires state? (Select three.)
+**Domain:** State Management
+**Topic:** Why Terraform requires state
+
+## Description
+
+Your team is discussing why Terraform maintains a state file. Which of the following are valid reasons why Terraform requires state? (Select three.)
+
+## Learning Objectives
+
+- Examine a state file
+- Purpose 1: Map config to real resources
+- Purpose 2: Improve performance via caching
+- Purpose 3: Track metadata and dependencies
+- What state does NOT do
 
 ## Background
 
@@ -74,19 +87,9 @@ Terraform state (`terraform.tfstate`) is a JSON file that maps your configuratio
    - State does **not** fix syntax errors — `terraform validate` does that
    - State does **not** validate credentials — provider config does that
 
-### Put It Together
-
-Your team is discussing why Terraform maintains a state file. Which of the following are valid reasons why Terraform requires state? (Select three.)
-
-- A. Map real-world resources to your Terraform configuration
-- B. Automatically fix HCL configuration syntax errors
-- C. Improve performance by caching resource attributes
-- D. Encrypt sensitive data in your configuration files
-- E. Validate provider credentials before applying changes
-- F. Track metadata such as resource dependencies
-
 ## Files
 
 - `main.tf` — config to generate state for inspection
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

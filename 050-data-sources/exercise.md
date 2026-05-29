@@ -1,6 +1,19 @@
 # Terraform Data Sources Exercise
 
-**Exam Question:** Which statement best describes a Terraform data source?
+**Domain:** IaC Concepts
+**Topic:** Data sources — read-only API queries
+
+## Description
+
+Which statement best describes a Terraform data source
+
+## Learning Objectives
+
+- Examine a data source
+- Compare resource vs data
+- Reference data source attributes
+- Common data source use cases
+- Data sources vs modules vs caches
 
 ## Background
 
@@ -96,17 +109,9 @@ A **data source** queries a provider API to fetch information about resources th
    | **Module** | Reusable package of resources | `module "vpc" { source = "./vpc" }` |
    | **Cache** | Store computed values between runs | No Terraform equivalent |
 
-### Put It Together
-
-Which statement best describes a Terraform data source?
-
-- A. A read-only construct that queries provider APIs and returns attributes for use elsewhere in the configuration
-- B. A local cache that stores computed values between runs to speed up `terraform apply`
-- C. A reusable package that defines multiple resources and outputs to be instantiated by other configurations
-- D. A mechanism for persisting variable defaults into state so they can be reused by other workspaces
-
 ## Files
 
 - `main.tf` — data source + resource using the fetched data
 - `outputs.tf` — output values from data source
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

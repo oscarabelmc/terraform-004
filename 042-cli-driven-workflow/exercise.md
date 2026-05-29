@@ -1,6 +1,18 @@
 # HCP Terraform CLI-Driven Workflow Exercise
 
-**Exam Question:** Your team uses HCP Terraform with a CLI-driven workflow. After making changes to your configuration locally, you run `terraform plan`. Where does the plan operation execute?
+**Domain:** HCP Terraform
+**Topic:** CLI-driven workflow in HCP Terraform
+
+## Description
+
+Your team uses HCP Terraform with a CLI-driven workflow. After making changes to your configuration locally, you run `terraform plan`. Where does the plan operation execute
+
+## Learning Objectives
+
+- Examine the CLI-driven config
+- See the execution flow
+- Understand the data flow
+- Compare with local execution
 
 ## Background
 
@@ -84,18 +96,9 @@ In **CLI-driven workflow**, you run commands on your local machine, but the actu
    | Shows in HCP Terraform UI | ✅ (run history) | ❌ |
    | Works offline | ❌ | ❌ (needs state from HCP) |
 
-### Put It Together
-
-Your team uses HCP Terraform with a CLI-driven workflow. After making changes to your configuration locally, you run `terraform plan`. Where does the plan operation execute?
-
-- A. On HCP Terraform infrastructure with results streamed back to your terminal
-- B. On your local machine, and the results are uploaded to HCP Terraform
-- C. On both your local machine and HCP Terraform simultaneously for redundancy
-- D. On your local machine only — HCP Terraform is not involved
-- E. On HCP Terraform infrastructure, but results are only visible in the web UI
-
 ## Files
 
 - `main.tf` — config with `cloud` block for CLI-driven workflow
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

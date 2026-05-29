@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct syntax is **B — `module.database.connection_string`**.
 
@@ -58,11 +58,3 @@ module.<module_label>.<output_name>
 | Data source | Data source attribute | `data.<DATA_TYPE>.<NAME>.<ATTRIBUTE>` |
 | Local value | Current module's locals | `local.<NAME>` |
 | Provider | Provider configuration | `provider.<PROVIDER>` |
-
-## Exam Tips
-
-- Module outputs are always accessed with `module.` prefix — never `output.` or `var.`
-- The `.` notation is: `module.<label>.<output_name>`
-- Pass outputs between modules at the **root module level** — each module receives inputs via `variable` blocks
-- If you need to chain `module A → root → module B`, the root does the wiring
-- Common exam trap: confusing `output.database.connection_string` (invalid) with `module.database.connection_string` (valid)

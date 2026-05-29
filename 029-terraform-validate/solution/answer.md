@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -43,13 +43,3 @@ It runs **without any cloud connectivity** — it's purely a static analysis of 
 | **Shows resource changes** | ❌ | ✅ |
 
 **Best practice:** run `terraform validate` early and often — in your editor, pre-commit hooks, and CI pipelines — then `terraform plan` after to verify against real infrastructure.
-
-## Exam Tips
-
-- `terraform validate` = **static analysis** (no cloud calls)
-- `terraform plan` = **dynamic analysis** (calls cloud APIs, reads state)
-- `terraform fmt` = **formatting only** (like `gofmt` or `prettier`)
-- `terraform validate` requires `terraform init` to have been run (needs provider schemas)
-- Common question pattern: "Which command checks X without making any changes?" — could be `validate` or `plan`, depending on whether cloud connectivity is needed
-- If the question mentions "syntactically valid" and "internally consistent" — that's `validate`
-- If the question mentions "compare with real infrastructure" — that's `plan`

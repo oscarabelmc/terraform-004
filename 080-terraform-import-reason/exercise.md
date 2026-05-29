@@ -1,8 +1,18 @@
 # Terraform Import — Reason and Purpose Exercise
 
-**Exam Question:** Your team has been using Terraform to manage infrastructure. A colleague manually created a database in the console for urgent troubleshooting and testing. The database is now needed permanently as part of your production environment.
+**Domain:** IaC Workflow
+**Topic:** Primary reason to use `terraform import`
 
-What is the primary reason to use Terraform import in this situation?
+## Description
+
+Your team has been using Terraform to manage infrastructure. A colleague manually created a database in the console for urgent troubleshooting and testing. The database is now needed permanently as part of your production environment.
+
+## Learning Objectives
+
+- The problem: infrastructure outside IaC
+- The solution: import into state
+- The primary reason: IaC management
+- What import does NOT do
 
 ## Background
 
@@ -107,20 +117,9 @@ Terraform import is the mechanism for bringing existing infrastructure under Ter
    - Import does **not** retroactively add Git history
    - Import requires the config to match the existing resource
 
-### Put It Together
-
-Your team has been using Terraform to manage infrastructure. A colleague manually created a database in the console for urgent troubleshooting and testing. The database is now needed permanently as part of your production environment.
-
-What is the primary reason to use Terraform import in this situation?
-
-- A. To destroy the existing database and recreate it with Terraform
-- B. To bring the database under Terraform management so future changes can be tracked and managed through your IaC workflow
-- C. To create a copy of the database for development use
-- D. To modify the database's configuration to match Terraform defaults
-- E. To delete the database from the cloud provider
-
 ## Files
 
 - `main.tf` — config with import block and RDS resource
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

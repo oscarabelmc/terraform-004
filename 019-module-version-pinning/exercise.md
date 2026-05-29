@@ -1,6 +1,18 @@
 # Module Version Pinning Exercise
 
-**Exam Question:** In a Terraform module block that sources a module from a registry, why should you include the `version` argument?
+**Domain:** Modules
+**Topic:** Module version pinning — why include `version` argument
+
+## Description
+
+In a Terraform module block that sources a module from a registry, why should you include the `version` argument
+
+## Learning Objectives
+
+- Why version matters
+- Initialize with version locking
+- Apply and see the result
+- The real risk (registry scenario)
 
 ## Steps
 
@@ -62,20 +74,11 @@
 
    With `version = "~> 5.0.0"`, both the original and the teammate would get `v5.0.x`, never `v6.x`.
 
-### Put It Together
-
-In a Terraform module block that sources a module from a registry, why should you include the `version` argument?
-
-- A. To specify the module's input variable types
-- B. To pin a specific module release and avoid unexpected upgrades
-- C. To enable parallel downloads of the module
-- D. To authenticate with the private registry
-- E. The `version` argument is optional and has no effect
-
 ## Files
 - `main.tf` — two module blocks: pinned vs unpinned
 - `modules/demo/` — local example module
 - `modules/demo/main.tf` — creates a random_pet with the given name
 - `modules/demo/variables.tf` — name input variable
 - `outputs.tf` — root module outputs
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

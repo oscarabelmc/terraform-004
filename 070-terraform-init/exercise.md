@@ -1,6 +1,18 @@
 # Terraform Init Exercise
 
-**Exam Question:** Which of the following actions are performed during a `terraform init`? (Select three.)
+**Domain:** IaC Workflow
+**Topic:** Actions during `terraform init`
+
+## Description
+
+Which of the following actions are performed during a `terraform init`? (Select three.)
+
+## Learning Objectives
+
+- Examine a config that needs init
+- Run init and observe
+- Examine what init created
+- What init does NOT do
 
 ## Background
 
@@ -104,17 +116,9 @@ It is **idempotent** — safe to run multiple times.
 
    Provisioning happens during `apply`, not `init`. Init only prepares the working directory.
 
-### Put It Together
-
-Which of the following actions are performed during a `terraform init`? (Select three.)
-
-- A. Provisions the declared resources in your configuration
-- B. Initializes the backend configuration
-- C. Downloads the required modules referenced in the configuration
-- D. Downloads the providers/plugins required to execute the configuration
-
 ## Files
 
 - `main.tf` — config requiring init (providers, modules, backend)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

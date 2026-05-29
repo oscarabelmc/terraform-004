@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C**.
 
@@ -79,13 +79,3 @@ Destroy order (reverse of create):
 | **Explicit** | `depends_on` meta-argument | `depends_on = [google_compute_instance.web]` |
 
 Both create edges in the dependency graph and affect creation order the same way.
-
-## Exam Tips
-
-- **Attribute references** create implicit dependencies — Terraform detects them automatically
-- The dependency graph determines: **creation order**, **destruction order** (reverse), and **parallelism**
-- Roots (no dependencies) are created first and destroyed last
-- Leaves (depend on others) are created last and destroyed first
-- Resources with no dependency path between them are created **in parallel**
-- `terraform graph` visualizes the DAG — useful for understanding complex dependencies
-- Common exam trap: thinking resources are created in the order they appear in the file (they're created in dependency order, not file order)

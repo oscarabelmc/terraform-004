@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A** and **B**.
 
@@ -61,12 +61,3 @@ Child Module:        /home/.../092-root-child-module/modules/local-cluster/
 | **Inputs** | Variables from tfvars, CLI | Variables passed via `module` block arguments |
 | **Outputs** | Exported via `output` blocks | Accessed as `module.<name>.<output>` |
 | **State** | Owns the state file | State managed by root module |
-
-## Exam Tips
-
-- `./path` = **local child module** on disk
-- The file containing `module` blocks is the **root (calling) module**
-- Registry modules use `namespace/name/provider` format, not `./` paths
-- Values in the `module` block are **inputs** (arguments), not outputs
-- Common exam trap: confusing local modules with registry modules based on the `source` format
-- Another trap: thinking the `module` block defines outputs (it defines inputs — outputs are in the child module's `outputs.tf`)

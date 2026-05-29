@@ -1,6 +1,17 @@
 # Terraform Init in Multiple Directories Exercise
 
-**Exam Question:** You have a Terraform project with multiple subdirectories: `/dev`, `/staging`, and `/prod`. Each directory contains a separate Terraform configuration for each different environment. Before deploying resources, where do you need to run `terraform init`?
+**Domain:** IaC Workflow
+**Topic:** `terraform init` in multi-directory environments
+
+## Description
+
+You have a Terraform project with multiple subdirectories: `/dev`, `/staging`, and `/prod`. Each directory contains a separate Terraform configuration for each different environment. Before deploying resources, where do you need to run `terraform init`
+
+## Learning Objectives
+
+- Examine the project structure
+- Try running init only in the root
+- Initialize each environment directory
 
 ## Background
 
@@ -89,20 +100,11 @@ This exercise demonstrates that pattern with three environments.
 
    Each `terraform init` creates a separate `.terraform/` directory with its own provider plugins and state.
 
-### Put It Together
-
-You have a Terraform project with multiple subdirectories: `/dev`, `/staging`, and `/prod`. Each directory contains a separate Terraform configuration for each different environment. Before deploying resources, where do you need to run `terraform init`?
-
-- A. Only in the root directory, since `terraform init` is recursive
-- B. In each directory (`/dev`, `/staging`, and `/prod`) since each is a separate working directory
-- C. Only in the `/prod` directory, since it's the production environment
-- D. In any single directory, since the provider plugins are shared
-- E. `terraform init` is not needed if you run `terraform plan` first
-
 ## Files
 
 - `main.tf` — root-level config
 - `dev/main.tf` — dev environment
 - `staging/main.tf` — staging environment
 - `prod/main.tf` — prod environment
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

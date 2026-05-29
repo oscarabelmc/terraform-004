@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -72,12 +72,3 @@ Plan result:
      ▼   ▼           ▼   ▼                 ▼   ▼
    No-op Create   Update Create         Destroy (impossible)
 ```
-
-## Exam Tips
-
-- `terraform plan` = **config vs state** (by default), not config vs real infra
-- To detect **drift** (changes outside Terraform), use `terraform plan -refresh-only`
-- The plan shows `+` (create), `~` (update in-place), `-` (destroy), `-/+` (replace)
-- Plan does **not** automatically detect manual changes to infrastructure
-- State is the **source of truth** for current state during planning
-- Common exam trap: thinking plan queries APIs by default (it does not — it uses state)

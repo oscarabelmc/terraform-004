@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -108,14 +108,3 @@ This is useful for:
 ## Objective Reference
 
 This question tests the fundamental understanding of the **Plan** step in the Terraform core workflow (Objective 3a).
-
-## Exam Tips
-
-- `terraform plan` = **read-only preview** — never modifies anything
-- Plan compares **config (desired)** vs **state (current)**
-- Plan output shows `+` (create), `~` (update), `-` (destroy), `-/+` (replace)
-- With default settings, plan includes a **refresh** (queries provider APIs)
-- Plan does NOT require confirmation
-- Plan does NOT modify state
-- Common exam trap: thinking plan applies changes or modifies state
-- Another trap: confusing plan with apply or refresh

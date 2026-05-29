@@ -1,6 +1,17 @@
 # Multi-Cloud Benefits Exercise
 
-**Exam Question:** Why is using a single tool like Terraform for multi-cloud deployments more beneficial than using separate tools and workflows for each cloud?
+**Domain:** IaC Concepts
+**Topic:** Single tool for multi-cloud deployments
+
+## Description
+
+Why is using a single tool like Terraform for multi-cloud deployments more beneficial than using separate tools and workflows for each cloud
+
+## Learning Objectives
+
+- Explore a multi-cloud configuration
+- Demonstrate reusable modules across clouds
+- CI/CD consistency
 
 ## Background
 
@@ -63,20 +74,11 @@ Terraform's HCL provides a **cloud-agnostic** configuration language. The same w
 
    Compare this to using separate tools: AWS CloudFormation requires a different pipeline than Azure Resource Manager templates or Google Cloud Deployment Manager.
 
-### Put It Together
-
-Why is using a single tool like Terraform for multi-cloud deployments more beneficial than using separate tools and workflows for each cloud?
-
-- A. It provides a common workflow and reusable modules, enabling consistent CI/CD and policy across clouds
-- B. It automatically syncs resources between clouds
-- C. It eliminates the need for cloud provider expertise
-- D. It runs faster than cloud-native tools
-- E. It requires fewer lines of code than any cloud-native template
-
 ## Files
 
 - `main.tf` — multi-cloud configuration (AWS + Azure)
 - `modules/naming/main.tf` — reusable naming module (cloud-agnostic)
 - `variables.tf` — input variables
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

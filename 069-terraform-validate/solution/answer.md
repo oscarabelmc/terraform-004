@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -79,12 +79,3 @@ terraform apply      ← provision infrastructure
 **Objective 2b** — Differentiate between Terraform commands and subcommands.
 
 `terraform validate` is the command for offline, pre-apply validation of configuration syntax and internal consistency.
-
-## Exam Tips
-
-- `terraform validate` = **offline, no remote calls, checks syntax + references**
-- Requires `terraform init` first (to download provider schemas locally)
-- Does **not** check credentials, API availability, or real-world resource state
-- Fast feedback loop — run it frequently during development
-- Common exam trap: confusing validate with plan — plan contacts state/APIs, validate does not
-- Another trap: thinking fmt validates syntax (fmt only formats, validate checks correctness)

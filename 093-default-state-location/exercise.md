@@ -1,6 +1,18 @@
 # Default State Location Exercise
 
-**Exam Question:** You have created a brand-new Terraform repo that has no backend block. After successfully running your first `terraform apply`, where does Terraform store state by default?
+**Domain:** State Management
+**Topic:** Default state location without backend block
+
+## Description
+
+You have created a brand-new Terraform repo that has no backend block. After successfully running your first `terraform apply`, where does Terraform store state by default
+
+## Learning Objectives
+
+- Examine a config with no backend
+- Apply and observe the state file
+- Inspect local state
+- Local backend characteristics
 
 ## Background
 
@@ -96,18 +108,9 @@ When no `backend` block is specified in the `terraform` block, Terraform uses th
    | **Versioning** | Via `.backup` file |
    | **Suitable for** | Learning, testing, single-user |
 
-### Put It Together
-
-You have created a brand-new Terraform repo that has no backend block. After successfully running your first `terraform apply`, where does Terraform store state by default?
-
-- A. In a remote S3 bucket
-- B. In the Terraform Cloud workspace
-- C. In the current working directory in a file named `terraform.tfstate`
-- D. In a database managed by Terraform
-- E. State is not persisted by default
-
 ## Files
 
 - `main.tf` — config with no backend block (uses local backend by default)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

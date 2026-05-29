@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **B** and **D**.
 
@@ -100,13 +100,3 @@ Without `-upgrade`, `terraform init` sees the cache and skips downloading. The `
 | `~> 5.3.0` | >= 5.3.0, < 5.4.0 | Safe minor upgrade with patch flexibility |
 | `>= 5.3.0` | Any version >= 5.3.0 | Too permissive — allows major bumps |
 | `~> 5.0` | >= 5.0, < 6.0 | Broad range within major version |
-
-## Exam Tips
-
-- Updating a module version always requires **two steps**: code change + `init -upgrade`
-- `terraform init -upgrade` is the command to re-download modules/providers with updated constraints
-- Simply editing `version` in code does **not** immediately download the new version
-- The `~>` (pessimistic) constraint is the safest way to allow minor/patch upgrades
-- Never delete `.terraform/` as a routine step — use `init -upgrade` instead
-- Always run `terraform plan` after a module upgrade to review changes before applying
-- Common exam trap: thinking `terraform init` (without `-upgrade`) re-downloads modules when the version changes (it does not — it uses the cache)

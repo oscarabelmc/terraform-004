@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -109,14 +109,3 @@ For a **dynamic lookup table**, `map(string)` is idiomatic and concise.
 | Dynamic keys | ✅ | ❌ | ❌ | ❌ |
 | Concise syntax | ✅ | ✅ | ✅ | ❌ |
 | Meaningful access | `["key"]` | `[0]` | ❌ | `.field` |
-
-## Exam Tips
-
-- **Key-value lookup = `map`** — anytime you see "look up X by Y", think `map`
-- `map(string)` is the most common; `map(list(string))` and `map(map(string))` exist for nested data
-- Access map values with bracket notation: `var.map_name["key"]` or `var.map_name["${var.key}"]`
-- `for` expressions work naturally with maps: `{ for k, v in var.image : k => v }`
-- `keys()` and `values()` functions extract map keys/values
-- `lookup()` function safely handles missing keys: `lookup(var.image, "sa-east-1", "ami-default")`
-- Don't confuse `map` with `object`: maps have dynamic keys, objects have fixed fields
-- The question's scenario — "look up the correct ID based on the region name" — is a textbook `map` use case

@@ -1,6 +1,18 @@
 # Provider Version Constraints Exercise
 
-**Exam Question:** Why should a user specify provider version constraints in their Terraform configuration?
+**Domain:** Modules
+**Topic:** Provider version constraints
+
+## Description
+
+Why should a user specify provider version constraints in their Terraform configuration
+
+## Learning Objectives
+
+- Examine version constraints in code
+- See what happens with and without constraints
+- Understand the version constraint syntax
+- Why separate release schedules matter
 
 ## Background
 
@@ -97,18 +109,9 @@ Providers are developed and released **independently** of Terraform Core. Hashic
 
    With version constraints (`~> 5.0`), both months download the latest 5.x version — safe from 6.x breakage.
 
-### Put It Together
-
-Why should a user specify provider version constraints in their Terraform configuration?
-
-- A. Providers require version constraints because they cannot be downloaded without them
-- B. Providers are released on a separate schedule from Terraform itself; therefore, a newer version could introduce breaking changes
-- C. Version constraints improve the performance of `terraform plan` by reducing API calls
-- D. Terraform Core requires all providers to use the same version number
-- E. Version constraints are only needed for third-party providers, not official HashiCorp providers
-
 ## Files
 
 - `main.tf` — config with version constraints for AWS and random providers
 - `outputs.tf` — output values including the constraints
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

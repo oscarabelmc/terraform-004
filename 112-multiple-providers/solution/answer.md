@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A — True**.
 
@@ -64,13 +64,3 @@ Saying "False" would imply Terraform can only manage resources from one provider
 | Database + monitoring | `aws` (or `azurerm`) + `datadog` | Create resources then configure monitoring |
 | Multi-cloud disaster recovery | `aws` + `azurerm` | Active in AWS, standby in Azure |
 | Infrastructure + random naming | `aws` + `random` | Generate unique names for resources |
-
-## Exam Tips
-
-- **True** — multiple providers in one config is fully supported
-- Each provider needs: `required_providers` entry + `provider` configuration block
-- Multiple instances of the **same** provider use the `alias` meta-argument
-- Cross-provider references work via Terraform's dependency graph
-- Common exam trap: thinking each provider needs its own directory or config file
-- Another trap: confusing "multiple providers" with "multiple provider aliases" (different concepts)
-- Key phrase: **"within a single Terraform configuration file"** — yes, multiple providers can coexist

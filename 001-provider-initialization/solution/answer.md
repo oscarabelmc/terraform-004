@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The fix is to run **`terraform init`**.
 
@@ -16,7 +16,3 @@ Without running `init`, `terraform plan` cannot find the provider plugin and ret
 Error: Failed to query available provider packages
 Could not retrieve the list of available versions for provider hashicorp/http
 ```
-
-### Exam Tip
-
-Always remember: **adding a new provider → `terraform init`** is the first thing to do. The options like `terraform providers` (lists providers), `terraform get` (downloads modules), or `terraform refresh` (syncs state) won't solve this.

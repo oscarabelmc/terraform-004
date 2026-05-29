@@ -1,6 +1,18 @@
 # Terraform Plan — State Comparison Exercise
 
-**Exam Question:** You run `terraform plan` in a workspace that has existing infrastructure. Terraform shows that it will update 3 resources, create 2 new resources, and destroy 1 resource. How does Terraform determine what changes need to be made?
+**Domain:** IaC Workflow
+**Topic:** How `terraform plan` determines changes
+
+## Description
+
+You run `terraform plan` in a workspace that has existing infrastructure. Terraform shows that it will update 3 resources, create 2 new resources, and destroy 1 resource. How does Terraform determine what changes need to be made
+
+## Learning Objectives
+
+- Understand the plan mechanism
+- The three-way comparison
+- See the plan in action
+- What plan does NOT do
 
 ## Background
 
@@ -98,18 +110,9 @@ Terraform's `plan` command is a **three-way diff** between three sources of trut
 
    This explicitly queries APIs to update state before comparing with config.
 
-### Put It Together
-
-You run `terraform plan` in a workspace that has existing infrastructure. Terraform shows that it will update 3 resources, create 2 new resources, and destroy 1 resource. How does Terraform determine what changes need to be made?
-
-- A. Terraform queries all cloud provider APIs and compares the results with the configuration files
-- B. Terraform compares the desired state in the configuration with the current state in the state file to build the plan
-- C. Terraform reads the configuration and checks Git history to identify what changed
-- D. Terraform looks at the `terraform plan` output from the last run and applies the same changes
-- E. Terraform randomly orders all resources and determines changes based on resource dependencies
-
 ## Files
 
 - `main.tf` — config with VPC, subnet, and EC2 instance
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

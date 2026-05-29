@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -60,14 +60,3 @@ Local and git sources handle versioning differently:
 | C — Local filesystem | Local paths start with `./` or `../`, e.g., `./modules/transit-gateway`. Three-segment format with slashes is never a local path. |
 | D — Git repository | Git sources must start with `git::` or use a format like `github.com/org/repo`. The three-segment format is exclusively a registry pattern. |
 | E — HTTP URL | HTTP sources start with `http://` or `https://`. The three-segment format doesn't contain `://`. |
-
-## Exam Tips
-
-- **Three-segment source** = public registry (`namespace/name/provider`)
-- **Four-segment with hostname** = private registry (`hostname/namespace/name/provider`)
-- **Leading `./` or `../`** = local module
-- **Contains `://`** = git or HTTP source
-- `version` argument only works with **registry** sources
-- Public registry URL pattern: `registry.terraform.io/modules/<namespace>/<name>/<provider>`
-- Common module namespace examples: `hashicorp/`, `terraform-aws-modules/`, `terraform-google-modules/`, `Azure/`
-- The provider suffix (`/aws`, `/azurerm`, `/google`) matches the **target** provider, not the module source

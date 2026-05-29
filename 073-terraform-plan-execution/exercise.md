@@ -1,6 +1,18 @@
 # Terraform Plan Execution Exercise
 
-**Exam Question:** You've updated a module and run `terraform plan` with default settings against the workspace's remote state. What happens when the command is executed?
+**Domain:** IaC Workflow
+**Topic:** What `terraform plan` does against remote state
+
+## Description
+
+You've updated a module and run `terraform plan` with default settings against the workspace's remote state. What happens when the command is executed
+
+## Learning Objectives
+
+- Examine the config
+- Run plan and observe
+- What plan does step by step
+- Plan with remote state
 
 ## Background
 
@@ -111,18 +123,9 @@
    | `-/+` | Replace (destroy then create) |
    | `<=` | Read (data source) |
 
-### Put It Together
-
-You've updated a module and run `terraform plan` with default settings against the workspace's remote state. What happens when the command is executed?
-
-- A. Terraform immediately applies all changes to the infrastructure
-- B. Terraform creates an execution plan and determines what changes are required to achieve the desired state in the configuration files
-- C. Terraform destroys all existing resources and recreates them
-- D. Terraform updates the state file to match the configuration without changing real infrastructure
-- E. Terraform prompts for confirmation and then applies the changes
-
 ## Files
 
 - `main.tf` — config with variables and multiple resources
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

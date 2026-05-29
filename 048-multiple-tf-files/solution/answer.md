@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -74,13 +74,3 @@ File names, block positions, line numbers, and comment placement are **not** par
 | `override.tf` | Override values (loaded last) |
 
 All of these patterns produce **identical plans** — organization is purely for human readability.
-
-## Exam Tips
-
-- Terraform merges **all `.tf` files** in a directory into one configuration
-- File names, block order, and number of files do **not** affect the plan
-- Only the **content** of declarations matters
-- `override.tf` is the only file with special loading behavior (loaded last)
-- This concept applies to **all** block types: resources, variables, outputs, providers, etc.
-- Common exam scenario: "Split a config into multiple files — what happens?" — nothing, plan is identical
-- Common exam trap: thinking block order in a file affects creation order — it doesn't; dependencies do

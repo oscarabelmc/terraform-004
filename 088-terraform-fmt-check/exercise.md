@@ -1,6 +1,18 @@
 # Terraform Fmt Check Exercise
 
-**Exam Question:** Your team wants to enforce consistent formatting across all Terraform files before merging code into the main branch. You're setting up a CI/CD pipeline and need a command that checks whether files are properly formatted without making changes. Which command should you use?
+**Domain:** IaC Workflow
+**Topic:** `terraform fmt -check` for CI/CD formatting gate
+
+## Description
+
+Your team wants to enforce consistent formatting across all Terraform files before merging code into the main branch. You're setting up a CI/CD pipeline and need a command that checks whether files are properly formatted without making changes. Which command should you use
+
+## Learning Objectives
+
+- Examine formatting issues
+- Check formatting without changes
+- Fix the formatting
+- Using fmt -check in CI/CD
 
 ## Background
 
@@ -90,18 +102,9 @@
    | `terraform fmt -recursive` | ✅ Yes — checks subdirs | 0 always | Multi-module projects |
    | `terraform fmt -check -recursive` | ❌ No — read-only all dirs | Non-zero if issues found | CI/CD for multi-module |
 
-### Put It Together
-
-Your team wants to enforce consistent formatting across all Terraform files before merging code into the main branch. You're setting up a CI/CD pipeline and need a command that checks whether files are properly formatted without making changes. Which command should you use?
-
-- A. `terraform fmt`
-- B. `terraform validate`
-- C. `terraform fmt -check`
-- D. `terraform plan`
-- E. `terraform fmt -recursive`
-
 ## Files
 
 - `main.tf` — config with intentional formatting issue
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **C — Terraform loses the mapping to existing resources, making them orphaned and unmanaged.**
 
@@ -40,11 +40,3 @@ This restores the previous state, but **any changes made between the backup and 
 | B — Confirms deletion | No such confirmation exists for deleting the local state file. The OS `rm` command doesn't ask. |
 | D — Backup is redundant | The backup exists, but **any changes since the last backup are lost**. It's also possible to accidentally delete both. |
 | E — Plan updates existing | Without state, Terraform has no knowledge of existing resources. It cannot update what it doesn't know about. |
-
-## Exam Tips
-
-- The state file is **NOT** optional — Terraform fundamentally requires it.
-- Deleting state does **NOT** destroy infrastructure. It only loses the tracking.
-- Always use a **remote backend with versioning** for any non-trivial environment.
-- `terraform.tfstate.backup` is created automatically — it's your safety net for local backends.
-- The exam may ask: "What happens to the real resources?" → They **continue running**, orphaned.

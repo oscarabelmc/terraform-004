@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — Provider**.
 
@@ -49,13 +49,3 @@ Provider Plugin (separate binary)
 | **Isolation** | A crashing provider plugin doesn't crash Terraform Core |
 | **Language independence** | Providers are Go binaries, but the Plugin Framework allows providers in any language |
 | **Parallelism** | Multiple provider plugins run concurrently for independent resources |
-
-## Exam Tips
-
-- **Provider = plugin.** This is the most fundamental relationship to remember.
-- The provider plugin is a **separate binary** downloaded by `terraform init`
-- `required_providers` declares *which* plugins to download — it is not a plugin itself
-- Terraform Core **launches** provider plugins as subprocesses during `plan` and `apply`
-- Modules are **not** plugins — they are reusable configuration packages that use providers
-- The exam may test this distinction with answer options like: provider, provisioner, module, state, `required_providers` block, `terraform plan` command
-- Only **providers** (and legacy provisioners) are plugins in Terraform's architecture

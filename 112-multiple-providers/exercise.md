@@ -1,6 +1,18 @@
 # Multiple Providers in One Config Exercise
 
-**Exam Question:** True or False? Multiple providers can be declared within a single Terraform configuration file.
+**Domain:** IaC Workflow
+**Topic:** Multiple providers in a single configuration
+
+## Description
+
+True or False? Multiple providers can be declared within a single Terraform configuration file.
+
+## Learning Objectives
+
+- Examine a multi-provider config
+- Resources from different providers
+- Why multiple providers matter
+- Multiple instances of the same provider
 
 ## Background
 
@@ -127,15 +139,9 @@ provider "random"  { }
 
    This is covered in depth in exercise #046 (Provider Alias).
 
-### Put It Together
-
-True or False? Multiple providers can be declared within a single Terraform configuration file.
-
-- A. True
-- B. False
-
 ## Files
 
 - `main.tf` — config with multiple providers (aws, random, local)
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

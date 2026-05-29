@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **A** and **B**.
 
@@ -116,13 +116,3 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 ```
-
-## Exam Tips
-
-- **Plaintext secrets** in state — passwords, keys, tokens are always visible
-- **Commit history** preserves secrets even after deletion — they never truly disappear from git
-- **No VCS locking** — concurrent runs corrupt state
-- Remote backends solve both problems: **encryption** + **locking**
-- Marking an output or variable `sensitive = true` does **not** prevent the value from appearing in state
-- The `.terraform.lock.hcl` file is for **provider version pinning**, not state — it's safe to commit
-- Common exam pattern: "Why not commit state?" — two answers: secrets exposure + no locking

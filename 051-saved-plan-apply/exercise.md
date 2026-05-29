@@ -1,6 +1,18 @@
 # Saved Plan — Apply Exercise
 
-**Exam Question:** Your team's change management process requires that all Terraform changes be reviewed and approved before execution. You run `terraform plan -out=saved-plan.tfplan` and send the output for review. After approval is granted two hours later, what command should you run to execute the exact changes that were reviewed?
+**Domain:** IaC Workflow
+**Topic:** Apply a saved plan file
+
+## Description
+
+Your team's change management process requires that all Terraform changes be reviewed and approved before execution. You run `terraform plan -out=saved-plan.tfplan` and send the output for review. After approval is granted two hours later, what command should you run to execute the exact changes that were reviewed
+
+## Learning Objectives
+
+- Generate a saved plan
+- Review the plan (simulated)
+- Apply the exact reviewed plan
+- Understand why saved plans are used
 
 ## Background
 
@@ -73,18 +85,9 @@ Terraform plans can be **saved to a file** with the `-out` flag. This captures t
    terraform apply plan.tfplan      # ← executes exact same content
    ```
 
-### Put It Together
-
-Your team's change management process requires that all Terraform changes be reviewed and approved before execution. You run `terraform plan -out=saved-plan.tfplan` and send the output for review. After approval is granted two hours later, what command should you run to execute the exact changes that were reviewed?
-
-- A. `terraform apply saved-plan.tfplan`
-- B. `terraform apply`
-- C. `terraform plan -out=saved-plan.tfplan` again, then `terraform apply`
-- D. `terraform apply -auto-approve saved-plan.tfplan`
-- E. `terraform init && terraform apply`
-
 ## Files
 
 - `main.tf` — simple config for plan-apply workflow
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

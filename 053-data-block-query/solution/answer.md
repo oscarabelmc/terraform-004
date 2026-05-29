@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -55,11 +55,3 @@ Key characteristics:
 | `module` | ❌ | ✅ (contains resources) | Reusable component |
 | `locals` | ❌ | ❌ | Local expression helpers |
 | `provider` | ❌ | ❌ | Provider configuration |
-
-## Exam Tips
-
-- **Only `data` blocks** query existing infrastructure
-- Data sources are referenced as `data.<type>.<name>.<attribute>`
-- Common data source uses: AMI lookup, VPC lookup, caller identity, existing bucket
-- Know the difference between `data` (read), `resource` (create/manage), `module` (package), `locals` (compute), and `provider` (configure)
-- The question asks about "querying information about existing resources" — that's exclusively a `data` block

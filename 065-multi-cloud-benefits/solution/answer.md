@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **B** and **C**.
 
@@ -80,12 +80,3 @@ Key points:
 - Providers still vary in behavior and capabilities
 - Credentials are still needed per provider
 - Pricing and billing are not standardized
-
-## Exam Tips
-
-- Multi-cloud benefit = **one tool, one workflow, one language** across all clouds
-- Terraform does **not** eliminate provider-specific credentials
-- Terraform does **not** standardize pricing or billing
-- Terraform does **not** make all clouds behave identically — each provider has unique resources and attributes
-- Common exam trap: overstating what Terraform can do — it's an IaC tool, not a multi-cloud abstraction layer that hides all provider differences
-- A single consistent workflow reduces **operational overhead** (training, governance, CI/CD)

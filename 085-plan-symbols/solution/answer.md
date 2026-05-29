@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -61,15 +61,3 @@ Changes that typically cause `-/+` (replace):
 - `cidr_block` (VPC — can't change CIDR without recreating)
 - `name` (some resources that are immutable)
 - `encrypted` (EBS — can't toggle encryption on existing volume)
-
-## Exam Tips
-
-- `~` = **update in-place** — safe, no replacement
-- `+` = **create**
-- `-` = **destroy**
-- `-/+` = **replace** (destroy + create)
-- `<=` = **read** (data source)
-- Update in-place means the resource **keeps its identity** (same ID)
-- Replace means the resource gets a **new identity** (new ID)
-- Common exam trap: confusing `~` with `-/+` (update vs replace)
-- Another trap: thinking tilde means any change (it specifically means in-place modification)

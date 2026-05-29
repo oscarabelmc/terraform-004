@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -61,14 +61,3 @@ module "my_module" {
 | Version control | Git tags on GitHub | Git tags on connected VCS |
 | CI/CD publishing | Manual / GitHub Actions | Auto-import from VCS |
 | Cost | Free | Included with HCP Terraform |
-
-## Exam Tips
-
-- **Private registry** = organization-scoped module storage in HCP Terraform
-- Module source format: `<hostname>/<org>/<module-name>/<provider>`
-- Contrast with public registry: `terraform-aws-modules/vpc/aws` (public) vs `app.terraform.io/my-org/vpc/aws` (private)
-- VCS connection enables automatic version detection from git tags
-- Version constraints work the same as on the public registry
-- The private registry supports both **modules** and **providers**
-- If you see a module source with `app.terraform.io/<org>/<name>/<provider>`, it's from a private registry
-- Common exam trap: confusing the private registry with workspaces — workspaces run Terraform, the registry stores Terraform code

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -70,14 +70,3 @@ But the lock file only applies to **providers**, not modules. Module versions ar
 | GitHub (git URL) | ❌ (use `ref` instead) |
 | Local path (`./modules/foo`) | ❌ |
 | HTTP URL | ❌ |
-
-## Exam Tips
-
-- `version` is **optional** but **recommended**
-- Purpose: **consistent and reproducible** deployments
-- Without it: defaults to **latest version**
-- Version constraints use the same syntax as provider version constraints
-- The `.terraform.lock.hcl` file locks **provider** versions only — module version pinning requires the `version` argument
-- Modules from **local paths** or **git URLs** don't use the `version` argument (use `ref` for git)
-- Common exam scenario: "Why did my infrastructure change after running `terraform init`?" — likely a module version change because no `version` was specified
-- `terraform init -upgrade` re-resolves module versions even when constrained

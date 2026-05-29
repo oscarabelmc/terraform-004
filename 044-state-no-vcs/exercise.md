@@ -1,6 +1,18 @@
 # State File — Version Control Exercise
 
-**Exam Question:** Why should users not commit the `terraform.tfstate` file to version control? (Select two.)
+**Domain:** State Management
+**Topic:** Why not commit `terraform.tfstate` to VCS
+
+## Description
+
+Why should users not commit the `terraform.tfstate` file to version control? (Select two.)
+
+## Learning Objectives
+
+- Examine what a state file contains
+- Understand the security risk
+- Understand the locking risk
+- Examine proper .gitignore
 
 ## Background
 
@@ -75,19 +87,10 @@ Terraform state files contain sensitive information about your infrastructure. D
    crash.log
    ```
 
-### Put It Together
-
-Why should users not commit the `terraform.tfstate` file to version control? (Select two.)
-
-- A. State can include plaintext secrets and detailed resource data; commit history can expose them
-- B. VCS provides no state locking, so concurrent runs can cause conflicting commits and corrupt state
-- C. State files are too large to be stored in version control
-- D. Terraform cannot read state files from a version control system
-- E. State files are only readable by the Terraform binary and cannot be viewed
-
 ## Files
 
 - `main.tf` — config that generates sensitive values in state
 - `variables.tf` — input variables
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

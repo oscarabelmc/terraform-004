@@ -1,6 +1,18 @@
 # Moved Block — State Refactoring Exercise
 
-**Exam Question:** True or False? After successfully applying a `moved` block to refactor your resources, you should immediately remove the `moved` block from your configuration to keep your code clean.
+**Domain:** IaC Workflow
+**Topic:** Keep `moved` block for ≥1 apply cycle
+
+## Description
+
+True or False? After successfully applying a `moved` block to refactor your resources, you should immediately remove the `moved` block from your configuration to keep your code clean.
+
+## Learning Objectives
+
+- Examine the moved block
+- How moved blocks work
+- What happens if you remove the moved block too soon
+- Best practices for moved blocks
 
 ## Background
 
@@ -92,15 +104,9 @@ However, removing a `moved` block too soon causes Terraform to interpret the old
    - **Until CI/CD pipelines** have completed at least one run
    - **Until you're confident** no state still references the old address
 
-### Put It Together
-
-True or False? After successfully applying a `moved` block to refactor your resources, you should immediately remove the `moved` block from your configuration to keep your code clean.
-
-- A. True
-- B. False
-
 ## Files
 
 - `main.tf` — config with moved block for resource rename
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

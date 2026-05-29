@@ -1,6 +1,18 @@
 # Terraform Logging Exercise
 
-**Exam Question:** You are troubleshooting an issue where Terraform is modifying certain resource attributes during apply operations that you didn't expect. You suspect the provider is interpreting your configuration differently than expected. What is the primary benefit of enabling Terraform logging in this situation?
+**Domain:** Troubleshooting
+**Topic:** Terraform logging with `TF_LOG`
+
+## Description
+
+You are troubleshooting an issue where Terraform is modifying certain resource attributes during apply operations that you didn't expect. You suspect the provider is interpreting your configuration differently than expected. What is the primary benefit of enabling Terraform logging in this situation
+
+## Learning Objectives
+
+- Understanding TF_LOG
+- Run a plan with logging enabled
+- What logs reveal
+- What logging does NOT do
 
 ## Background
 
@@ -86,18 +98,9 @@ Terraform logging provides visibility into the internal operations of Terraform 
    - ❌ Does not modify behavior — only observes it
    - ❌ Can reveal sensitive data (passwords, keys) in plain text — be careful with log files
 
-### Put It Together
-
-You are troubleshooting an issue where Terraform is modifying certain resource attributes during apply operations that you didn't expect. You suspect the provider is interpreting your configuration differently than expected. What is the primary benefit of enabling Terraform logging in this situation?
-
-- A. Logging will automatically correct the configuration errors
-- B. Logging will show you the detailed interactions between Terraform and the provider API and help you identify where the unexpected behavior occurs
-- C. Logging will speed up the apply process by caching provider responses
-- D. Logging will prevent the unexpected changes from being applied
-- E. Logging will hide all sensitive data from the output
-
 ## Files
 
 - `main.tf` — example config for testing with logging
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — `TF_VAR_`**.
 
@@ -48,10 +48,3 @@ Terraform resolves variable values in this order:
 - **list** — `TF_VAR_list='["a","b","c"]'`
 - **map / object** — `TF_VAR_tags='{"env":"dev","team":"infra"}'`
 - Use HCL syntax inside the string (Terraform parses the value)
-
-## Exam Tips
-
-- The prefix is always **`TF_VAR_`** — this is a guaranteed exam question.
-- Remember the precedence order: defaults are **lowest**, CLI flags are **highest**.
-- `.tfvars` files beat `TF_VAR_` env vars. Many candidates get this backwards.
-- `TF_VAR_` is useful in CI/CD pipelines where you inject secrets via environment variables.

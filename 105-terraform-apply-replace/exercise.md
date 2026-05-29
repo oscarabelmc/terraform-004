@@ -1,6 +1,18 @@
 # Terraform Apply -replace Exercise
 
-**Exam Question:** Which Terraform command will force a resource to be destroyed and recreated even if there are no configuration changes that would require it?
+**Domain:** IaC Workflow
+**Topic:** `terraform apply -replace` — force resource recreation without config changes
+
+## Description
+
+Which Terraform command will force a resource to be destroyed and recreated even if there are no configuration changes that would require it
+
+## Learning Objectives
+
+- Understand the scenario
+- Force replacement with `-replace`
+- Compare: `-replace` vs other approaches
+- How `-replace` works
 
 ## Background
 
@@ -108,18 +120,9 @@ terraform apply                 (single command, no taint state)
 
    The `-replace` flag **overrides** Terraform's normal plan logic, forcing the resource to appear as `-/+` (replace) in the plan.
 
-### Put It Together
-
-Which Terraform command will force a resource to be destroyed and recreated even if there are no configuration changes that would require it?
-
-- A. `terraform destroy -target=<address>`
-- B. `terraform plan -out=tfplan`
-- C. `terraform apply -replace=<address>`
-- D. `terraform state rm <address>`
-- E. `terraform refresh`
-
 ## Files
 
 - `main.tf` — config with a resource to force-replace
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

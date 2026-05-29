@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -66,13 +66,3 @@ With `TF_LOG=TRACE` or `DEBUG`, you can see:
 | `TF_WORKSPACE` | Select workspace for commands |
 | `TF_CLI_ARGS` | Inject additional CLI flags |
 | `TF_SKIP_PROVIDER_VERIFY` | Skip provider plugin verification (not recommended) |
-
-## Exam Tips
-
-- **`TF_LOG`** is the variable name — memorize it
-- Valid levels: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR`, `JSON`
-- `TRACE` is the most verbose
-- `TF_LOG_PATH` writes logs to a file (complementary to `TF_LOG`)
-- Unset `TF_LOG` (or set to empty) to disable logging
-- `TF_LOG` only controls Terraform's own logs — provider logs are separate
-- Common exam scenario: "A Terraform operation is failing with a cryptic error. Which env var helps you see more detail about what's happening internally?"

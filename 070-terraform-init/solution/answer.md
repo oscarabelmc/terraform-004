@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answers are **B**, **C**, and **D**.
 
@@ -118,13 +118,3 @@ It is **safe to run repeatedly** — it's idempotent.
 **Objective 3b** — Initialize a Terraform working directory.
 
 `terraform init` is the first command after writing config or cloning from VCS. It initializes backends, downloads providers and modules, and is safe to run multiple times.
-
-## Exam Tips
-
-- Three init actions: **backend initialization, module download, provider download**
-- Init does **NOT** provision resources (that's apply)
-- Init is **idempotent** — safe to run multiple times
-- `terraform init -upgrade` re-downloads providers/modules with updated constraints
-- `.terraform/` directory is created by init — add to `.gitignore`
-- Common exam trap: thinking init provisions resources (it only prepares the working directory)
-- Another trap: forgetting that init is required before plan/apply in a fresh clone

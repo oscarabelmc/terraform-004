@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -94,14 +94,3 @@ data.aws_subnets.all.ids
 data.aws_caller_identity.current.account_id
 data.aws_region.current.name
 ```
-
-## Exam Tips
-
-- Data sources = **read-only API queries** — they fetch, don't create
-- Referenced as `data.<type>.<name>.<attribute>`
-- Data sources can see resources **not managed by Terraform**
-- They are evaluated during `plan` and re-queried on every run
-- They do **not** create managed state entries
-- Common exam trap: confusing data sources with resources — data sources don't create anything
-- Common exam trap: confusing data sources with modules — modules are reusable component packages
-- A data source block and a resource block share similar syntax but serve fundamentally different purposes

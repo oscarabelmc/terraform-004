@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -59,13 +59,3 @@ Write (config) → Plan (preview) → Apply (execute)
 | `terraform validate` | **Check** syntax and internal consistency |
 | `terraform fmt` | **Format** configuration files |
 | `terraform destroy` | **Destroy** all managed resources |
-
-## Exam Tips
-
-- `terraform apply` = **execute the plan** to make infra match config
-- Prompts for confirmation by default
-- `-auto-approve` skips prompt (CI/CD use only)
-- With a saved plan file: `terraform apply plan.tfplan` (no prompt)
-- Apply updates state after successful execution
-- Common exam trap: confusing apply with plan or init
-- Another trap: thinking apply doesn't prompt by default (it does)

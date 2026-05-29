@@ -1,6 +1,18 @@
 # Terraform Show Commands Exercise
 
-**Exam Question:** A colleague asks what the difference is between `terraform show` and `terraform state show`. What is the correct explanation? (Select three.)
+**Domain:** State Management
+**Topic:** `terraform show` vs `terraform state show`
+
+## Description
+
+A colleague asks what the difference is between `terraform show` and `terraform state show`. What is the correct explanation? (Select three.)
+
+## Learning Objectives
+
+- Create the baseline
+- `terraform show` (broad overview)
+- `terraform state show` (targeted view)
+- Side-by-side comparison
 
 ## Steps
 
@@ -67,18 +79,8 @@
 | Use case | Broad overview of all infra | Inspecting a specific resource |
 | Also works with | Plan files (`terraform show tfplan`) | State only |
 
-### Put It Together
-
-A colleague asks what the difference is between `terraform show` and `terraform state show`. What is the correct explanation? (Select three.)
-
-- A. `terraform show` displays the entire state file without requiring any additional arguments.
-- B. `terraform state show` requires you to specify a resource address to view that specific resource.
-- C. `terraform show` is useful when you want a complete overview of all managed infrastructure.
-- D. `terraform state show` displays the entire state file without requiring any additional arguments.
-- E. `terraform show` requires you to specify a resource address to view that specific resource.
-- F. `terraform state show` can display saved plan files as well as state files.
-
 ## Files
 - `main.tf` — creates 4 resources (2 random_pet, 2 local_file)
 - `outputs.tf` — outputs for verification
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B**.
 
@@ -97,12 +97,3 @@ terraform.tfvars
 | **Pass local** | `instance_type = local.web_type` |
 | **Pass resource attribute** | `vpc_id = aws_vpc.main.id` |
 | **Pass module output** | `vpc_id = module.vpc.vpc_id` |
-
-## Exam Tips
-
-- Child modules **do not inherit** root variables automatically
-- All module inputs must be **explicitly passed** via the module block
-- Module isolation is **by design** — it promotes reusability and explicitness
-- Each module declares its own variables independently
-- Common exam trap: thinking root variables are automatically available in child modules (they are not)
-- Another trap: thinking `terraform.tfvars` applies to all modules (it only applies to the root module)

@@ -1,6 +1,18 @@
 # Plan Symbols Exercise
 
-**Exam Question:** After executing a `terraform plan` in your working directory, you notice that a resource has a tilde (~) next to it. What does this indicate?
+**Domain:** IaC Workflow
+**Topic:** Tilde (~) in plan means update in-place
+
+## Description
+
+After executing a `terraform plan` in your working directory, you notice that a resource has a tilde (~) next to it. What does this indicate
+
+## Learning Objectives
+
+- Examine the config
+- Run plan and see the symbols
+- All plan symbols
+- Why update in-place matters
 
 ## Background
 
@@ -103,18 +115,9 @@ Terraform uses symbols in plan output to indicate the type of change each resour
 
    Recognizing `~` tells you the change is **safe** — existing resource attributes are modified without recreation.
 
-### Put It Together
-
-After executing a `terraform plan` in your working directory, you notice that a resource has a tilde (~) next to it. What does this indicate?
-
-- A. The resource will be destroyed
-- B. The resource will be updated in place
-- C. The resource will be created
-- D. The resource will be replaced (destroyed and recreated)
-- E. The resource is being read from a data source
-
 ## Files
 
 - `main.tf` — config for demonstrating plan symbols
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

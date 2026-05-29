@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A — `terraform plan -refresh-only`**.
 
@@ -41,10 +41,3 @@ This gives you a **read-only preview** of drift, exactly as the question asks.
 | C — `terraform refresh` | Immediately **writes** to state — the question says "don't want to make any changes yet." No preview mode. |
 | D — `terraform apply` | Makes both state and infrastructure changes — the opposite of "don't want to make any changes." |
 | E — `terraform validate` | Only checks HCL syntax and config validity. Never interacts with state or real resources. |
-
-## Exam Tips
-
-- The key phrase is **"don't want to make any changes yet, but want to see"** → read-only preview → `-refresh-only`
-- `terraform refresh` is the older approach but it **writes to state immediately** — no preview
-- `terraform apply -refresh-only` is the safe way to actually update state (write version)
-- `terraform plan` with the `-refresh=false` flag skips refresh entirely (useful for large states)

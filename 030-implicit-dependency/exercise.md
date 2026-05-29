@@ -1,19 +1,18 @@
 # Implicit vs Explicit Dependency Exercise
 
-**Exam Question:** Your colleague provided the code snippet below and is looking for assistance in identifying the implicit dependency. What is the implicit dependency in this code?
+**Domain:** State & DAG Management
+**Topic:** Implicit dependency from attribute reference
 
-```hcl
-resource "aws_eip" "public_ip" {
-    vpc      = true
-    instance = aws_instance.web_server.id
-}
+## Description
 
-resource "aws_instance" "web_server" {
-  ami           = "ami-502b7f631"
-  instance_type = "t2.micro"
-  depends_on    = [aws_s3_bucket.company_data]
-}
-```
+Your colleague provided the code snippet below and is looking for assistance in identifying the implicit dependency. What is the implicit dependency in this code
+
+## Learning Objectives
+
+- Read the config
+- Trace the implicit dependency
+- Trace the explicit dependency
+- Understand the resulting dependency graph
 
 ## Background
 
@@ -89,30 +88,9 @@ Terraform uses this graph to determine:
    aws_eip.public_ip
    ```
 
-### Put It Together
-
-Your colleague provided the code snippet below. What is the **implicit** dependency in this code?
-
-```hcl
-resource "aws_eip" "public_ip" {
-    vpc      = true
-    instance = aws_instance.web_server.id
-}
-
-resource "aws_instance" "web_server" {
-  ami           = "ami-502b7f631"
-  instance_type = "t2.micro"
-  depends_on    = [aws_s3_bucket.company_data]
-}
-```
-
-- A. `aws_s3_bucket.company_data`
-- B. `aws_instance.web_server`
-- C. `aws_eip.public_ip`
-- D. There is no implicit dependency
-
 ## Files
 
 - `main.tf` — configuration with both implicit and explicit dependencies
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,6 +1,17 @@
 # length() Function Exercise
 
-**Exam Question:** You have a variable containing subnet CIDR blocks as a list: `["10.0.5.0/24", "10.0.0.0/24", "10.0.2.0/24"]`. You need to determine how many subnets are in the list to use. Which function returns the number of elements?
+**Domain:** Functions
+**Topic:** `length()` function — count elements in a list
+
+## Description
+
+You have a variable containing subnet CIDR blocks as a list: `["10.0.5.0/24", "10.0.0.0/24", "10.0.2.0/24"]`. You need to determine how many subnets are in the list to use. Which function returns the number of elements
+
+## Learning Objectives
+
+- `length()` with a list
+- `length()` adapts to different inputs
+- `length()` with other types
 
 ## Steps
 
@@ -68,18 +79,9 @@
 
    This is useful for validation, conditionals, and dynamic logic throughout Terraform configurations.
 
-### Put It Together
-
-You have a variable containing subnet CIDR blocks as a list: `["10.0.5.0/24", "10.0.0.0/24", "10.0.2.0/24"]`. You need to determine how many subnets are in the list to use. Which function returns the number of elements?
-
-- A. `count(var.subnet_cidrs)`
-- B. `len(var.subnet_cidrs)`
-- C. `length(var.subnet_cidrs)`
-- D. `size(var.subnet_cidrs)`
-- E. `element(var.subnet_cidrs, 0)`
-
 ## Files
 - `main.tf` — uses `length()` in `count`, `content`, and conditionals
 - `variables.tf` — declares `var.subnet_cidrs` with a default list
 - `outputs.tf` — shows computed length-based values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

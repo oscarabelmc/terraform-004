@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **B — False**.
 
@@ -63,12 +63,3 @@ Choosing "True" assumes the moved block is only for the initial migration. In re
 | 2 | Apply | Migrates state from old to new address |
 | 3 | Keep moved block for ≥1 cycle | Allows team/CI to sync state |
 | 4 | Remove moved block in separate commit | Clean code after migration complete |
-
-## Exam Tips
-
-- **Keep the moved block** until all state references are migrated
-- Removing too soon risks **unintended destroy + create**
-- The moved block is **safe to keep** — it's a no-op after the first successful apply
-- Use a **separate commit** to remove the moved block after migration
-- Common exam trap: thinking moved blocks are single-use and can be removed immediately
-- Another trap: assuming your apply is the only one that matters (team and CI matter too)

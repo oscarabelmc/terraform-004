@@ -1,6 +1,18 @@
 # Map(string) Variable Syntax Exercise
 
-**Exam Question:** Which of the following options correctly demonstrates the HCL syntax for assigning a value to a variable declared with the type `map(string)`?
+**Domain:** Input Variables
+**Topic:** Correct `map(string)` syntax — `{ "key" = "value" }`
+
+## Description
+
+Which of the following options correctly demonstrates the HCL syntax for assigning a value to a variable declared with the type `map(string)`
+
+## Learning Objectives
+
+- Examine correct map syntax
+- Map syntax rules
+- Common syntax errors
+- Maps in resource blocks
 
 ## Background
 
@@ -106,18 +118,9 @@ A `map(string)` in HCL is a collection of key-value pairs where both keys and va
 
    The `tags` argument in many AWS resources accepts `map(string)` — the same syntax.
 
-### Put It Together
-
-Which of the following options correctly demonstrates the HCL syntax for assigning a value to a variable declared with the type `map(string)`?
-
-- A. `default = ["key1" = "value1", "key2" = "value2"]`
-- B. `default = { "environment" = "production", "owner" = "dev-team" }`
-- C. `default = { "key1": "value1", "key2": "value2" }`
-- D. `default = "key1=value1,key2=value2"`
-- E. `default = ["value1", "value2", "value3"]`
-
 ## Files
 
 - `main.tf` — config with map(string) variables
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

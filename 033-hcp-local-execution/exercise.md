@@ -1,6 +1,18 @@
 # HCP Terraform Local Execution Mode Exercise
 
-**Exam Question:** You have configured a workspace in HCP Terraform to use local execution. In this mode, what does HCP Terraform do?
+**Domain:** HCP Terraform
+**Topic:** HCP Terraform local execution mode
+
+## Description
+
+You have configured a workspace in HCP Terraform to use local execution. In this mode, what does HCP Terraform do
+
+## Learning Objectives
+
+- Examine the remote backend config
+- Understand the local execution workflow
+- Verify state is in HCP Terraform
+- Compare with remote execution
 
 ## Background
 
@@ -76,18 +88,9 @@ In **local execution mode**, HCP Terraform acts as a **remote state backend only
    | Requires CLI | ✅ | ✅ (or VCS/API) |
    | Works offline | ❌ (needs HCP for state) | ❌ |
 
-### Put It Together
-
-You have configured a workspace in HCP Terraform to use local execution. In this mode, what does HCP Terraform do?
-
-- A. HCP Terraform only stores and syncs the workspace's state file, while you run plan and apply locally on your own machine
-- B. HCP Terraform runs plan and apply on its infrastructure, and stores the state
-- C. HCP Terraform only stores provider plugins, while you run all Terraform commands locally
-- D. HCP Terraform disables all remote functionality and reverts to local state
-- E. HCP Terraform runs plan locally but apply remotely on its infrastructure
-
 ## Files
 
 - `main.tf` — config with `cloud` block for HCP Terraform local execution
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

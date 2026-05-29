@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -74,14 +74,3 @@ You cannot have one without the other — the reference always retrieves the val
 | Creates dependency | ✅ Implicit | ✅ Explicit |
 | When to use | Always, when you need a value from another resource | When you need ordering but no value passes between resources |
 | Example | `vpc_id = aws_vpc.main.id` | `depends_on = [aws_vpc.main]` |
-
-## Exam Tips
-
-- **Every** `resource_type.name.attribute` reference = **value retrieval + implicit dependency**
-- You can't separate the two — if you reference an attribute, you get both
-- If you only need ordering (no value), use `depends_on`
-- If you need a value, use an attribute reference (dependency is automatic)
-- Computed attributes (like `id`, `arn`, `created_at`) are only available after creation — you **must** reference them to pass them
-- The dependency graph is built from **all** references in the configuration
-- Common exam trap: thinking references only retrieve values — they create dependencies too
-- Common exam trap: thinking `depends_on` is the only way to create dependencies — references create them implicitly

@@ -1,8 +1,18 @@
 # Variable Type Errors Exercise
 
-**Exam Question:** Which of the following variable declarations will cause Terraform to return a type error before apply?
+**Domain:** Input Variables
+**Topic:** Variable type errors — `list(string)` with `default = {}`
 
-This exercise includes all four variable declarations from the exam question. One has a deliberate type mismatch.
+## Description
+
+Which of the following variable declarations will cause Terraform to return a type error before apply
+
+## Learning Objectives
+
+- See the type error
+- Fix the error
+- Confirm the others work
+- Experiment with other mismatches
 
 ## Steps
 
@@ -77,48 +87,9 @@ This exercise includes all four variable declarations from the exam question. On
    # type = map(string), default = []  → ERROR: list is not map
    ```
 
-### Put It Together
-
-Which of the following variable declarations will cause Terraform to return a type error before apply?
-
-- A.
-  ```hcl
-  variable "names" {
-    description = "List of user names"
-    type        = list(string)
-    default     = {}
-  }
-  ```
-- B.
-  ```hcl
-  variable "instance_count" {
-    description = "Number of instances to create"
-    type        = number
-    default     = 3
-  }
-  ```
-- C.
-  ```hcl
-  variable "enabled" {
-    description = "Decide whether to enable the feature"
-    type        = bool
-    default     = true
-  }
-  ```
-- D.
-  ```hcl
-  variable "tags" {
-    description = "Map of resource tags"
-    type        = map(string)
-    default     = {
-      Environment = "prod"
-      Owner       = "platform-team"
-    }
-  }
-  ```
-
 ## Files
 - `variables.tf` — all four variable declarations (one with intentional type error)
 - `main.tf` — uses all variables in a local_file resource
 - `outputs.tf` — outputs for verification
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,6 +1,18 @@
 # Destroy Confirmation Exercise
 
-**Exam Question:** True or False? By default, the `terraform destroy` command will prompt the user for confirmation before proceeding.
+**Domain:** IaC Workflow
+**Topic:** `terraform destroy` prompts for confirmation by default
+
+## Description
+
+True or False? By default, the `terraform destroy` command will prompt the user for confirmation before proceeding.
+
+## Learning Objectives
+
+- Create resources to destroy
+- Default behavior (with prompt)
+- Skipping the prompt
+- Preview without destroying
 
 ## Steps
 
@@ -75,13 +87,7 @@
 
    This shows exactly what would be destroyed, but does nothing — no prompt, no changes.
 
-### Put It Together
-
-True or False? By default, the `terraform destroy` command will prompt the user for confirmation before proceeding.
-
-- A. True
-- B. False
-
 ## Files
 - `main.tf` — simple config to destroy
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

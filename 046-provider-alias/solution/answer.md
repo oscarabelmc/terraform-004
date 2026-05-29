@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -73,14 +73,3 @@ resource "aws_instance" "web_mumbai" {
 | **Multi-account setup** | Use different AWS accounts for different environments |
 | **Cross-provider resources** | e.g., DNS in us-east-1, compute in eu-west-1 |
 | **Provider with different credentials** | Different IAM roles for different resources |
-
-## Exam Tips
-
-- `alias` is the argument that differentiates multiple configurations of the **same** provider
-- The first/default provider block does **not** need `alias`
-- Every additional provider block of the same type **must** have a unique `alias`
-- Reference aliased providers as `provider = <provider_type>.<alias>` in resources
-- `alias` is also used in `required_providers` to configure provider versions per alias
-- Modules can accept aliased providers via `providers` mapping
-- The error message literally tells you: "set the 'alias' argument" — a strong hint for the exam
-- Common exam scenario: two `provider "aws"` blocks causing a duplicate error → add `alias`

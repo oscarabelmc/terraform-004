@@ -1,27 +1,18 @@
 # Multiple Implicit Dependencies Exercise
 
-**Exam Question:** True or False? In the configuration below, the `aws_volume_attachment.attach_data` resource has an implicit dependency on both the instance and the volume.
+**Domain:** State & DAG Management
+**Topic:** Multiple implicit dependencies
 
-```hcl
-resource "aws_instance" "app_core" {
-  ami               = "ami-0c55b159cbfafe1f0"
-  instance_type     = "t3.micro"
-  availability_zone = "ca-central-1a"
+## Description
 
-  tags = { Owner = "implicit-team", Env = "pr0d-east" }
-}
+True or False? In the configuration below, the `aws_volume_attachment.attach_data` resource has an implicit dependency on both the instance and the volume.
 
-resource "aws_ebs_volume" "data_pr0d_east" {
-  availability_zone = "ca-central-1a"
-  size              = 10
-}
+## Learning Objectives
 
-resource "aws_volume_attachment" "attach_data" {
-  device_name = "/dev/xvdf"
-  volume_id   = aws_ebs_volume.data_pr0d_east.id
-  instance_id = aws_instance.app_core.id
-}
-```
+- Examine the config
+- Trace each attribute reference
+- Visualize the dependency graph
+- Verify the dependency count
 
 ## Background
 
@@ -86,36 +77,9 @@ A resource can have **multiple implicit dependencies** — every attribute refer
 
    The plan shows the creation order: the instance and volume are planned before the attachment. Terraform knows it can create the instance and volume **in parallel** (no dependency between them), but must create the attachment **last**.
 
-### Put It Together
-
-True or False? The `aws_volume_attachment.attach_data` resource has an implicit dependency on **both** the instance and the volume.
-
-```hcl
-resource "aws_instance" "app_core" {
-  ami               = "ami-0c55b159cbfafe1f0"
-  instance_type     = "t3.micro"
-  availability_zone = "ca-central-1a"
-
-  tags = { Owner = "implicit-team", Env = "pr0d-east" }
-}
-
-resource "aws_ebs_volume" "data_pr0d_east" {
-  availability_zone = "ca-central-1a"
-  size              = 10
-}
-
-resource "aws_volume_attachment" "attach_data" {
-  device_name = "/dev/xvdf"
-  volume_id   = aws_ebs_volume.data_pr0d_east.id
-  instance_id = aws_instance.app_core.id
-}
-```
-
-- A. True
-- B. False
-
 ## Files
 
 - `main.tf` — config with multiple implicit dependencies
 - `outputs.tf` — output values
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

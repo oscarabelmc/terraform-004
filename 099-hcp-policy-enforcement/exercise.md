@@ -1,6 +1,18 @@
 # HCP Terraform Policy Enforcement Levels Exercise
 
-**Exam Question:** Your team has multiple infrastructure projects with different compliance requirements. Some projects require advisory policy checks while others need mandatory enforcement. How should you configure policies in HCP Terraform to meet these varying requirements?
+**Domain:** HCP Terraform
+**Topic:** HCP Terraform policy enforcement levels — advisory vs mandatory
+
+## Description
+
+Your team has multiple infrastructure projects with different compliance requirements. Some projects require advisory policy checks while others need mandatory enforcement. How should you configure policies in HCP Terraform to meet these varying requirements
+
+## Learning Objectives
+
+- Understand policy sets and enforcement levels
+- Apply policy sets to workspaces
+- Example Sentinel policy with different enforcement
+- Configure in HCP Terraform UI or API
 
 ## Background
 
@@ -143,19 +155,10 @@ HCP Terraform supports **Policy as Code** using Sentinel (or OPA) to enforce com
    }
    ```
 
-### Put It Together
-
-Your team has multiple infrastructure projects with different compliance requirements. Some projects require advisory policy checks while others need mandatory enforcement. How should you configure policies in HCP Terraform to meet these varying requirements?
-
-- A. Create a single policy set with mandatory enforcement and apply it to all workspaces
-- B. Configure different enforcement levels for each policy set and apply them to the appropriate workspaces or projects
-- C. Use `terraform plan` with the `-policy` flag to set enforcement per run
-- D. Set the enforcement level in each Sentinel policy file and HCP Terraform will auto-detect the correct level
-- E. Create separate HCP Terraform organizations for each enforcement level
-
 ## Files
 
 - `main.tf` — Terraform config for a workspace that will have policies applied
 - `policies/require-cost-center-tag.sentinel` — example advisory policy
 - `policies/restrict-public-s3.sentinel` — example hard-mandatory policy
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct sequence is **B**:
 
@@ -34,11 +34,3 @@ This follows the standard VCS-driven workflow: **Code → PR (spec plan) → Rev
 | **PR comments** | HCP Terraform posts the speculative plan result directly as a comment on the PR |
 | **VCS trigger** | HCP Terraform watches the connected repo for new commits and PRs |
 | **Run trigger** | Different from VCS trigger — it's workspace-to-workspace, not code-to-workspace |
-
-## Exam Tips
-
-- The VCS-driven workflow is: **code → PR → speculative plan → review → merge → apply**
-- Speculative plans are triggered by **PRs**, not by `terraform plan` locally
-- In a VCS-driven workflow, you **never** need to run `terraform plan` or `terraform apply` locally — HCP Terraform handles everything
-- If the question says "auto-apply is disabled", there's an explicit approval step after the plan
-- The three workflow types: **VCS-driven**, **CLI-driven**, **API-driven** — know which is which

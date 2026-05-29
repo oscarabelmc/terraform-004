@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -81,14 +81,3 @@ terraform apply change-2024-01-15.tfplan
 ```
 
 This is the standard workflow for **change management** and **compliance** requirements.
-
-## Exam Tips
-
-- `terraform plan -out=<file>` saves the plan to a binary file
-- `terraform apply <file>` applies the saved plan (exactly as reviewed)
-- Saved plans ensure **consistency between review and execution**
-- Without `-out`, `terraform apply` generates a fresh plan — which may differ from what was reviewed
-- `-auto-approve` is **not** used with saved plan files
-- Saved plans contain a signature to prevent tampering
-- Common exam scenario: "Plan was reviewed 2 hours ago, what command applies the exact same changes?" — `terraform apply <planfile>`
-- Common exam trap: thinking `terraform apply` without a plan file executes the same plan — it doesn't, it re-plans

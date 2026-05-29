@@ -1,6 +1,18 @@
 # Terraform Logging Exercise
 
-**Exam Question:** What environment variable can be set to enable detailed logging for Terraform?
+**Domain:** Troubleshooting
+**Topic:** `TF_LOG` — detailed Terraform logging
+
+## Description
+
+What environment variable can be set to enable detailed logging for Terraform
+
+## Learning Objectives
+
+- Run without logging (baseline)
+- Enable logging with TF_LOG
+- Write logs to a file
+- Unset logging
 
 ## Background
 
@@ -85,17 +97,8 @@ Log levels (from least to most verbose):
 
    Without `TF_LOG` set, Terraform returns to its default output behavior.
 
-### Put It Together
-
-What environment variable can be set to enable detailed logging for Terraform?
-
-- A. `TF_LOG`
-- B. `TF_DEBUG`
-- C. `TERRAFORM_LOG`
-- D. `TF_VERBOSE`
-- E. `TF_LOG_LEVEL`
-
 ## Files
 
 - `main.tf` — simple random_pet config for testing logging
-- `solution/answer.md` — explanation and exam tips
+- `solution/` — reference implementation
+

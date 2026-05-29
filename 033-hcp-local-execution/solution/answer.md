@@ -1,4 +1,4 @@
-# Answer
+# Explanation
 
 The correct answer is **A**.
 
@@ -62,14 +62,3 @@ Your machine handles:
 | **Air-gapped compute** | Resources must be created from a specific network/location |
 | **Custom tooling** | CI pipeline needs to install custom plugins or run local scripts |
 | **Developer preference** | Team wants HCP state benefits but CLI-driven workflow |
-
-## Exam Tips
-
-- **Local execution** = state in HCP Terraform, compute on your machine
-- **Remote execution** = state AND compute in HCP Terraform
-- In local mode, runs do **not** appear in HCP Terraform's run history
-- In local mode, you still need to be authenticated to HCP Terraform (`terraform login`)
-- Both modes require the `cloud` block (or `remote` backend) in configuration
-- The `cloud` block with `workspaces { name = "..." }` targets a single workspace
-- The execution mode is configured in the **HCP Terraform workspace settings**, not in the Terraform config file
-- Running `terraform init` with a `cloud` block will prompt you to authenticate if not already logged in
