@@ -1,11 +1,9 @@
-output "vpc_id" {
-  value = aws_vpc.main.id
+output "name" {
+  description = "The name of the resource"
+  value       = random_pet.main.id
 }
 
-output "instance_id" {
-  value = aws_instance.web.id
-}
-
-output "logging_note" {
-  value = "Enable TF_LOG=DEBUG or TF_LOG=TRACE to inspect Terraform-provider API interactions."
+output "result_file" {
+  description = "The result file path"
+  value       = local_file.config.filename
 }

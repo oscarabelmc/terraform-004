@@ -1,29 +1,36 @@
 terraform {
   required_version = ">= 1.5"
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
+    }
+  }
 }
 
 # Using a module from HCP Terraform's private registry
 module "networking" {
-  source  = "app.terraform.io/my-org/networking/aws"
-  version = "~> 1.0"
+  source = "./modules/networking"
 
-  name   = "production"
-  cidr   = "10.0.0.0/16"
-  region = "us-east-1"
+  name = "production"
+  cidr = "10.0.0.0/16"
 }
 
 module "database" {
-  source  = "app.terraform.io/my-org/rds/aws"
-  version = ">= 2.0, < 3.0"
+  source = "./modules/database"
 
-  engine         = "postgres"
-  engine_version = "15"
-  instance_class = "db.t3.medium"
-  vpc_id         = module.networking.vpc_id
+  engine      = "postgres"
+  version_str = "15"
+  tier        = "medium"
+  network_id  = module.networking.network_id
 }
 
-output "vpc_id" {
-  value = module.networking.vpc_id
+output "network_id" {
+  value = module.networking.network_id
 }
 
 output "database_endpoint" {

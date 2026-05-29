@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
@@ -22,30 +26,16 @@ locals {
   name_prefix = "log-demo-${var.environment}"
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-
-  tags = {
-    Name        = local.name_prefix
-    Environment = var.environment
-  }
+resource "random_pet" "main" {
+  prefix = local.name_prefix
+  length = 2
 }
 
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
-
-  tags = {
-    Name = "${local.name_prefix}-subnet"
-  }
+resource "local_file" "config" {
+  filename = "${path.module}/result.txt"
+  content  = "name = ${random_pet.main.id}"
 }
 
-resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = var.instance_type
-  subnet_id     = aws_subnet.public.id
-
-  tags = {
-    Name = "${local.name_prefix}-web"
-  }
+output "name" {
+  value = random_pet.main.id
 }

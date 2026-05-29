@@ -9,9 +9,9 @@ terraform {
 }
 
 resource "random_pet" "cluster" {
-  count   = var.create_cluster ? 1 : 0
-  prefix  = "cluster"
-  length  = 3
+  count  = var.create_cluster ? 1 : 0
+  prefix = "cluster"
+  length = 3
 }
 
 locals {

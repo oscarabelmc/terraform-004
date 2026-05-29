@@ -7,7 +7,15 @@ Each exercise presents a real-world scenario that tests your understanding of co
 ## Prerequisites
 
 - [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.5 installed
-- A cloud provider account (AWS, Azure, or GCP) — varies by exercise
+- A code editor — **VS Code** recommended for the visual HCL experience (the official
+  [HashiCorp Terraform extension](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
+  provides syntax highlighting, validation, and `terraform init`/`plan`/`apply` commands
+  via the command palette)
+- OS: **Windows**, **Linux**, or **macOS** — all fully supported
+- **No cloud account required** — all exercises use `random`, `local`, or `null` providers that work offline
+- The following exercises include backend configurations that optionally require cloud credentials for full end-to-end testing:
+  - `058-s3-backend-partial-config` — S3 backend (needs AWS to init with backend)
+  - `084-state-locking-backends` — S3 + DynamoDB backend (needs AWS to init with backend)
 
 ## How to Use
 

@@ -1,10 +1,19 @@
 terraform {
   required_version = ">= 1.5"
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
+    }
+  }
 }
 
-module "vault-aws-tgw" {
-  source  = "terraform-aws-modules/transit-gateway/aws"
-  version = "3.0.3"
+module "config" {
+  source = "./modules/config"
 
   client_id      = var.tgw_client
   hvn_id         = var.hvn
@@ -28,5 +37,5 @@ variable "rtb_id" {
 
 output "transit_gateway_id" {
   description = "The ID of the Transit Gateway attachment"
-  value       = module.vault-aws-tgw.transit_gateway_attachment_id
+  value       = module.config.transit_gateway_attachment_id
 }

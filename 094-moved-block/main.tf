@@ -1,37 +1,39 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-# Previously named "aws_instance.web_server"
+# Previously named "random_pet.web_server"
 # Refactored to a more descriptive name
 moved {
-  from = aws_instance.web_server
-  to   = aws_instance.application
+  from = random_pet.web_server
+  to   = random_pet.application
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name = "moved-block-demo"
-  }
+resource "random_pet" "main" {
+  prefix = "moved-block"
+  length = 2
 }
 
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+resource "local_file" "config" {
+  filename = "${path.module}/result.txt"
+  content  = "vpc = ${random_pet.main.id}"
 }
 
-resource "aws_instance" "application" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.public.id
-  tags = {
-    Name = "refactored-app"
-  }
+resource "random_pet" "application" {
+  prefix = "refactored"
+  length = 2
+}
+
+output "app_id" {
+  value = random_pet.application.id
 }

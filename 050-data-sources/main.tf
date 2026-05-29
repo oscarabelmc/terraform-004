@@ -1,28 +1,26 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    http = {
+      source  = "hashicorp/http"
+      version = "~> 3.4"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
 
-data "aws_ami" "ubuntu" {
-  most_recent = true
-  owners      = ["099720109477"]
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-*-amd64-server-*"]
-  }
+data "http" "terraform_releases" {
+  url = "https://api.github.com/repos/hashicorp/terraform/releases/latest"
 }
 
-resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+resource "random_pet" "web" {
+  prefix = "web"
+  length = 2
+}
 
-  tags = {
-    Name = "web-server"
-  }
+output "latest_release" {
+  value = data.http.terraform_releases.response_body
 }

@@ -1,75 +1,52 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
-    }
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 5.0"
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-provider "aws" {
-  region = "us-east-1"
+resource "random_pet" "aws_vpc" {
+  prefix = "aws"
+  length = 2
 }
 
-provider "azurerm" {
-  features {}
+resource "random_pet" "aws_instance" {
+  prefix     = "aws-web"
+  length     = 2
+  depends_on = [random_pet.aws_vpc]
 }
 
-provider "google" {
-  project = "my-project"
-  region  = "us-central1"
+resource "random_pet" "aws_subnet" {
+  prefix     = "aws-subnet"
+  length     = 2
+  depends_on = [random_pet.aws_vpc]
 }
 
-# AWS resources
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = { Name = "multi-cloud-demo" }
+resource "random_pet" "azure_rg" {
+  prefix = "azure"
+  length = 2
 }
 
-resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.main.id
-
-  tags = { Name = "web-aws" }
+resource "random_pet" "azure_vnet" {
+  prefix     = "azure-vnet"
+  length     = 2
+  depends_on = [random_pet.azure_rg]
 }
 
-resource "aws_subnet" "main" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+resource "random_pet" "gcp_network" {
+  prefix = "gcp"
+  length = 2
 }
 
-# Azure resources
-resource "azurerm_resource_group" "main" {
-  name     = "multi-cloud-rg"
-  location = "eastus"
-}
-
-resource "azurerm_virtual_network" "main" {
-  name                = "multi-cloud-vnet"
-  location            = azurerm_resource_group.main.location
-  resource_group_name = azurerm_resource_group.main.name
-  address_space       = ["10.1.0.0/16"]
-}
-
-# GCP resources
-resource "google_compute_network" "main" {
-  name                    = "multi-cloud-network"
-  auto_create_subnetworks = false
-}
-
-resource "google_compute_subnetwork" "main" {
-  name          = "multi-cloud-subnet"
-  network       = google_compute_network.main.id
-  region        = "us-central1"
-  ip_cidr_range = "10.2.0.0/16"
+resource "random_pet" "gcp_subnet" {
+  prefix     = "gcp-subnet"
+  length     = 2
+  depends_on = [random_pet.gcp_network]
 }

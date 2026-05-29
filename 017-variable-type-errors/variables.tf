@@ -19,7 +19,7 @@ variable "enabled" {
 variable "tags" {
   description = "Map of resource tags"
   type        = map(string)
-  default     = {
+  default = {
     Environment = "prod"
     Owner       = "platform-team"
   }

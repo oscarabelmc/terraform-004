@@ -44,9 +44,9 @@ This workflow is **identical** whether you're deploying to AWS, Azure, GCP, or a
 
 ```hcl
 # Same tool, same commands, same language:
-resource "aws_instance" "x" { ... }      # AWS
-resource "azurerm_vm" "y" { ... }        # Azure
-resource "google_instance" "z" { ... }   # GCP
+resource "random_pet" "aws_main" { ... }      # AWS
+resource "random_pet" "azure_main" { ... }     # Azure
+resource "random_pet" "gcp_main" { ... }       # GCP
 ```
 
 ## Why the Others Are Wrong

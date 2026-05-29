@@ -37,15 +37,15 @@ locals {
 }
 ```
 
-The same module is called once for AWS and once for Azure with different inputs:
+The same module is called for each environment with different inputs:
 
 ```hcl
-module "naming_aws" {
+module "aws_naming" {
   source = "./modules/naming"
   prefix = "prod"
 }
 
-module "naming_azure" {
+module "azure_naming" {
   source = "./modules/naming"
   prefix = "prod"
 }

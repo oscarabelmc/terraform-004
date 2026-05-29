@@ -1,9 +1,9 @@
-resource "aws_subnet" "private" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.2.0/24"
+resource "local_file" "private" {
+  filename = "${path.module}/private.txt"
+  content  = "subnet: private\nvpc: ${random_pet.main.id}"
 }
 
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+resource "local_file" "public" {
+  filename = "${path.module}/public.txt"
+  content  = "subnet: public\nvpc: ${random_pet.main.id}"
 }

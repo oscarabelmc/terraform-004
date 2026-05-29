@@ -1,3 +1,3 @@
 output "server_ids" {
-  value = aws_instance.server[*].id
+  value = random_pet.server[*].id
 }

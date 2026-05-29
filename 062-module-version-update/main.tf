@@ -1,12 +1,28 @@
 terraform {
   required_version = ">= 1.5"
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
+    }
+  }
 }
 
 module "compute" {
-  source  = "azure/compute/azurerm"
-  version = "5.2.0"
+  source = "./modules/compute"
 
-  virtual_machine_name = "version-vm"
-  resource_group_name  = "version-rg"
-  location             = "eastus"
+  name = "version-vm"
+}
+
+resource "random_pet" "main" {
+  prefix = module.compute.name_result
+  length = 2
+}
+
+output "pet" {
+  value = random_pet.main.id
 }

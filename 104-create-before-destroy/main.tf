@@ -10,8 +10,8 @@ terraform {
 
 # Simulating a resource that requires recreation on attribute change
 resource "random_pet" "database" {
-  length    = 2
-  prefix    = "prod-db"
+  length = 2
+  prefix = "prod-db"
 
   # Changing the separator forces recreation (simulates SKU change)
   separator = "-"

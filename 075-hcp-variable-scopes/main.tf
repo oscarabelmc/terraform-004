@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 
@@ -15,11 +19,6 @@ terraform {
       name = "variable-scope-demo"
     }
   }
-}
-
-variable "aws_region" {
-  type    = string
-  default = "us-east-1"
 }
 
 variable "environment" {
@@ -39,11 +38,16 @@ variable "common_tags" {
   }
 }
 
-provider "aws" {
-  region = var.aws_region
+resource "random_pet" "main" {
+  prefix = "scope-demo-${var.environment}"
+  length = 2
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags       = merge(var.common_tags, { Environment = var.environment })
+resource "local_file" "config" {
+  filename = "${path.module}/result.txt"
+  content  = "name = ${random_pet.main.id}"
+}
+
+output "name" {
+  value = random_pet.main.id
 }

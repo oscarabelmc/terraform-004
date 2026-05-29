@@ -1,11 +1,9 @@
-output "vpc_id" {
-  value = aws_vpc.main.id
+output "name" {
+  description = "The name of the resource"
+  value       = random_pet.main.id
 }
 
-output "instance_id" {
-  value = aws_instance.web.id
-}
-
-output "key_difference" {
-  value = "IaC: versioned, reusable, shared config. Manual: ephemeral CLI commands, no version history, no automation."
+output "result_file" {
+  description = "The result file path"
+  value       = local_file.config.filename
 }

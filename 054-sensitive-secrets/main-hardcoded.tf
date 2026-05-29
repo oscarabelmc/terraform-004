@@ -10,10 +10,10 @@ provider "aws" {
 # Anti-pattern 2: Secrets in variable defaults
 variable "db_password" {
   type    = string
-  default = "hardcoded-password-123"  # ❌ Visible in source code
+  default = "hardcoded-password-123" # ❌ Visible in source code
 }
 
 # Anti-pattern 3: Secrets in resource arguments
 resource "aws_db_instance" "main" {
-  password = "another-hardcoded-password"  # ❌ Visible in plaintext
+  password = "another-hardcoded-password" # ❌ Visible in plaintext
 }

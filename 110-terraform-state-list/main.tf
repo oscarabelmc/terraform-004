@@ -9,16 +9,16 @@ terraform {
 }
 
 resource "random_pet" "vpc" {
-  prefix  = "vpc"
-  length  = 2
+  prefix = "vpc"
+  length = 2
 }
 
 resource "random_pet" "subnet" {
-  prefix  = "subnet"
-  length  = 2
+  prefix = "subnet"
+  length = 2
 }
 
 resource "random_pet" "instance" {
-  prefix  = "instance"
-  length  = 2
+  prefix = "instance"
+  length = 2
 }

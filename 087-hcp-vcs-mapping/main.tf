@@ -1,5 +1,15 @@
 terraform {
   required_version = ">= 1.5"
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
+    }
+  }
 
   cloud {
     organization = "my-org"
@@ -16,15 +26,16 @@ variable "environment" {
   default = "dev"
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name        = "vcs-demo-${var.environment}"
-    Environment = var.environment
-  }
+resource "random_pet" "main" {
+  prefix = "vcs-demo-${var.environment}"
+  length = 2
 }
 
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+resource "local_file" "config" {
+  filename = "${path.module}/result.txt"
+  content  = "name = ${random_pet.main.id}"
+}
+
+output "name" {
+  value = random_pet.main.id
 }

@@ -1,5 +1,9 @@
-output "vpc_id" {
-  value = aws_vpc.main.id
+output "resource_id" {
+  value = random_pet.main.id
+}
+
+output "config_file" {
+  value = local_file.config.filename
 }
 
 output "locking_info" {

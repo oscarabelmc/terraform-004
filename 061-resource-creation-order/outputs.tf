@@ -1,11 +1,9 @@
 output "instance_name" {
-  value = google_compute_instance.web.name
+  description = "The name of the instance"
+  value       = random_pet.web.id
 }
 
-output "attached_disk_instance" {
-  value = google_compute_attached_disk.data.instance
-}
-
-output "creation_order" {
-  value = "Instance created first (no dependencies), then attached disk (depends on instance)."
+output "attachment_file" {
+  description = "The attachment file path"
+  value       = local_file.data.filename
 }

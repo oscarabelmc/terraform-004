@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
@@ -12,24 +16,12 @@ variable "existing_disk" {
   type = string
 }
 
-resource "google_compute_instance" "web" {
-  name         = "order-web-1"
-  machine_type = "e2-micro"
-  zone         = "us-central1-a"
-
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-11"
-    }
-  }
-
-  network_interface {
-    network = "default"
-    access_config {}
-  }
+resource "random_pet" "web" {
+  prefix = "order"
+  length = 2
 }
 
-resource "google_compute_attached_disk" "data" {
-  instance = google_compute_instance.web.name
-  disk     = var.existing_disk
+resource "local_file" "data" {
+  filename = "${path.module}/attachment.txt"
+  content  = "instance = ${random_pet.web.id}\ndisk = ${var.existing_disk}"
 }

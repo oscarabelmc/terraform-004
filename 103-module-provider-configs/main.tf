@@ -1,22 +1,20 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
 
 # Default provider — child modules inherit this automatically
-provider "aws" {
-  region = "us-east-1"
+provider "random" {
 }
 
 # Aliased provider for explicit passing
-provider "aws" {
-  alias  = "west"
-  region = "us-west-2"
+provider "random" {
+  alias = "west"
 }
 
 # Child module inherits default provider automatically
@@ -26,8 +24,8 @@ module "default" {
 
 # Child module receives explicit provider via providers argument
 module "explicit" {
-  source    = "./modules/child"
+  source = "./modules/child"
   providers = {
-    aws = aws.west
+    random = random.west
   }
 }

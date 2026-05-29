@@ -3,20 +3,21 @@
 
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
 
-provider "aws" {
-  region = "eu-west-1"
+provider "random" {
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name = "self-provider-vpc"
-  }
+resource "random_pet" "main" {
+  prefix = "self-provider"
+  length = 2
+}
+
+output "id" {
+  value = random_pet.main.id
 }

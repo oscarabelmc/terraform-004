@@ -5,7 +5,7 @@
 
 ## Description
 
-You're configuring an S3 backend for your Terraform project. You want to keep sensitive values, such as the bucket name and region, out of version control while keeping other backend configuration in your code. Which approach correctly implements partial backend configuration
+You're configuring an S3 backend for your Terraform project. You want to keep sensitive values, such as the bucket name and region, out of version control while keeping other backend configuration in your code. Which approach correctly implements partial backend configuration?
 
 ## Learning Objectives
 
@@ -112,7 +112,7 @@ Terraform supports **partial backend configuration** — declaring the backend t
 
 ## Files
 
-- `main.tf` — config with partial S3 backend declaration (type only)
+- `main.tf` — config with partial S3 backend declaration (type only) and a placeholder resource
 - `outputs.tf` — output values
 - `solution/` — reference implementation
 

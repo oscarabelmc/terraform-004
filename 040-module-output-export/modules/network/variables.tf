@@ -1,27 +1,9 @@
 variable "name" {
-  description = "VPC name"
+  description = "Resource name"
   type        = string
 }
 
 variable "cidr" {
-  description = "VPC CIDR block"
+  description = "CIDR block"
   type        = string
-}
-
-variable "azs" {
-  description = "Availability zones"
-  type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
-}
-
-variable "private_subnets" {
-  description = "Private subnet CIDRs"
-  type        = list(string)
-  default     = ["10.5.1.0/24", "10.5.3.0/24"]
-}
-
-variable "public_subnets" {
-  description = "Public subnet CIDRs"
-  type        = list(string)
-  default     = ["10.5.2.0/24", "10.5.4.0/24"]
 }

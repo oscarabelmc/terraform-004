@@ -27,8 +27,8 @@ variable "file_permission" {
 }
 
 resource "local_file" "example" {
-  content     = var.content
-  filename    = var.filename
+  content         = var.content
+  filename        = var.filename
   file_permission = var.file_permission
 }
 

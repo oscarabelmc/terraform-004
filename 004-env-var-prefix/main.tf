@@ -24,9 +24,9 @@ variable "tags" {
 
 output "config" {
   value = {
-    region           = var.region
-    instance_count   = var.instance_count
-    monitoring       = var.enable_monitoring
-    tags             = var.tags
+    region         = var.region
+    instance_count = var.instance_count
+    monitoring     = var.enable_monitoring
+    tags           = var.tags
   }
 }

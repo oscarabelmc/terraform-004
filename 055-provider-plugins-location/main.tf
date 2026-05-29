@@ -1,9 +1,9 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
     time = {
       source  = "hashicorp/time"
@@ -16,6 +16,10 @@ resource "time_sleep" "wait" {
   create_duration = "1s"
 }
 
-resource "aws_s3_bucket" "data" {
-  bucket = "example-bucket-${time_sleep.wait.id}"
+resource "random_pet" "data" {
+  prefix = "example"
+  length = 2
+  keepers = {
+    id = time_sleep.wait.id
+  }
 }

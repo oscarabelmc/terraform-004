@@ -1,7 +1,9 @@
-output "vpc_id" {
-  value = aws_vpc.main.id
+output "name" {
+  description = "The name of the resource"
+  value       = random_pet.name.id
 }
 
-output "workflow_steps" {
-  value = "Write → Plan → Apply"
+output "result_file" {
+  description = "The result file path"
+  value       = local_file.config.filename
 }

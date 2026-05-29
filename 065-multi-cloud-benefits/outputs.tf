@@ -1,13 +1,13 @@
 output "aws_vpc_id" {
-  value = aws_vpc.main.id
+  value = random_pet.aws_vpc.id
 }
 
 output "azure_vnet_id" {
-  value = azurerm_virtual_network.main.id
+  value = random_pet.azure_vnet.id
 }
 
 output "gcp_network_id" {
-  value = google_compute_network.main.id
+  value = random_pet.gcp_network.id
 }
 
 output "note" {

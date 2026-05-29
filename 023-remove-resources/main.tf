@@ -22,7 +22,7 @@ resource "random_password" "db_backup_policy" {
   length  = 16
   special = false
 }
- 
+
 # Other infrastructure (keep running)
 resource "random_pet" "server" {
   prefix = "web"

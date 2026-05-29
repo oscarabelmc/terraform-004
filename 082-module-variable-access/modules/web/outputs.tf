@@ -1,3 +1,3 @@
-output "instance_id" {
-  value = aws_instance.web.id
+output "web_id" {
+  value = random_pet.web.id
 }

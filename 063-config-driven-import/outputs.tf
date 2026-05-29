@@ -1,11 +1,9 @@
 output "bucket_name" {
-  value = google_storage_bucket.data_lake.name
+  description = "The name of the bucket"
+  value       = random_pet.data_lake.id
 }
 
-output "bucket_location" {
-  value = google_storage_bucket.data_lake.location
-}
-
-output "import_method" {
-  value = "Config-driven import using import block — run terraform plan then terraform apply."
+output "info_file" {
+  description = "The info file path"
+  value       = local_file.info.filename
 }

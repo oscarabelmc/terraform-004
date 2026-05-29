@@ -1,11 +1,9 @@
 output "build_tag" {
-  value = var.metadata["build-tag"]
+  description = "The build tag from the metadata map"
+  value       = local.build_tag
 }
 
-output "owner" {
-  value = var.metadata["owner"]
-}
-
-output "vpc_name" {
-  value = aws_vpc.main.tags["Name"]
+output "pet_id" {
+  description = "The ID of the pet"
+  value       = random_pet.main.id
 }

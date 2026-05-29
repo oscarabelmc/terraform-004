@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
@@ -15,11 +19,7 @@ module "network" {
   cidr = "10.5.0.0/16"
 }
 
-resource "aws_subnet" "primary_core" {
-  vpc_id     = module.network.vpc_id
-  cidr_block = "10.5.0.0/23"
-
-  tags = {
-    Name = "primary-core-subnet"
-  }
+resource "local_file" "config" {
+  filename = "${path.module}/output.txt"
+  content  = "vpc_id = ${module.network.vpc_id}"
 }

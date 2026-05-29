@@ -28,13 +28,13 @@ Terraform is a **provider-agnostic** infrastructure as code tool. The same HCL s
    cat main.tf
    ```
 
-   This single configuration defines resources across **three cloud providers**:
+   This single configuration defines resources **conceptually representing** three cloud providers:
 
    | Provider | Resource | Language |
    |----------|----------|----------|
-   | AWS | `aws_vpc`, `aws_subnet`, `aws_instance` | HCL |
-   | Azure | `azurerm_resource_group`, `azurerm_virtual_network` | HCL |
-   | GCP | `google_compute_network`, `google_compute_subnetwork` | HCL |
+   | AWS | `random_pet.aws_vpc`, `random_pet.aws_subnet`, `random_pet.aws_instance` | HCL |
+   | Azure | `random_pet.azure_rg`, `random_pet.azure_vnet` | HCL |
+   | GCP | `random_pet.gcp_network`, `random_pet.gcp_subnet` | HCL |
 
    All use the **same HCL syntax**, the **same workflow**, and are managed by the **same tool**.
 
@@ -64,19 +64,21 @@ Terraform is a **provider-agnostic** infrastructure as code tool. The same HCL s
 
    ```hcl
    # AWS — same HCL syntax
-   resource "aws_instance" "web" {
-     ami           = "ami-0c55b159cbfafe1f0"
-     instance_type = "t2.micro"
+   resource "random_pet" "aws_instance" {
+     prefix = "aws-web"
+     length = 2
    }
 
    # Azure — same HCL syntax
-   resource "azurerm_linux_virtual_machine" "web" {
-     size = "Standard_B2s"
+   resource "random_pet" "azure_vnet" {
+     prefix = "azure-vnet"
+     length = 2
    }
 
    # GCP — same HCL syntax
-   resource "google_compute_instance" "web" {
-     machine_type = "e2-micro"
+   resource "random_pet" "gcp_network" {
+     prefix = "gcp"
+     length = 2
    }
    ```
 
@@ -110,7 +112,7 @@ Terraform is a **provider-agnostic** infrastructure as code tool. The same HCL s
 
 ## Files
 
-- `main.tf` — multi-cloud config with AWS, Azure, and GCP resources
+- `main.tf` — multi-cloud config with simulated AWS, Azure, and GCP resources
 - `outputs.tf` — output values
 - `solution/` — reference implementation
 

@@ -40,7 +40,7 @@ State locking prevents concurrent modifications to Terraform state, which could 
    }
    ```
 
-   S3 itself does **not** natively support state locking. Locking is provided by a separate DynamoDB table that must be created and configured.
+   S3 itself does **not** natively support state locking. Locking is provided by a separate DynamoDB table that must be created and configured. A placeholder `random_pet` resource is included to have something for Terraform to manage.
 
 ### Part 2 — Backend locking support matrix
 
@@ -115,7 +115,7 @@ State locking prevents concurrent modifications to Terraform state, which could 
 
 ## Files
 
-- `main.tf` — S3 backend with DynamoDB locking
+- `main.tf` — S3 backend with DynamoDB locking and placeholder resources
 - `outputs.tf` — output values
 - `solution/` — reference implementation
 

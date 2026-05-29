@@ -1,16 +1,14 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
-  }
-
-  backend "s3" {
-    bucket = "terraform-state-prod"
-    key    = "plan-demo/terraform.tfstate"
-    region = "us-east-1"
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
+    }
   }
 }
 
@@ -24,24 +22,18 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name = "plan-demo-vpc"
-  }
+resource "random_pet" "main" {
+  count  = var.instance_count
+  prefix = "plan-demo"
+  length = 2
 }
 
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+resource "local_file" "config" {
+  count    = var.instance_count
+  filename = "${path.module}/result-${count.index}.txt"
+  content  = "name = ${random_pet.main[count.index].id}"
 }
 
-resource "aws_instance" "web" {
-  count         = var.instance_count
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = var.instance_type
-  subnet_id     = aws_subnet.public.id
-  tags = {
-    Name = "web-${count.index}"
-  }
+output "names" {
+  value = random_pet.main[*].id
 }

@@ -1,65 +1,38 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+    http = {
+      source  = "hashicorp/http"
+      version = "~> 3.4"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-provider "azurerm" {
-  features {}
+data "http" "prod" {
+  url = "https://api.github.com/repos/hashicorp/terraform"
 }
 
-data "azurerm_virtual_network" "prod" {
-  name                = "prod-network"
-  resource_group_name = "networking-rg"
+resource "random_pet" "app" {
+  prefix = "app"
+  length = 2
 }
 
-resource "azurerm_subnet" "app" {
-  name                 = "app-subnet"
-  resource_group_name  = "networking-rg"
-  virtual_network_name = data.azurerm_virtual_network.prod.name
-  address_prefixes     = ["10.0.1.0/24"]
+resource "local_file" "config" {
+  filename = "${path.module}/ref-data.txt"
+  content  = <<-EOT
+    repo_name = data.http.prod.response_body
+    pet_id    = ${random_pet.app.id}
+  EOT
 }
 
-resource "azurerm_network_interface" "app" {
-  name                = "app-nic"
-  location            = data.azurerm_virtual_network.prod.location
-  resource_group_name = "application-rg"
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.app.id
-    private_ip_address_allocation = "Dynamic"
-  }
-}
-
-resource "azurerm_linux_virtual_machine" "app" {
-  name                = "app-vm"
-  location            = data.azurerm_virtual_network.prod.location
-  resource_group_name = "application-rg"
-  size                = "Standard_B2s"
-  admin_username      = "adminuser"
-  network_interface_ids = [
-    azurerm_network_interface.app.id,
-  ]
-
-  admin_ssh_key {
-    username   = "adminuser"
-    public_key = file("~/.ssh/id_rsa.pub")
-  }
-
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-  }
-
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
-    version   = "latest"
-  }
+output "reference_data" {
+  value = data.http.prod.response_body
 }

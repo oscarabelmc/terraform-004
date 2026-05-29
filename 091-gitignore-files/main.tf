@@ -1,16 +1,18 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name = "gitignore-demo"
-  }
+resource "random_pet" "main" {
+  prefix = "gitignore-demo"
+  length = 2
+}
+
+output "id" {
+  value = random_pet.main.id
 }

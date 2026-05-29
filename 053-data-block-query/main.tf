@@ -1,28 +1,24 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    http = {
+      source  = "hashicorp/http"
+      version = "~> 3.4"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
 
-data "aws_ami" "example" {
-  most_recent = true
-  owners      = ["self"]
-
-  filter {
-    name   = "tag:Owner"
-    values = ["data-platform"]
-  }
+data "http" "example" {
+  url = "https://api.github.com/repos/hashicorp/terraform"
 }
 
-resource "aws_instance" "web" {
-  ami           = data.aws_ami.example.id
-  instance_type = "m6g.xlarge"
-
-  tags = {
-    Name = "data-web-server"
-  }
+resource "random_pet" "web" {
+  prefix = "data"
+  length = 2
 }
+
+

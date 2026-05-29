@@ -3,11 +3,11 @@ terraform {
   required_providers {
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.5"
+      version = "~> 3.6"
     }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
@@ -17,9 +17,12 @@ resource "random_password" "db_master" {
   special = true
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name = "sensitive-output-demo"
-  }
+resource "random_pet" "main" {
+  prefix = "sensitive-output"
+  length = 2
+}
+
+output "password" {
+  value     = random_password.db_master.result
+  sensitive = true
 }

@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
@@ -11,4 +15,8 @@ terraform {
 module "servers" {
   source  = "./modules/local-cluster"
   servers = 5
+}
+
+output "server_ids" {
+  value = module.servers.server_ids
 }

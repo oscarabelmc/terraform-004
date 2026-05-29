@@ -29,15 +29,15 @@ Terraform's HCL provides a **cloud-agnostic** configuration language. The same w
    cat main.tf
    ```
 
-   The same `main.tf` declares resources in **both AWS and Azure** — the same workflow, same file, same tool.
+   The same `main.tf` uses a `random` provider called from **two module instances** — the same workflow, same file, same tool.
 
-2. **Initialize both providers:**
+2. **Initialize the provider:**
 
    ```bash
    terraform init
    ```
 
-   Terraform downloads provider plugins for both AWS and Azure in a single step.
+   Terraform downloads the provider plugin in a single step.
 
 3. **Generate a plan:**
 
@@ -55,9 +55,9 @@ Terraform's HCL provides a **cloud-agnostic** configuration language. The same w
    cat modules/naming/main.tf
    ```
 
-   This `naming` module generates a consistent naming convention. Because it only uses Terraform's built-in functions (no cloud-specific resources), it works for **any provider**.
+   This `naming` module generates a consistent naming convention. Because it uses a cloud-agnostic `random_pet` resource, it works for **any provider**.
 
-5. **Use the module for both clouds** — the module is called twice in `main.tf`, once for AWS and once for Azure, with different inputs.
+5. **Use the module for both clouds** — the module is called twice in `main.tf`, once for each environment, with different inputs.
 
 ### Part 3 — CI/CD consistency
 

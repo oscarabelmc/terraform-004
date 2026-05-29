@@ -1,28 +1,31 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-resource "aws_instance" "app_core" {
-  ami               = "ami-0c55b159cbfafe1f0"
-  instance_type     = "t3.micro"
-  availability_zone = "ca-central-1a"
-
-  tags = { Owner = "implicit-team", Env = "pr0d-east" }
+resource "random_pet" "app_core" {
+  prefix = "app"
+  length = 2
 }
 
-resource "aws_ebs_volume" "data_pr0d_east" {
-  availability_zone = "ca-central-1a"
-  size              = 10
+resource "random_pet" "data_volume" {
+  prefix = "data"
+  length = 2
 }
 
-resource "aws_volume_attachment" "attach_data" {
-  device_name = "/dev/xvdf"
-  volume_id   = aws_ebs_volume.data_pr0d_east.id
-  instance_id = aws_instance.app_core.id
+resource "local_file" "attachment" {
+  filename = "${path.module}/attachment.txt"
+  content  = <<-EOT
+    instance_id = ${random_pet.app_core.id}
+    volume_id   = ${random_pet.data_volume.id}
+  EOT
 }

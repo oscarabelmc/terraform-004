@@ -1,11 +1,11 @@
-output "private_subnet_id" {
-  value = aws_subnet.private.id
+output "private_file" {
+  value = local_file.private.filename
 }
 
-output "public_subnet_id" {
-  value = aws_subnet.public.id
+output "public_file" {
+  value = local_file.public.filename
 }
 
 output "vpc_id" {
-  value = aws_vpc.main.id
+  value = random_pet.main.id
 }

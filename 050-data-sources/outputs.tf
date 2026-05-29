@@ -1,14 +1,9 @@
-output "ami_id" {
-  description = "The ID of the fetched AMI"
-  value       = data.aws_ami.ubuntu.id
+output "release_data" {
+  description = "The latest Terraform release data"
+  value       = data.http.terraform_releases.response_body
 }
 
-output "ami_name" {
-  description = "The name of the fetched AMI"
-  value       = data.aws_ami.ubuntu.name
-}
-
-output "instance_ami_used" {
-  description = "The AMI used by the instance"
-  value       = aws_instance.web.ami
+output "pet_id" {
+  description = "The ID of the pet"
+  value       = random_pet.web.id
 }

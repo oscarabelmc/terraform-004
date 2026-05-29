@@ -14,8 +14,8 @@ variable "pet_length" {
 }
 
 resource "random_pet" "name" {
-  length    = var.pet_length
-  prefix    = "apply-demo"
+  length = var.pet_length
+  prefix = "apply-demo"
 }
 
 resource "random_password" "db" {

@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 
@@ -16,14 +20,12 @@ terraform {
   }
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name = "locking-demo"
-  }
+resource "random_pet" "main" {
+  prefix = "locking"
+  length = 2
 }
 
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+resource "local_file" "config" {
+  filename = "${path.module}/config.txt"
+  content  = "resource_id = ${random_pet.main.id}"
 }

@@ -1,15 +1,9 @@
-output "instance_ids" {
-  value = aws_instance.web[*].id
-}
-
-output "instance_names" {
-  value = aws_instance.web[*].tags["Name"]
-}
-
 output "vpc_id" {
-  value = aws_vpc.main.id
+  description = "The VPC ID"
+  value       = random_pet.main.id
 }
 
-output "state_inspection" {
-  value = "Use 'terraform state list' + 'terraform state show' to match managed resources against real infrastructure."
+output "web_ids" {
+  description = "The IDs of the web resources"
+  value       = random_pet.web[*].id
 }

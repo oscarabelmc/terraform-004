@@ -15,7 +15,7 @@ resource "random_pet" "a" {
 
 # Explicit dependency on a — waits for a to finish
 resource "random_pet" "b" {
-  prefix    = "b"
+  prefix     = "b"
   depends_on = [random_pet.a]
 }
 

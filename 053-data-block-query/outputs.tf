@@ -1,14 +1,9 @@
-output "ami_id" {
-  description = "Queried AMI ID"
-  value       = data.aws_ami.example.id
+output "repo_data" {
+  description = "The repository data from GitHub"
+  value       = data.http.example.response_body
 }
 
-output "ami_name" {
-  description = "Queried AMI name"
-  value       = data.aws_ami.example.name
-}
-
-output "instance_ami" {
-  description = "AMI used by the instance"
-  value       = aws_instance.web.ami
+output "pet_id" {
+  description = "The ID of the pet"
+  value       = random_pet.web.id
 }

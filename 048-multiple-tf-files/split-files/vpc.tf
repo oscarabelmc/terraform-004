@@ -1,11 +1,18 @@
 terraform {
   required_version = ">= 1.5"
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
+    }
+  }
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-
-  tags = {
-    Name = "main"
-  }
+resource "random_pet" "main" {
+  prefix = "main"
+  length = 2
 }

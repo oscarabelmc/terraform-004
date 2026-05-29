@@ -1,7 +1,4 @@
-output "vpc_id" {
-  value = aws_vpc.main.id
-}
-
-output "gitignore_note" {
-  value = "terraform.tfstate, .terraform/, *.tfvars (with secrets), crash.log should be in .gitignore"
+output "id" {
+  description = "The ID of the pet"
+  value       = random_pet.main.id
 }

@@ -1,19 +1,9 @@
-output "us_instance_id" {
-  description = "ID of the us-east-1 instance"
-  value       = aws_instance.web_us.id
+output "web_us_id" {
+  description = "The ID of the us pet"
+  value       = random_pet.web_us.id
 }
 
-output "mumbai_instance_id" {
-  description = "ID of the ap-south-1 instance"
-  value       = aws_instance.web_mumbai.id
-}
-
-output "us_region" {
-  description = "Region of the default provider"
-  value       = "us-east-1"
-}
-
-output "mumbai_region" {
-  description = "Region of the aliased provider"
-  value       = "ap-south-1"
+output "web_mumbai_id" {
+  description = "The ID of the mumbai pet"
+  value       = random_pet.web_mumbai.id
 }

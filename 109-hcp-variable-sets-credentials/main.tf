@@ -25,8 +25,8 @@ resource "tfe_project" "app_team" {
 }
 
 resource "tfe_workspace" "app_dev" {
-  name       = "app-dev"
-  project_id = tfe_project.app_team.id
+  name         = "app-dev"
+  project_id   = tfe_project.app_team.id
   organization = "my-org"
 }
 
@@ -38,18 +38,18 @@ resource "tfe_variable_set" "third_party_creds" {
 }
 
 resource "tfe_variable" "api_token" {
-  key          = "API_TOKEN"
-  value        = var.third_party_api_token
-  category     = "terraform"
-  sensitive    = true
+  key             = "API_TOKEN"
+  value           = var.third_party_api_token
+  category        = "terraform"
+  sensitive       = true
   variable_set_id = tfe_variable_set.third_party_creds.id
 }
 
 resource "tfe_variable" "api_secret" {
-  key          = "API_SECRET"
-  value        = var.third_party_api_secret
-  category     = "terraform"
-  sensitive    = true
+  key             = "API_SECRET"
+  value           = var.third_party_api_secret
+  category        = "terraform"
+  sensitive       = true
   variable_set_id = tfe_variable_set.third_party_creds.id
 }
 

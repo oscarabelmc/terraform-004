@@ -52,29 +52,28 @@ Neither step alone is sufficient. You must **declare** the provider so Terraform
    }
 
    provider "<name>" {
-     # Configuration arguments (region, credentials, etc.)
+     # Configuration arguments
    }
    ```
 
-   Example for AWS:
+   Example:
 
    ```hcl
    terraform {
      required_providers {
-       aws = {
-         source  = "hashicorp/aws"
-         version = "~> 5.0"
+       random = {
+         source  = "hashicorp/random"
+         version = "~> 3.6"
        }
      }
    }
 
-   provider "aws" {
-     region = "us-east-1"
+   provider "random" {
    }
    ```
 
    - `required_providers` — tells Terraform which provider plugin to download
-   - `provider` block — configures the provider instance with API-specific settings
+   - `provider` block — configures the provider instance
 
 ### Part 2 — Step 2: Initialize the working directory
 
@@ -88,9 +87,9 @@ Neither step alone is sufficient. You must **declare** the provider so Terraform
 
    ```
    Initializing provider plugins...
-   - Finding hashicorp/aws versions matching "~> 5.0"...
-   - Installing hashicorp/aws v5.84.0...
-   - Installed hashicorp/aws v5.84.0 (signed by HashiCorp)
+   - Finding hashicorp/random versions matching "~> 3.6"...
+   - Installing hashicorp/random v3.6.x...
+   - Installed hashicorp/random v3.6.x (signed by HashiCorp)
 
    Terraform has been successfully initialized!
    ```
@@ -122,12 +121,12 @@ Neither step alone is sufficient. You must **declare** the provider so Terraform
    terraform plan
    ```
 
-   The plan runs successfully — Terraform can now communicate with the AWS API through the provider plugin.
+   The plan runs successfully — Terraform can now communicate with the provider through the plugin.
 
 6. **Check what was downloaded:**
 
    ```bash
-   ls .terraform/providers/registry.terraform.io/hashicorp/aws/
+   ls .terraform/providers/registry.terraform.io/hashicorp/random/
    ```
 
    The provider plugin binary is available for use.

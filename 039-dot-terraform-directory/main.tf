@@ -9,8 +9,8 @@ terraform {
 }
 
 module "example" {
-  source  = "./modules/demo"
-  prefix  = "dot-terraform"
+  source = "./modules/demo"
+  prefix = "dot-terraform"
 }
 
 resource "random_pet" "main" {

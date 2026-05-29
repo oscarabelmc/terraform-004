@@ -1,27 +1,23 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
 
-module "naming_aws" {
+module "aws_naming" {
   source   = "./modules/naming"
-  prefix   = "prod"
+  prefix   = var.environment
   env      = "aws"
-  location = "us-east-1"
+  location = var.aws_region
 }
 
-module "naming_azure" {
+module "azure_naming" {
   source   = "./modules/naming"
-  prefix   = "prod"
+  prefix   = var.environment
   env      = "azure"
-  location = "eastus"
+  location = var.azure_location
 }

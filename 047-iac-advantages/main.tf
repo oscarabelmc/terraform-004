@@ -1,38 +1,25 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name        = "web-server"
-    Environment = "production"
-  }
+resource "random_pet" "web" {
+  prefix = "web"
+  length = 2
 }
 
-resource "aws_security_group" "web_sg" {
-  name_prefix = "web-sg-"
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+resource "local_file" "config" {
+  filename = "${path.module}/config.txt"
+  content  = "server: ${random_pet.web.id}"
 }
 
-output "instance_id" {
-  value = aws_instance.web.id
-}
 
-output "security_group_id" {
-  value = aws_security_group.web_sg.id
-}

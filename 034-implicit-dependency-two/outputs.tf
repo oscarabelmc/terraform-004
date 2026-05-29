@@ -1,18 +1,23 @@
 output "instance_id" {
-  description = "EC2 instance ID"
-  value       = aws_instance.app_core.id
+  description = "The ID of the instance pet"
+  value       = random_pet.app_core.id
 }
 
 output "volume_id" {
-  description = "EBS volume ID"
-  value       = aws_ebs_volume.data_pr0d_east.id
+  description = "The ID of the data pet"
+  value       = random_pet.data_volume.id
+}
+
+output "attachment_file" {
+  description = "The attachment file path"
+  value       = local_file.attachment.filename
 }
 
 output "attachment_info" {
   description = "Volume attachment details"
   value = {
-    device     = aws_volume_attachment.attach_data.device_name
-    instance   = aws_volume_attachment.attach_data.instance_id
-    volume     = aws_volume_attachment.attach_data.volume_id
+    device   = local_file.attachment.filename
+    instance = random_pet.app_core.id
+    volume   = random_pet.data_volume.id
   }
 }

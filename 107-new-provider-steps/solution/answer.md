@@ -18,7 +18,7 @@ Running `terraform init` is the step that actually downloads the provider plugin
 terraform init
     │
     ├── Reads required_providers from config
-    ├── Downloads hashicorp/aws v5.84.0 from registry
+    ├── Downloads hashicorp/random from registry
     ├── Stores in .terraform/providers/
     └── Creates/updates .terraform.lock.hcl
 ```
@@ -33,16 +33,15 @@ You must add two things to your configuration:
 # 1. required_providers — tells Terraform WHAT to download
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
 
 # 2. provider block — configures HOW to use it
-provider "aws" {
-  region = "us-east-1"
+provider "random" {
 }
 ```
 
@@ -56,8 +55,8 @@ Without these declarations, Terraform doesn't know which provider plugin to down
 ├─────────────────────────────────────────────────────┤
 │                                                       │
 │  Step 1 (Config):                                     │
-│    required_providers { aws = { ... } }               │
-│    provider "aws" { region = "..." }                  │
+│    required_providers { random = { ... } }            │
+│    provider "random" { }                              │
 │                                                       │
 │  Step 2 (CLI):                                        │
 │    terraform init                                     │

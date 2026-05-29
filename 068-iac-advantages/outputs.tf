@@ -1,15 +1,9 @@
-output "vpc_id" {
-  value = aws_vpc.main.id
+output "name" {
+  description = "The name of the resource"
+  value       = random_pet.main.id
 }
 
-output "instance_id" {
-  value = aws_instance.web.id
-}
-
-output "environment" {
-  value = var.environment
-}
-
-output "iac_benefits" {
-  value = "Same code, different envs: consistent, repeatable, automated, easy to learn, disaster recovery ready."
+output "result_file" {
+  description = "The result file path"
+  value       = local_file.config.filename
 }

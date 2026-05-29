@@ -9,6 +9,6 @@ terraform {
 }
 
 resource "random_pet" "api_demo" {
-  length    = 3
-  prefix    = "translation-demo"
+  length = 3
+  prefix = "translation-demo"
 }

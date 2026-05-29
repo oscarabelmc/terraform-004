@@ -1,24 +1,29 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-resource "aws_s3_bucket" "company_data" {
-  bucket = "company-data-bucket"
+resource "random_pet" "company_data" {
+  prefix = "company"
+  length = 2
 }
 
-resource "aws_instance" "web_server" {
-  ami           = "ami-502b7f631"
-  instance_type = "t2.micro"
-  depends_on    = [aws_s3_bucket.company_data]
+resource "random_pet" "web_server" {
+  prefix     = "web"
+  length     = 2
+  depends_on = [random_pet.company_data]
 }
 
-resource "aws_eip" "public_ip" {
-  vpc      = true
-  instance = aws_instance.web_server.id
+resource "local_file" "public_ip" {
+  filename = "${path.module}/public-ip.txt"
+  content  = "web_server_id = ${random_pet.web_server.id}"
 }

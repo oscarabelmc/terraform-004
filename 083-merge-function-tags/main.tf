@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 1.5"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
@@ -20,31 +24,24 @@ variable "common_tags" {
 
 locals {
   resource_tags = {
-    Name        = "billing-api"
-    Service     = "api-gateway"
-    Backup      = "daily"
+    Name    = "billing-api"
+    Service = "api-gateway"
+    Backup  = "daily"
   }
 
   merged_tags = merge(var.common_tags, local.resource_tags)
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  tags       = merge(var.common_tags, { Name = "billing-vpc" })
+resource "random_pet" "main" {
+  prefix = "billing"
+  length = 2
 }
 
-resource "aws_instance" "api" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t3.micro"
-
-  tags = merge(var.common_tags, local.resource_tags)
+resource "local_file" "config" {
+  filename = "${path.module}/tags.txt"
+  content  = join("\n", [for k, v in local.merged_tags : "${k} = ${v}"])
 }
 
-resource "aws_s3_bucket" "logs" {
-  bucket = "billing-logs"
-
-  tags = merge(var.common_tags, {
-    Name = "billing-logs"
-    Retention = "90days"
-  })
+output "merged_tags" {
+  value = local.merged_tags
 }

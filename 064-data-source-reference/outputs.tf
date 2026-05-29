@@ -1,19 +1,14 @@
-output "vnet_name" {
-  value = data.azurerm_virtual_network.prod.name
+output "repo_name" {
+  description = "The repository name from GitHub"
+  value       = data.http.prod.response_body
 }
 
-output "vnet_location" {
-  value = data.azurerm_virtual_network.prod.location
+output "pet_id" {
+  description = "The ID of the pet"
+  value       = random_pet.app.id
 }
 
-output "subnet_id" {
-  value = azurerm_subnet.app.id
-}
-
-output "vm_name" {
-  value = azurerm_linux_virtual_machine.app.name
-}
-
-output "approach" {
-  value = "Data source reads existing VNet — VM resources use its attributes without modifying it."
+output "config_file" {
+  description = "Config file path"
+  value       = local_file.config.filename
 }
